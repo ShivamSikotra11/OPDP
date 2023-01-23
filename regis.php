@@ -24,11 +24,11 @@ if(isset($_POST['submitr']))
 
     $_SESSION['name'] = $name;
     $_SESSION['gender'] = $gender;
-    $_SESSION['email'] = $email;
+    $_SESSION['emailid'] = $email;
     $_SESSION['password'] = $password;
     $_SESSION['mNr'] = $mN;
 
-    if(empty($name) || strlen($name)<=3 || !preg_match("/^[a-zA-Z ]*$/", $name)) {
+    if(empty($name) || strlen($name)<=3 || !preg_match("/^[a-zA-Z\s.'-]+$/", $name)) {
         header("Location: techInfection.php?error=invalid_name");
         exit();
     }
@@ -66,7 +66,7 @@ if(isset($_POST['submitr']))
     $result = $conn->query($query);
     if($result)
     {
-        header("Location: techInfectionlogged.php?email=$email");
+        header("Location: techInfection.php");
     }
     $conn->close();
 }

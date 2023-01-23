@@ -34,10 +34,7 @@ if(isset($_POST['submit'])){
         $_SESSION['name'] = $name;
         $_SESSION['gender'] = $gender;
         $_SESSION['emailid'] = $emailid;
-        unset($_SESSION['email']);
-        session_unset();
-        session_destroy();
-        header("Location: techInfectionlogged.php?email=$emailid");
+        header("Location: techInfection.php");
     }
     else{
         header("Location: techInfection.php?error=invalid_credentials");

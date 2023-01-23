@@ -1,4 +1,3 @@
-// window.history.forward(); 
 function clearModalData() {
     document.getElementById("password").value = "";
     document.getElementById("eid").value = "";
