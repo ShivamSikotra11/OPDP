@@ -4,6 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <link rel="icon" type="image/png" sizes="16x16" href="icon.png">
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">  
     <meta content="" name="description">
@@ -113,9 +114,9 @@
                     <input type="password" class="form-control" id="password" placeholder="Enter your password" name="password">
                   </div>
                   <?php
-                      if(isset($_GET["error"]))
+                      if(isset($_SESSION["errori"]))
                       {
-                          if($_GET["error"] == "invalid_credentials")
+                          if($_SESSION["errori"] == "invalid_credentials")
                            {
                               echo "<script>";
                               echo "$(document).ready(function() {";
@@ -153,9 +154,9 @@
                                 <input type="text" class="form-control" id="namer" name="namer" placeholder="Enter Name" value="<?php if(isset($_SESSION['name'])) {echo $_SESSION['name'];} ?>">
                             </div>
                             <?php
-                                if(isset($_GET["error"]))
+                                if(isset($_SESSION["errori"]))
                                 {
-                                    if($_GET["error"] == "invalid_name")
+                                    if($_SESSION["errori"] == "invalid_name")
                                      {
                                         echo "<script>";
                                         echo "$(document).ready(function() {";
@@ -171,9 +172,9 @@
                                 <input type="text" class="form-control" id="eidi" placeholder="Enter your email" name="emailidr" value="<?php if(isset($_SESSION['emailid'])) {echo $_SESSION['emailid'];} ?>" >
                             </div>
                             <?php
-                                if(isset($_GET["error"]))
+                                if(isset($_SESSION["errori"]))
                                 {
-                                    if($_GET["error"] == "duplicate_email")
+                                    if($_SESSION["errori"] == "duplicate_email")
                                      {
                                         echo "<script>";
                                         echo "$(document).ready(function() {";
@@ -182,7 +183,7 @@
                                         echo "</script>";
                                         echo "<div class='alert alert-danger'>Error: Email already exists. Please use a different email.</div>";
                                     }
-                                    if($_GET["error"] == "nonvalid_email")
+                                    if($_SESSION["errori"] == "nonvalid_email")
                                      {
                                         echo "<script>";
                                         echo "$(document).ready(function() {";
@@ -198,9 +199,9 @@
                                 <input type="password" class="form-control" id="password1" name="passwordr" placeholder="Enter your password" value="<?php if(isset($_SESSION['password'])) {echo $_SESSION['password'];} ?>">
                             </div>
                             <?php
-                                if(isset($_GET["error"]))
+                                if(isset($_SESSION["errori"]))
                                 {
-                                    if($_GET["error"] == "weak_password")
+                                    if($_SESSION["errori"] == "weak_password")
                                      {
                                         echo "<script>";
                                         echo "$(document).ready(function() {";
@@ -221,9 +222,9 @@
                                 <input type="tel" class="form-control" id="mN" name="mNr" placeholder="Enter your mobile number" value="<?php if(isset($_SESSION['mNr'])) {echo $_SESSION['mNr'];} ?>">
                             </div>
                             <?php
-                                if(isset($_GET["error"]))
+                                if(isset($_SESSION["errori"]))
                                 {
-                                    if($_GET["error"] == "correct_number")
+                                    if($_SESSION["errori"] == "correct_number")
                                      {
                                         echo "<script>";
                                         echo "$(document).ready(function() {";
