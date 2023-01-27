@@ -4,6 +4,10 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">  
+    <meta content="" name="description">
+    <meta content="" name="keywords">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
@@ -82,12 +86,12 @@
                             <button class="btn btn-outline-success ml-lg-3 my-2 my-lg-0" data-toggle="modal" data-target="#registerModal">Register</button>
                         </li>
                     </ul>
-                <div>
+                </div>
             <?php } ?>
         </div>
     </nav>
 
-    <div id="bar" style="height:601px; overflow-y: scroll;">
+    <div id="bar" style="overflow-y: scroll;">
         <!-- The Login modal-->
         <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div class="modal-dialog modal-xl" role="document">
@@ -164,7 +168,7 @@
                             ?>
                             <div class="form-group">
                                 <label for="emailid">Email-id:</label>
-                                <input type="text" class="form-control" id="eidi" placeholder="Enter your email" name="emailidr" value="<?php if(isset($_SESSION['email'])) {echo $_SESSION['email'];} ?>" >
+                                <input type="text" class="form-control" id="eidi" placeholder="Enter your email" name="emailidr" value="<?php if(isset($_SESSION['emailid'])) {echo $_SESSION['emailid'];} ?>" >
                             </div>
                             <?php
                                 if(isset($_GET["error"]))
@@ -271,10 +275,10 @@
             </a>
         </div>
         <!-- data -->
-        <div class="container mt-5">
+        <div class="container-sm-fluid container-lg mt-5">
             <h1 class="text-center mb-5">Tech Infections</h1>
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-lg-6 col-sm-12 col-xs-12 mb-5 mb-lg-0">
                     <div class="card">
                         <div class="card-header">
                             <h3>What are tech infections?</h3>
@@ -286,7 +290,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6">
+                <div class="col-lg-6 col-sm-12 col-xs-12 mb-3 mb-lg-0">
                     <div class="card">
                         <div class="card-header">
                             <h3>How to protect against tech infections?</h3>
@@ -317,26 +321,26 @@
             </ul>
         </div>
         <!-- //blog -->
-        <div class="container my-5">
+        <div class="container-sm-fluid container-lg my-5">
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-lg-6 col-sm-12 col-xs-12 mb-5 mb-lg-0">
                     <img src="image.jpg" class="img-fluid rounded" alt="image1">
                     <p class="my-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor, magna id bibendum
                         molestie, ipsum odio congue nisl, id luctus magna augue et metus. </p>
                 </div>
-                <div class="col-md-6">
+                <div class="col-lg-6 col-sm-12 col-xs-12 mb-5 mb-lg-0">
                     <img src="image.jpg" class="img-fluid rounded" alt="image2">
                     <p class="my-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor, magna id bibendum
                         molestie, ipsum odio congue nisl, id luctus magna augue et metus. </p>
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-6" class="col-sm-12">
+                <div class="col-lg-6 col-sm-12 col-xs-12 mb-5 mb-lg-0">
                     <img src="image.jpg" class="img-fluid rounded" alt="image3">
                     <p class="my-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor, magna id bibendum
                         molestie, ipsum odio congue nisl, id luctus magna augue et metus. </p>
                 </div>
-                <div class="col-md-6">
+                <div class="col-lg-6 col-sm-12 col-xs-12 mb-5 mb-lg-0">
                     <img src="image.jpg" class="img-fluid rounded" alt="image4">
                     <p class="my-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor, magna id bibendum
                         molestie, ipsum odio congue nisl, id luctus magna augue et metus. </p>
@@ -344,7 +348,7 @@
             </div>
         </div>
         <!-- bibliography -->
-        <div class="container my-5">
+        <div class="container-sm-fluid container-lg my-5">
             <h5>References</h5>
             <ol>
                 <li><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7173320/" class="text-info">Health Risks from

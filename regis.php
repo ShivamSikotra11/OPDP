@@ -2,9 +2,9 @@
 session_start();
 
 $servername = "localhost";
-$username = "root";
-$pa = "";
-$dbname = "logindb";
+$username = "id20205424_root";
+$pa = "Ootroot@2021";
+$dbname = "id20205424_logindb";
 
 // Create connection
 $conn = new mysqli($servername, $username, $pa, $dbname);

@@ -2,9 +2,9 @@
 session_start();
 
 $servername = "localhost";
-$username = "root";
-$pa = "";
-$dbname = "logindb";
+$username = "id20205424_root";
+$pa = "Ootroot@2021";
+$dbname = "id20205424_logindb";
 
 // Create connection
 $conn = new mysqli($servername, $username, $pa, $dbname);
@@ -18,8 +18,8 @@ if(isset($_POST['submit'])){
     $emailid = $_POST['emailid'];
     $pass = $_POST['password'];
 
-    $_SESSION['email'] = $email;
-    $_SESSION['password'] = $password;
+    $_SESSION['email'] = $emailid;
+    $_SESSION['password'] = $pass;
 
     // Check if user exists in database
     $query = "SELECT * FROM logintb WHERE emailid='$emailid' AND password='$pass'";
