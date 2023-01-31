@@ -94,6 +94,7 @@
 
     <div id="bar" style="overflow-y: scroll;">
         <!-- The Login modal-->
+    <form method="post" action="logintry.php">
         <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div class="modal-dialog modal-xl" role="document">
             <div class="modal-content">
@@ -104,7 +105,6 @@
                 </button>
               </div>
               <div class="modal-body">
-                <form method="post" action="logintry.php">
                   <div class="form-group">
                     <label for="eid">Email-id:</label>
                     <input type="text" class="form-control" id="eid"  placeholder="Enter your email" name="emailid">
@@ -128,18 +128,23 @@
                       }
                   ?>
                 </div>
-                <div class="modal-footer d-flex">
-                    <button type="button" class="btn btn-outline-success mr-auto" data-toggle="modal" data-dismiss="modal" data-target="#registerModal">Don't have an account? Register</button>
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="clearModalData()">Close</button>                        
+                <div class="modal-footer d-flex col-12">
+                    <button type="button" class="btn btn-outline-success mr-auto col-xs-12 col-sm-12 col-md-12 col-lg-4" data-toggle="modal" data-dismiss="modal" data-target="#registerModal">Don't have an account? Register</button>
+                    <div class="d-flex justify-content-between col-xs-12 col-sm-12 sol-md-12 col-lg-7 justify-content-xs-between justify-content-sm-between justify-content-md-between justify-content-lg-end">
+                    <button type="button" class="btn btn-secondary mr-2 " data-dismiss="modal" onclick="clearModalData()">Close</button>                        
                     <input type="submit" value="Login" name="submit" class="btn btn-primary">
+                    </div>
                 </div>
-            </form>
             </div>
           </div>
         </div>
+    </form>
+    
+    
         <!-- Register Modal -->
+    <form method="post" action="regis.php">
         <div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="registerModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-xl modal-dialog-scrollable" role="document">
+            <div class="modal-dialog modal-xl" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title" id="registerModalLabel">Register</h5>
@@ -148,7 +153,6 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <form method="post" action="regis.php">
                             <div class="form-group">
                                 <label for="name">Name:</label>
                                 <input type="text" class="form-control" id="namer" name="namer" placeholder="Enter Name" value="<?php if(isset($_SESSION['name'])) {echo $_SESSION['name'];} ?>">
@@ -236,17 +240,17 @@
                                 }
                             ?>
                         </div>
-                        <div class="modal-footer d-flex">
-                            <button type="button" class="btn btn-outline-success mr-auto" data-toggle="modal" data-dismiss="modal" data-target="#loginModal">Already have an account? Login</button>
-                            <!-- <div class="btn-group"> -->
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="clearRegis()">Close</button>
+                        <div class="modal-footer d-flex col-12">
+                            <button type="button" class="btn btn-outline-success mr-auto col-xs-12 col-sm-12 col-md-12 col-lg-4" data-toggle="modal" data-dismiss="modal" data-target="#loginModal">Already have an account? Login</button>
+                             <div class="d-flex justify-content-between col-xs-12 col-sm-12 sol-md-12 col-lg-7 justify-content-xs-between justify-content-sm-between justify-content-md-between justify-content-lg-end">
+                                <button type="button" class="btn btn-secondary mr-2" data-dismiss="modal" onclick="clearRegis()">Close</button>
                                 <input type="submit" value="Register" name="submitr" class="btn btn-primary">
-                            <!-- </div> -->
+                             </div> 
                         </div>
-                    </form>
                 </div>
             </div>
         </div>
+        </form>
 
         <!-- carousel -->
         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="500" style="margin:5%;margin-top:100px;" >
