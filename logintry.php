@@ -2,9 +2,9 @@
 session_start();
 
 $servername = "localhost";
-$username = "root";
-$pa = "";
-$dbname = "logindb";
+$username = "id20205424_root";
+$pa = "Ootroot@2021";
+$dbname = "id20205424_logindb";
 
 // Create connection
 $conn = new mysqli($servername, $username, $pa, $dbname);
@@ -13,13 +13,13 @@ $conn = new mysqli($servername, $username, $pa, $dbname);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
-
 if(isset($_POST['submit'])){
+    $_SESSION["errori"]="";
     $emailid = $_POST['emailid'];
     $pass = $_POST['password'];
 
-    $_SESSION['email'] = $email;
-    $_SESSION['password'] = $password;
+    $_SESSION['email'] = "";
+    $_SESSION['password'] = "";
 
     // Check if user exists in database
     $query = "SELECT * FROM logintb WHERE emailid='$emailid' AND password='$pass'";
@@ -37,7 +37,8 @@ if(isset($_POST['submit'])){
         header("Location: techInfection.php");
     }
     else{
-        header("Location: techInfection.php?error=invalid_credentials");
+        $_SESSION['errori'] = "invalid_credentials";
+        header("Location: techInfection.php");
         exit();
     }
     $conn->close();

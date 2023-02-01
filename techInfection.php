@@ -4,6 +4,11 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <link rel="icon" type="image/png" sizes="16x16" href="icon.png">
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">  
+    <meta content="" name="description">
+    <meta content="" name="keywords">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
@@ -82,13 +87,14 @@
                             <button class="btn btn-outline-success ml-lg-3 my-2 my-lg-0" data-toggle="modal" data-target="#registerModal">Register</button>
                         </li>
                     </ul>
-                <div>
+                </div>
             <?php } ?>
         </div>
     </nav>
 
-    <div id="bar" style="height:601px; overflow-y: scroll;">
+    <div id="bar" style="overflow-y: scroll;">
         <!-- The Login modal-->
+    <form method="post" action="logintry.php">
         <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div class="modal-dialog modal-xl" role="document">
             <div class="modal-content">
@@ -99,7 +105,6 @@
                 </button>
               </div>
               <div class="modal-body">
-                <form method="post" action="logintry.php">
                   <div class="form-group">
                     <label for="eid">Email-id:</label>
                     <input type="text" class="form-control" id="eid"  placeholder="Enter your email" name="emailid">
@@ -109,9 +114,9 @@
                     <input type="password" class="form-control" id="password" placeholder="Enter your password" name="password">
                   </div>
                   <?php
-                      if(isset($_GET["error"]))
+                      if(isset($_SESSION["errori"]))
                       {
-                          if($_GET["error"] == "invalid_credentials")
+                          if($_SESSION["errori"] == "invalid_credentials")
                            {
                               echo "<script>";
                               echo "$(document).ready(function() {";
@@ -123,18 +128,23 @@
                       }
                   ?>
                 </div>
-                <div class="modal-footer d-flex">
-                    <button type="button" class="btn btn-outline-success mr-auto" data-toggle="modal" data-dismiss="modal" data-target="#registerModal">Don't have an account? Register</button>
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="clearModalData()">Close</button>                        
+                <div class="modal-footer d-flex col-12">
+                    <button type="button" class="btn btn-outline-success mr-auto col-xs-12 col-sm-12 col-md-12 col-lg-4" data-toggle="modal" data-dismiss="modal" data-target="#registerModal">Don't have an account? Register</button>
+                    <div class="d-flex justify-content-between col-xs-12 col-sm-12 sol-md-12 col-lg-7 justify-content-xs-between justify-content-sm-between justify-content-md-between justify-content-lg-end">
+                    <button type="button" class="btn btn-secondary mr-2 " data-dismiss="modal" onclick="clearModalData()">Close</button>                        
                     <input type="submit" value="Login" name="submit" class="btn btn-primary">
+                    </div>
                 </div>
-            </form>
             </div>
           </div>
         </div>
+    </form>
+    
+    
         <!-- Register Modal -->
+    <form method="post" action="regis.php">
         <div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="registerModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-xl modal-dialog-scrollable" role="document">
+            <div class="modal-dialog modal-xl" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title" id="registerModalLabel">Register</h5>
@@ -143,15 +153,14 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <form method="post" action="regis.php">
                             <div class="form-group">
                                 <label for="name">Name:</label>
                                 <input type="text" class="form-control" id="namer" name="namer" placeholder="Enter Name" value="<?php if(isset($_SESSION['name'])) {echo $_SESSION['name'];} ?>">
                             </div>
                             <?php
-                                if(isset($_GET["error"]))
+                                if(isset($_SESSION["errori"]))
                                 {
-                                    if($_GET["error"] == "invalid_name")
+                                    if($_SESSION["errori"] == "invalid_name")
                                      {
                                         echo "<script>";
                                         echo "$(document).ready(function() {";
@@ -164,12 +173,12 @@
                             ?>
                             <div class="form-group">
                                 <label for="emailid">Email-id:</label>
-                                <input type="text" class="form-control" id="eidi" placeholder="Enter your email" name="emailidr" value="<?php if(isset($_SESSION['email'])) {echo $_SESSION['email'];} ?>" >
+                                <input type="text" class="form-control" id="eidi" placeholder="Enter your email" name="emailidr" value="<?php if(isset($_SESSION['emailid'])) {echo $_SESSION['emailid'];} ?>" >
                             </div>
                             <?php
-                                if(isset($_GET["error"]))
+                                if(isset($_SESSION["errori"]))
                                 {
-                                    if($_GET["error"] == "duplicate_email")
+                                    if($_SESSION["errori"] == "duplicate_email")
                                      {
                                         echo "<script>";
                                         echo "$(document).ready(function() {";
@@ -178,7 +187,7 @@
                                         echo "</script>";
                                         echo "<div class='alert alert-danger'>Error: Email already exists. Please use a different email.</div>";
                                     }
-                                    if($_GET["error"] == "nonvalid_email")
+                                    if($_SESSION["errori"] == "nonvalid_email")
                                      {
                                         echo "<script>";
                                         echo "$(document).ready(function() {";
@@ -194,9 +203,9 @@
                                 <input type="password" class="form-control" id="password1" name="passwordr" placeholder="Enter your password" value="<?php if(isset($_SESSION['password'])) {echo $_SESSION['password'];} ?>">
                             </div>
                             <?php
-                                if(isset($_GET["error"]))
+                                if(isset($_SESSION["errori"]))
                                 {
-                                    if($_GET["error"] == "weak_password")
+                                    if($_SESSION["errori"] == "weak_password")
                                      {
                                         echo "<script>";
                                         echo "$(document).ready(function() {";
@@ -217,9 +226,9 @@
                                 <input type="tel" class="form-control" id="mN" name="mNr" placeholder="Enter your mobile number" value="<?php if(isset($_SESSION['mNr'])) {echo $_SESSION['mNr'];} ?>">
                             </div>
                             <?php
-                                if(isset($_GET["error"]))
+                                if(isset($_SESSION["errori"]))
                                 {
-                                    if($_GET["error"] == "correct_number")
+                                    if($_SESSION["errori"] == "correct_number")
                                      {
                                         echo "<script>";
                                         echo "$(document).ready(function() {";
@@ -231,17 +240,17 @@
                                 }
                             ?>
                         </div>
-                        <div class="modal-footer d-flex">
-                            <button type="button" class="btn btn-outline-success mr-auto" data-toggle="modal" data-dismiss="modal" data-target="#loginModal">Already have an account? Login</button>
-                            <!-- <div class="btn-group"> -->
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="clearRegis()">Close</button>
+                        <div class="modal-footer d-flex col-12">
+                            <button type="button" class="btn btn-outline-success mr-auto col-xs-12 col-sm-12 col-md-12 col-lg-4" data-toggle="modal" data-dismiss="modal" data-target="#loginModal">Already have an account? Login</button>
+                             <div class="d-flex justify-content-between col-xs-12 col-sm-12 sol-md-12 col-lg-7 justify-content-xs-between justify-content-sm-between justify-content-md-between justify-content-lg-end">
+                                <button type="button" class="btn btn-secondary mr-2" data-dismiss="modal" onclick="clearRegis()">Close</button>
                                 <input type="submit" value="Register" name="submitr" class="btn btn-primary">
-                            <!-- </div> -->
+                             </div> 
                         </div>
-                    </form>
                 </div>
             </div>
         </div>
+        </form>
 
         <!-- carousel -->
         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="500" style="margin:5%;margin-top:100px;" >
@@ -271,10 +280,10 @@
             </a>
         </div>
         <!-- data -->
-        <div class="container mt-5">
+        <div class="container-sm-fluid container-lg mt-5">
             <h1 class="text-center mb-5">Tech Infections</h1>
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-lg-6 col-sm-12 col-xs-12 mb-5 mb-lg-0">
                     <div class="card">
                         <div class="card-header">
                             <h3>What are tech infections?</h3>
@@ -286,7 +295,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6">
+                <div class="col-lg-6 col-sm-12 col-xs-12 mb-3 mb-lg-0">
                     <div class="card">
                         <div class="card-header">
                             <h3>How to protect against tech infections?</h3>
@@ -317,26 +326,26 @@
             </ul>
         </div>
         <!-- //blog -->
-        <div class="container my-5">
+        <div class="container-sm-fluid container-lg my-5">
             <div class="row">
-                <div class="col-md-6">
+                <div class="col-lg-6 col-sm-12 col-xs-12 mb-5 mb-lg-0">
                     <img src="image.jpg" class="img-fluid rounded" alt="image1">
                     <p class="my-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor, magna id bibendum
                         molestie, ipsum odio congue nisl, id luctus magna augue et metus. </p>
                 </div>
-                <div class="col-md-6">
+                <div class="col-lg-6 col-sm-12 col-xs-12 mb-5 mb-lg-0">
                     <img src="image.jpg" class="img-fluid rounded" alt="image2">
                     <p class="my-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor, magna id bibendum
                         molestie, ipsum odio congue nisl, id luctus magna augue et metus. </p>
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-6" class="col-sm-12">
+                <div class="col-lg-6 col-sm-12 col-xs-12 mb-5 mb-lg-0">
                     <img src="image.jpg" class="img-fluid rounded" alt="image3">
                     <p class="my-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor, magna id bibendum
                         molestie, ipsum odio congue nisl, id luctus magna augue et metus. </p>
                 </div>
-                <div class="col-md-6">
+                <div class="col-lg-6 col-sm-12 col-xs-12 mb-5 mb-lg-0">
                     <img src="image.jpg" class="img-fluid rounded" alt="image4">
                     <p class="my-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor, magna id bibendum
                         molestie, ipsum odio congue nisl, id luctus magna augue et metus. </p>
@@ -344,7 +353,7 @@
             </div>
         </div>
         <!-- bibliography -->
-        <div class="container my-5">
+        <div class="container-sm-fluid container-lg my-5">
             <h5>References</h5>
             <ol>
                 <li><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7173320/" class="text-info">Health Risks from

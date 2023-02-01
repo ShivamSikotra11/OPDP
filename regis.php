@@ -2,9 +2,9 @@
 session_start();
 
 $servername = "localhost";
-$username = "root";
-$pa = "";
-$dbname = "logindb";
+$username = "id20205424_root";
+$pa = "Ootroot@2021";
+$dbname = "id20205424_logindb";
 
 // Create connection
 $conn = new mysqli($servername, $username, $pa, $dbname);
@@ -22,14 +22,16 @@ if(isset($_POST['submitr']))
     $password = $_POST['passwordr'];
     $mN = $_POST['mNr'];
 
-    $_SESSION['name'] = $name;
-    $_SESSION['gender'] = $gender;
-    $_SESSION['emailid'] = $email;
-    $_SESSION['password'] = $password;
-    $_SESSION['mNr'] = $mN;
+    $_SESSION['name'] = "";
+    $_SESSION['gender'] = "";
+    $_SESSION['emailid'] = "";
+    $_SESSION['password'] = "";
+    $_SESSION['mNr'] = "";
+    $_SESSION["errori"]="";
 
     if(empty($name) || strlen($name)<=3 || !preg_match("/^[a-zA-Z\s.'-]+$/", $name)) {
-        header("Location: techInfection.php?error=invalid_name");
+        $_SESSION["errori"]="invalid_name";
+        header("Location: techInfection.php");
         exit();
     }
 
@@ -39,25 +41,29 @@ if(isset($_POST['submitr']))
     if($result->num_rows > 0)
     {
         // Email already exists, display error message
-        header("Location: techInfection.php?error=duplicate_email");
+        $_SESSION["errori"]="duplicate_email";
+        header("Location: techInfection.php");
         exit();
     }
     else if(strlen($email) < 8 || strlen($email) > 50 || !filter_var($email, FILTER_VALIDATE_EMAIL))
     {
         // Non-Valid Email address
-        header("Location: techInfection.php?error=nonvalid_email");
+        $_SESSION["errori"]="nonvalid_email";
+        header("Location: techInfection.php");
         exit();
     }
     if (!preg_match('/^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[^\w\d\s:])([^\s]){8,}$/', $password)) 
     {
         //password is not strong
-        header("Location: techInfection.php?error=weak_password");
+        $_SESSION["errori"]="weak_password";
+        header("Location: techInfection.php");
         exit();
     }
     if(strlen($mN) != 10) 
     {
         // display error message on registration page if length not equal to 10
-        header("Location: techInfection.php?error=correct_number");
+        $_SESSION["errori"]="correct_number";
+        header("Location: techInfection.php");
         exit();
     } 
 
@@ -66,6 +72,11 @@ if(isset($_POST['submitr']))
     $result = $conn->query($query);
     if($result)
     {
+        $_SESSION['name'] = $name;
+        $_SESSION['gender'] = $gender;
+        $_SESSION['emailid'] = $email;
+        $_SESSION['password'] = $password;
+        $_SESSION['mNr'] = $mN;
         header("Location: techInfection.php");
     }
     $conn->close();
