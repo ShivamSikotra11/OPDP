@@ -53,6 +53,9 @@
         .dropdown-menu {
             margin-right:30px;
         }
+        .border-c {
+            border:2px solid lightgrey;
+        }
     </style>
 </head>
 
@@ -253,32 +256,35 @@
         </form>
 
         <!-- carousel -->
-        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="500" style="margin:5%;margin-top:100px;" >
-            <ol class="carousel-indicators">
-                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-            </ol>
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="images\genral.jpeg" width="30px" height="300%" class="d-block w-100 mx-auto" alt="image1">
-                </div>
-                <div class="carousel-item">
-                    <img src="images\genral_2.jpeg" width="30px" height="300%" class="d-block w-100 mx-auto" alt="image2">
-                </div>
-                <div class="carousel-item">
-                    <img src="images\overall.jpeg" width="30px" height="300%" class="d-block w-100 mx-auto" alt="image3">
-                </div>
-            </div>
-            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-            </a>
-        </div>
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="500" style="margin:5%;margin-top:100px;">
+  <ol class="carousel-indicators">
+    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+  </ol>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="images\genral.jpeg" class="d-block mx-auto border-c" style="height:80vh;width:150vh;" alt="image1">
+    </div>
+    <div class="carousel-item">
+      <img src="images\genral_2.jpeg" class="d-block mx-auto border-c" style="height:80vh;width:150vh;" alt="image2">
+    </div>
+    <div class="carousel-item">
+      <img src="images\overall.jpeg" class="d-block mx-auto border-c" style="height:80vh;width:150vh;" alt="image3">
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+
+
+
         <!-- data -->
         <div class="container-sm-fluid container-lg mt-5">
             <h1 class="text-center mb-5">Tech Infections</h1>
