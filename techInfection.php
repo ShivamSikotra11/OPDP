@@ -61,7 +61,7 @@
     <!-- Nav-bar Header -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="#">Your Site</a>
+            <a class="navbar-brand" href="#">Tech Infections</a>
             <?php if (isset($_SESSION['name']) && isset($_SESSION['emailid'])) { ?>
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i class="fas fa-user"></i>
@@ -289,9 +289,7 @@
                             <h3>What are tech infections?</h3>
                         </div>
                         <div class="card-body">
-                            <p>Tech infections are malicious software that can harm your device and steal your personal
-                                information. Common types of tech infections include malware, viruses, spyware, and adware.
-                                They can slow down your device, cause data loss, and even lead to identity theft.</p>
+                            <p>Tech infections(Technological diseases) are diseases of the modern era. Some are caused by occupational exposures, and are marked with direct professional relation, or the action of harmful effects in the workplace. Technological diseases occur due to excessive work at the computer, or excessive use of keyboards and computer mice, especially the non-ergonomic ones.</p>
                         </div>
                     </div>
                 </div>
@@ -322,7 +320,8 @@
                 <li class="list-group-item">Computer Vision Syndrome</li>
                 <li class="list-group-item">Carpal Tunnel Syndrome</li>
                 <li class="list-group-item">Text Neck</li>
-                <li class="list-group-item">Tennis Elbow</li>
+                <li class="list-group-item">Ear Pain</li>
+                <li class="list-group-item">Shoulder Pain</li>
             </ul>
         </div>
         <!-- //blog -->
@@ -347,6 +346,18 @@
                 </div>
                 <div class="col-lg-6 col-sm-12 col-xs-12 mb-5 mb-lg-0">
                     <img src="images\neck.jpeg" class="img-fluid rounded" alt="image4">
+                    <p class="my-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor, magna id bibendum
+                        molestie, ipsum odio congue nisl, id luctus magna augue et metus. </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 col-sm-12 col-xs-12 mb-5 mb-lg-0">
+                    <img src="images\ear.jpg" class="img-fluid rounded" alt="image5">
+                    <p class="my-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor, magna id bibendum
+                        molestie, ipsum odio congue nisl, id luctus magna augue et metus. </p>
+                </div>
+                <div class="col-lg-6 col-sm-12 col-xs-12 mb-5 mb-lg-0">
+                    <img src="images\shoulder_1.jpeg" class="img-fluid rounded" alt="image6">
                     <p class="my-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor, magna id bibendum
                         molestie, ipsum odio congue nisl, id luctus magna augue et metus. </p>
                 </div>
