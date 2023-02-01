@@ -261,13 +261,13 @@
             </ol>
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="image.jpg" width="30px" height="300%" class="d-block w-100 mx-auto" alt="image1">
+                    <img src="images\genral.jpeg" width="30px" height="300%" class="d-block w-100 mx-auto" alt="image1">
                 </div>
                 <div class="carousel-item">
-                    <img src="image.jpg" width="30px" height="300%" class="d-block w-100 mx-auto" alt="image2">
+                    <img src="images\genral_2.jpeg" width="30px" height="300%" class="d-block w-100 mx-auto" alt="image2">
                 </div>
                 <div class="carousel-item">
-                    <img src="image.jpg" width="30px" height="300%" class="d-block w-100 mx-auto" alt="image3">
+                    <img src="images\overall.jpeg" width="30px" height="300%" class="d-block w-100 mx-auto" alt="image3">
                 </div>
             </div>
             <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -319,8 +319,8 @@
             <a class="navbar-brand text-center" href="#">Tech Infections Types</a>
             <ul class="list-group">
                 <li class="list-group-item">Back pain</li>
-                <li class="list-group-item">Carpal Tunnel Syndrome</li>
                 <li class="list-group-item">Computer Vision Syndrome</li>
+                <li class="list-group-item">Carpal Tunnel Syndrome</li>
                 <li class="list-group-item">Text Neck</li>
                 <li class="list-group-item">Tennis Elbow</li>
             </ul>
@@ -329,24 +329,24 @@
         <div class="container-sm-fluid container-lg my-5">
             <div class="row">
                 <div class="col-lg-6 col-sm-12 col-xs-12 mb-5 mb-lg-0">
-                    <img src="image.jpg" class="img-fluid rounded" alt="image1">
+                    <img src="images\neck_back.jpeg" class="img-fluid rounded" alt="image1">
                     <p class="my-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor, magna id bibendum
                         molestie, ipsum odio congue nisl, id luctus magna augue et metus. </p>
                 </div>
                 <div class="col-lg-6 col-sm-12 col-xs-12 mb-5 mb-lg-0">
-                    <img src="image.jpg" class="img-fluid rounded" alt="image2">
+                    <img src="images\eye_1.jpeg" class="img-fluid rounded" alt="image2">
                     <p class="my-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor, magna id bibendum
                         molestie, ipsum odio congue nisl, id luctus magna augue et metus. </p>
                 </div>
             </div>
             <div class="row">
                 <div class="col-lg-6 col-sm-12 col-xs-12 mb-5 mb-lg-0">
-                    <img src="image.jpg" class="img-fluid rounded" alt="image3">
+                    <img src="images\tunnel.jpg" class="img-fluid rounded" alt="image3">
                     <p class="my-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor, magna id bibendum
                         molestie, ipsum odio congue nisl, id luctus magna augue et metus. </p>
                 </div>
                 <div class="col-lg-6 col-sm-12 col-xs-12 mb-5 mb-lg-0">
-                    <img src="image.jpg" class="img-fluid rounded" alt="image4">
+                    <img src="images\neck.jpeg" class="img-fluid rounded" alt="image4">
                     <p class="my-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor, magna id bibendum
                         molestie, ipsum odio congue nisl, id luctus magna augue et metus. </p>
                 </div>
