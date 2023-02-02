@@ -56,6 +56,16 @@
         .border-c {
             border:2px solid lightgrey;
         }
+        .card-custom {
+            background-color: #f2f2f2;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            transition: 0.3s;
+            margin-bottom: 30px;
+          }
+          .card-custom:hover {
+            box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+          }
     </style>
 </head>
 
@@ -331,6 +341,7 @@
             </ul>
         </div>
         <!-- //blog -->
+        
         <div class="container-sm-fluid container-lg my-5">
             <div class="row">
                 <div class="col-lg-6 col-sm-12 col-xs-12 mb-5 mb-lg-0">
