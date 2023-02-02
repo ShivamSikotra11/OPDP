@@ -70,7 +70,7 @@ session_start();
     </style>
 </head>
 
-<body>
+<body style="background-color:beige;">
 
     <!-- Nav-bar Header -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
@@ -384,35 +384,35 @@ session_start();
                         <div class=" row card-body d-flex align-items-center">
                             <p class="my-3 card-text col-lg-8" style="font-size:24px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor, magna id bibendum
                                 molestie, ipsum odio congue nisl, id luctus magna augue et metus. </p>
-                            <img src="..\images\neck.jpeg" class="img-fluid rounded col-lg-4 card-img-top" alt="image2">
+                            <img src="..\images\neckpain.jpg" class="img-fluid rounded col-lg-4 card-img-top" alt="image2">
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- <div class="row">
-                <div class="d-flex col-lg-12 col-sm-12 col-xs-12 mb-5 mb-lg-0">
-                    <img src="..\images\tunnel.jpg" class="img-fluid rounded col-lg-5" alt="image3">
-                    <p class="my-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor, magna id bibendum
-                        molestie, ipsum odio congue nisl, id luctus magna augue et metus. </p>
+            <div class="row mb-5">
+                <div class="d-flex col-lg-12 col-sm-12 col-xs-12 mb-5 mb-lg-0" *ngFor="let item of items">
+                    <div class="card h-100" style="background-color: aliceblue;">
+                        <h5 class="card-title text-center m-2">Ear Issues</h5>
+                        <div class=" row card-body d-flex align-items-center">
+                            <img src="..\images\ear.jpg" class="img-fluid rounded col-lg-4 card-img-top" alt="image2">
+                            <p class="my-3 card-text col-lg-8" style="font-size:24px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor, magna id bibendum
+                                molestie, ipsum odio congue nisl, id luctus magna augue et metus. </p>
+                        </div>
+                    </div>
                 </div>
-                <div class="d-flex col-lg-12 col-sm-12 col-xs-12 mb-5 mb-lg-0">
-                    <p class="my-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor, magna id bibendum
-                        molestie, ipsum odio congue nisl, id luctus magna augue et metus. </p>
-                    <img src="..\images\neck.jpeg" class="img-fluid rounded col-lg-5" alt="image4">
+            </div>
+            <div class="row mb-5">
+                <div class="d-flex col-lg-12 col-sm-12 col-xs-12 mb-5 mb-lg-0" *ngFor="let item of items">
+                    <div class="card h-100" style="background-color: aliceblue;">
+                        <h5 class="card-title text-center m-2">Shoulder Pain</h5>
+                        <div class=" row card-body d-flex align-items-center">
+                            <p class="my-3 card-text col-lg-8" style="font-size:24px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor, magna id bibendum
+                                molestie, ipsum odio congue nisl, id luctus magna augue et metus. </p>
+                            <img src="..\images\shoulder_1.jpeg" class="img-fluid rounded col-lg-4 card-img-top" alt="image2">
+                        </div>
+                    </div>
                 </div>
-            </div> -->
-            <!-- <div class="row">
-                <div class="d-flex col-lg-12 col-sm-12 col-xs-12 mb-5 mb-lg-0">
-                    <img src="..\images\ear.jpg" class="img-fluid rounded col-lg-4" alt="image5">
-                    <p class="my-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor, magna id bibendum
-                        molestie, ipsum odio congue nisl, id luctus magna augue et metus. </p>
-                </div>
-                <div class="d-flex col-lg-12 col-sm-12 col-xs-12 mb-5 mb-lg-0">
-                    <p class="my-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor, magna id bibendum
-                        molestie, ipsum odio congue nisl, id luctus magna augue et metus. </p>
-                    <img src="..\images\shoulder_1.jpeg" class="img-fluid rounded col-lg-5" alt="image6">
-                </div>
-            </div> -->
+            </div>
         </div>
         <!-- bibliography -->
         <div class="container-sm-fluid container-lg my-5">
