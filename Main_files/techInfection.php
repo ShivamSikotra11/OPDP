@@ -272,13 +272,13 @@ session_start();
             </ol>
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="..\images\genral.jpeg" class="d-block mx-auto border-c" style="height:80vh;width:150vh;" alt="image1">
+                    <img src="..\images\genral.png" class="d-block mx-auto border-c" style="height:80vh;width:150vh;" alt="image1">
                 </div>
                 <div class="carousel-item">
                     <img src="..\images\genral_2.jpeg" class="d-block mx-auto border-c" style="height:80vh;width:150vh;" alt="image2">
                 </div>
                 <div class="carousel-item">
-                    <img src="..\images\overall.jpeg" class="d-block mx-auto border-c" style="height:80vh;width:150vh;" alt="image3">
+                    <img src="..\images\overall.png" class="d-block mx-auto border-c" style="height:80vh;width:150vh;" alt="image3">
                 </div>
             </div>
             <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
