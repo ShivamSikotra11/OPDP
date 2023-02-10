@@ -1,5 +1,12 @@
 <?php
 session_start();
+if(isset($_SESSION['le']) && ($_SESSION['le']=="NL"))
+{
+    echo '<script>
+    // document.getElementById("loginModal").style.display = "block";
+    alert("Please Log in");
+    </script>';
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -16,6 +23,8 @@ session_start();
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
     <script src="oot.js"></script>
+    <script src="animation.js"></script>
+    <link rel="stylesheet" href="animation.css">
     <style>
         .carousel-control-prev,
         .carousel-control-next {
@@ -66,6 +75,14 @@ session_start();
 
         .card-custom:hover {
             box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+        }
+
+        .card-title{
+            font-size:40px; 
+        }
+
+        .read{
+            margin:-4px;
         }
     </style>
 </head>
@@ -347,19 +364,30 @@ session_start();
                         <h5 class="card-title text-center m-2">Back Pain</h5>
                         <div class=" row card-body d-flex align-items-center">
                             <img src="..\images\neck_back.jpeg" class="img-fluid rounded col-lg-4 card-img-top" alt="image1">
-                            <p class="my-3 card-text col-lg-8" style="font-size:24px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor, magna id bibendum
-                                molestie, ipsum odio congue nisl, id luctus magna augue et metus. </p>
+                            <p class="my-3 card-text col-lg-8" style="font-size:21px;">Back pain caused by prolonged use of laptops and mobile devices is a common issue in modern times. This is due to the unnatural posture and positioning of the body while using these devices, leading to poor spinal alignment and straining of the neck, shoulders, and back muscles. To alleviate this problem, it is important to take regular breaks, practice good posture, and use ergonomic accessories.</p>
                         </div>
                     </div>
                 </div>
             </div>
+            <form method="post" action="headache.php">
+            <div class="row mb-5">
+                <div class="d-flex col-lg-12 col-sm-12 col-xs-12 mb-5 mb-lg-0" *ngFor="let item of items">
+                    <div class="card h-100" style="background-color: aliceblue;">
+                        <h5 class="card-title text-center m-2">Headache</h5>
+                        <div class=" row card-body d-flex align-items-center">
+                            <img src="..\images\headache2.jpg" class="img-fluid rounded col-lg-4 card-img-top" alt="image2">
+                            <p class="my-3 card-text col-lg-8" style="font-size:21px;">Headache related to technology, often referred to as "tech headache", is a type of discomfort caused by the extended usage of digital devices such as laptops, smartphones, and tablets. This type of headache results from the stress placed on the eyes and neck as we continuously stare at screens for extended periods of time. It is important to take breaks and practice good posture to reduce the risk of tech headaches.<span class="flex justify-content-end mt-0 read"><input type="submit" value="Read More" class="btn btn-link"></span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </form>
             <div class="row mb-5">
                 <div class="d-flex col-lg-12 col-sm-12 col-xs-12 mb-5 mb-lg-0" *ngFor="let item of items">
                     <div class="card h-100" style="background-color: aliceblue;">
                         <h5 class="card-title text-center m-2">Eye Issues</h5>
                         <div class=" row card-body d-flex align-items-center">
-                            <p class="my-3 card-text col-lg-8" style="font-size:24px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor, magna id bibendum
-                                molestie, ipsum odio congue nisl, id luctus magna augue et metus. </p>
+                            <p class="my-3 card-text col-lg-8" style="font-size:21px;">Eye issues due to laptop and mobile technology are a growing concern due to the prolonged and frequent use of digital devices. These issues include computer vision syndrome, dry eyes, blurred vision, and eye strain, which can cause discomfort and reduce visual performance. The blue light emitted by digital devices can also disrupt the natural sleep-wake cycle and lead to sleep problems.</p>
                             <img src="..\images\eye_1.jpeg" class="img-fluid rounded col-lg-4 card-img-top" alt="image2">
                         </div>
                     </div>
@@ -371,8 +399,7 @@ session_start();
                         <h5 class="card-title text-center m-2">Wrist Pain</h5>
                         <div class=" row card-body d-flex align-items-center">
                             <img src="..\images\tunnel.jpg" class="img-fluid rounded col-lg-4 card-img-top" alt="image2">
-                            <p class="my-3 card-text col-lg-8" style="font-size:24px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor, magna id bibendum
-                                molestie, ipsum odio congue nisl, id luctus magna augue et metus. </p>
+                            <p class="my-3 card-text col-lg-8" style="font-size:21px;">Wrist pain due to laptop and mobile use is a condition commonly known as "tech neck" or "texting thumb." It is caused by prolonged use of technology devices, such as laptops and smartphones, which can result in repetitive strain injury to the wrist and hand. This discomfort is due to the repetitive motions and awkward angles of the wrist as individuals type and swipe on their devices. This can cause discomfort, numbness, and weakness in the wrist, making it difficult to carry out daily activities.</p>
                         </div>
                     </div>
                 </div>
@@ -382,8 +409,7 @@ session_start();
                     <div class="card h-100" style="background-color: aliceblue;">
                         <h5 class="card-title text-center m-2">Neck Pain</h5>
                         <div class=" row card-body d-flex align-items-center">
-                            <p class="my-3 card-text col-lg-8" style="font-size:24px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor, magna id bibendum
-                                molestie, ipsum odio congue nisl, id luctus magna augue et metus. </p>
+                            <p class="my-3 card-text col-lg-8" style="font-size:21px;">Neck pain caused by technology refers to the discomfort and strain felt in the neck area as a result of prolonged usage of digital devices such as laptops, smartphones and tablets. Neck pain from technology is a common issue arising from the modern digital age where individuals spend extended hours in front of screens like laptops, smartphones and other devices. This prolonged usage can cause stress on the neck muscles and joints, leading to pain and discomfort. </p>
                             <img src="..\images\neckpain.jpg" class="img-fluid rounded col-lg-4 card-img-top" alt="image2">
                         </div>
                     </div>
@@ -395,8 +421,7 @@ session_start();
                         <h5 class="card-title text-center m-2">Ear Issues</h5>
                         <div class=" row card-body d-flex align-items-center">
                             <img src="..\images\ear.jpg" class="img-fluid rounded col-lg-4 card-img-top" alt="image2">
-                            <p class="my-3 card-text col-lg-8" style="font-size:24px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor, magna id bibendum
-                                molestie, ipsum odio congue nisl, id luctus magna augue et metus. </p>
+                            <p class="my-3 card-text col-lg-8" style="font-size:21px;">Ear pain due to the use of technology gadgets like laptops, mobiles, earphones, headphones, etc. is a common issue faced by many people. It is caused by prolonged exposure to high volume and prolonged use of these gadgets which can lead to hearing damage and discomfort in the ear. It is important to take regular breaks and limit the use of these gadgets to prevent ear pain and maintain good hearing health.</p>
                         </div>
                     </div>
                 </div>
@@ -406,8 +431,7 @@ session_start();
                     <div class="card h-100" style="background-color: aliceblue;">
                         <h5 class="card-title text-center m-2">Shoulder Pain</h5>
                         <div class=" row card-body d-flex align-items-center">
-                            <p class="my-3 card-text col-lg-8" style="font-size:24px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor, magna id bibendum
-                                molestie, ipsum odio congue nisl, id luctus magna augue et metus. </p>
+                            <p class="my-3 card-text col-lg-8" style="font-size:21px;">Shoulder pain caused by technology is a modern day affliction resulting from excessive use of laptops, mobile devices and other technology. This condition is characterized by tension, stiffness and discomfort in the neck, shoulders and upper back as a result of prolonged hours of hunching over and poor posture. It is a growing concern among individuals who are heavily reliant on technology for their daily activities.</p>
                             <img src="..\images\shoulder_1.jpeg" class="img-fluid rounded col-lg-4 card-img-top" alt="image2">
                         </div>
                     </div>
