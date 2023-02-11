@@ -36,7 +36,7 @@
   -ms-transform: translate(0, -50%);
   -o-transform: translate(0, -50%);
   transform: translate(0, -50%);
-  margin-top: 250px;
+  top: 270px;
 }
 
 #loginModal .modal-body {
@@ -109,12 +109,12 @@
   -o-transform: translate(0, -50%);
   transform: translate(0, -50%);
   /* margin-top: 300px; */
-  top: 295px;
+  top: 280px;
 }
 
 #registerModal .modal-body {
   overflow-y: auto;
-  max-height: calc(100vh - 210px);
+  max-height: calc(75vh - 140px);
 }
 
 #registerModal .modal-dialog .modal-content {
@@ -245,15 +245,13 @@
   display: inline-block;
   width: 4rem;
   height: 4rem;
-  /* border: 2px solid ; */
-  /* border-color: blue; */
   box-shadow: 0 0 30px rgb(53, 53, 255);
   vertical-align: text-bottom;
   background-color: rgb(59, 59, 196);
   border-radius: 50%;
   opacity: 0;
-  -webkit-animation: spinner-grow .75s linear infinite;
-  animation: spinner-grow .75s linear infinite;
+  -webkit-animation: spinner-grow 1s linear infinite;
+  animation: spinner-grow 1s linear infinite;
 }
 
 @keyframes grow {
@@ -284,3 +282,16 @@
   opacity: 1;
   transform: translateX(0);
 }
+
+/* Drop-Down Menu */
+.dropdown-menu {
+  display: none;
+  opacity: 0;
+  transition: all 0.5s ease-in-out;
+}
+
+.dropdown-menu.show {
+  display: block;
+  opacity: 1;
+}
+

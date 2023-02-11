@@ -22,11 +22,6 @@ if(isset($_POST['submitr']))
     $password = $_POST['passwordr'];
     $mN = $_POST['mNr'];
 
-    $_SESSION['name'] = "";
-    $_SESSION['gender'] = "";
-    $_SESSION['emailid'] = "";
-    $_SESSION['password'] = "";
-    $_SESSION['mNr'] = "";
     $_SESSION["errori"]="";
 
     if(empty($name) || strlen($name)<=3 || !preg_match("/^[a-zA-Z\s.'-]+$/", $name)) {

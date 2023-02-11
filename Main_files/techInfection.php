@@ -25,72 +25,7 @@ if (isset($_SESSION['le']) && ($_SESSION['le'] == "NL")) {
     <script src="oot.js"></script>
     <script src="animation.js"></script>
     <link rel="stylesheet" href="animation.css">
-    <style>
-        .carousel-control-prev,
-        .carousel-control-next {
-            display: none;
-        }
-
-        .carousel-item img {
-            margin: 0 30px;
-        }
-
-        ::-webkit-scrollbar {
-            width: 0.2em;
-            background-color: #F5F5F5;
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background-color: #000000;
-        }
-
-        /* #bar::-webkit-scrollbar {   
-            width: 0.4em;
-            background-color: #F5F5F5;
-            background-color: lightblue;
-        }
-
-        #bar::-webkit-scrollbar-thumb {
-          background-color: blue;
-        } */
-        .btn-custom-hover:hover {
-            background-color: red !important;
-        }
-
-        .dropdown-menu {
-            margin-right: 30px;
-        }
-
-        .border-c {
-            border: 2px solid lightgrey;
-        }
-
-        .card-custom {
-            background-color: #f2f2f2;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-            transition: 0.3s;
-            margin-bottom: 30px;
-        }
-
-        .card-custom:hover {
-            box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-        }
-
-        .card-title {
-            font-size: 40px;
-        }
-
-        .read {
-            margin: -4px;
-        }
-
-        @media only screen and (max-width: 888px) {
-            .carousel-item img {
-                height: 50vh !important;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body style="background-color:beige;">
@@ -133,7 +68,7 @@ if (isset($_SESSION['le']) && ($_SESSION['le'] == "NL")) {
         <!-- The Login modal-->
         <form method="post" action="logintry.php">
             <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog modal-xl" role="document">
+                <div class="modal-dialog modal-md" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
                             <h5 class="modal-title" id="exampleModalLabel">Login</h5>
@@ -158,7 +93,7 @@ if (isset($_SESSION['le']) && ($_SESSION['le'] == "NL")) {
                                     echo "$('#loginModal').modal('show');";
                                     echo "});";
                                     echo "</script>";
-                                    echo "<div class='alert alert-danger'>Error: Invalid login credentials. Please try again.</div>";
+                                    echo "<div class='alert alert-danger form-group'>Error: Invalid login credentials. Please try again.</div>";
                                 }
                             }
                             ?>
@@ -179,7 +114,7 @@ if (isset($_SESSION['le']) && ($_SESSION['le'] == "NL")) {
         <!-- Register Modal -->
         <form method="post" action="regis.php">
             <div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="registerModalLabel" aria-hidden="true">
-                <div class="modal-dialog modal-xl" role="document">
+                <div class="modal-dialog modal-md" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
                             <h5 class="modal-title" id="registerModalLabel">Register</h5>
@@ -202,7 +137,7 @@ if (isset($_SESSION['le']) && ($_SESSION['le'] == "NL")) {
                                     echo "$('#registerModal').modal('show');";
                                     echo "});";
                                     echo "</script>";
-                                    echo "<div class='alert alert-danger'>Error: Please enter Valid Name(length>4).</div>";
+                                    echo "<div class='alert alert-danger form-group'>Error: Please enter Valid Name(length>4).</div>";
                                 }
                             }
                             ?>
@@ -220,7 +155,7 @@ if (isset($_SESSION['le']) && ($_SESSION['le'] == "NL")) {
                                     echo "$('#registerModal').modal('show');";
                                     echo "});";
                                     echo "</script>";
-                                    echo "<div class='alert alert-danger'>Error: Email already exists. Please use a different email.</div>";
+                                    echo "<div class='alert alert-danger form-group'>Error: Email already exists. Please use a different email.</div>";
                                 }
                                 if ($_SESSION["errori"] == "nonvalid_email") {
                                     echo "<script>";
@@ -228,7 +163,7 @@ if (isset($_SESSION['le']) && ($_SESSION['le'] == "NL")) {
                                     echo "$('#registerModal').modal('show');";
                                     echo "});";
                                     echo "</script>";
-                                    echo "<div class='alert alert-danger'>Error: Please enter the valid Email Address</div>";
+                                    echo "<div class='alert alert-danger form-group'>Error: Please enter the valid Email Address</div>";
                                 }
                             }
                             ?>
@@ -246,7 +181,7 @@ if (isset($_SESSION['le']) && ($_SESSION['le'] == "NL")) {
                                     echo "$('#registerModal').modal('show');";
                                     echo "});";
                                     echo "</script>";
-                                    echo "<div class='alert alert-danger'> Please enter Strong Password of Length At least 8 length,&nbsp At least one Uppercase letter,At least one Lowercase letter,At least one special character and At least one digit.</div>";
+                                    echo "<div class='alert alert-danger form-group'> Please enter Strong Password of Length At least 8 length,&nbsp At least one Uppercase letter,At least one Lowercase letter,At least one special character and At least one digit.</div>";
                                 }
                             }
                             ?>
@@ -269,17 +204,17 @@ if (isset($_SESSION['le']) && ($_SESSION['le'] == "NL")) {
                                     echo "$('#registerModal').modal('show');";
                                     echo "});";
                                     echo "</script>";
-                                    echo "<div class='alert alert-danger'>Error: Please enter 10 digit Number.</div>";
+                                    echo "<div class='alert alert-danger form-group'>Error: Please enter 10 digit Number.</div>";
                                 }
                             }
                             ?>
                         </div>
                         <div class="modal-footer d-flex col-12">
-                            <button type="button" class="btn btn-outline-success mr-auto col-xs-12 col-sm-12 col-md-12 col-lg-4" data-toggle="modal" data-dismiss="modal" data-target="#loginModal">Already have an account? Login</button>
-                            <div class="d-flex justify-content-between col-xs-12 col-sm-12 sol-md-12 col-lg-7 justify-content-xs-between justify-content-sm-between justify-content-md-between justify-content-lg-end">
+                            <div class="d-flex justify-content-between col-xs-12 col-sm-12 sol-md-12 col-lg-12 justify-content-xs-between justify-content-sm-between justify-content-md-between justify-content-lg-between">
                                 <button type="button" class="btn btn-secondary mr-2" data-dismiss="modal" onclick="clearRegis()">Close</button>
                                 <input type="submit" value="Register" name="submitr" class="btn btn-primary">
                             </div>
+                            <button type="button" class="btn btn-outline-success mr-auto col-xs-12 col-sm-12 col-md-12 col-lg-12" data-toggle="modal" data-dismiss="modal" data-target="#loginModal">Already have an account? Login</button>
                         </div>
                     </div>
                 </div>
@@ -497,9 +432,9 @@ if (isset($_SESSION['le']) && ($_SESSION['le'] == "NL")) {
             </div>
         </footer>
     </div>
-    <div id="loading">
+    <!-- <div id="loading">
   <div class="spinner-grow text-light"></div>
-</div>
+</div> -->
 
 </body>
 

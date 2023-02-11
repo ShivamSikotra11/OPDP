@@ -55,11 +55,11 @@ $(document).ready(function() {
   });
 
   //loader
-window.onload = function() {
-  setTimeout(function() {
-    document.getElementById("loading").style.display = "none";
-  }, 2000);
-};
+// window.onload = function() {
+//   setTimeout(function() {
+//     document.getElementById("loading").style.display = "none";
+//   }, 2000);
+// };
 
 //Card
 $(document).ready(function() {
@@ -86,7 +86,10 @@ $(document).ready(function() {
   });
 });
 
-
-
-
+//Drop_Down Menu
+$(document).ready(function () {
+  $('.dropdown-toggle').click(function () {
+      $('.dropdown-menu').toggleClass('show');
+  });
+});
   
