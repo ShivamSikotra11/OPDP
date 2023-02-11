@@ -55,11 +55,11 @@ $(document).ready(function() {
   });
 
   //loader
-// window.onload = function() {
-//   setTimeout(function() {
-//     document.getElementById("loading").style.display = "none";
-//   }, 2000);
-// };
+window.onload = function() {
+  setTimeout(function() {
+    document.getElementById("loading").style.display = "none";
+  }, 2000);
+};
 
 //Card
 $(document).ready(function() {

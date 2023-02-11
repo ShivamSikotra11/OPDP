@@ -497,9 +497,9 @@ if (isset($_SESSION['le']) && ($_SESSION['le'] == "NL")) {
             </div>
         </footer>
     </div>
-    <!-- <div id="loading">
+    <div id="loading">
   <div class="spinner-grow text-light"></div>
-</div> -->
+</div>
 
 </body>
 
