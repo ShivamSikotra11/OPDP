@@ -1,82 +1,94 @@
 /* navbar header */
 .navbar {
-    /* background: linear-gradient(to right, #E8C41A, #FDE92D); Gradient background color */
+  /* background: linear-gradient(to right, #E8C41A, #FDE92D); Gradient background color */
   animation: slide-in-top 0.5s ease-in-out both;
 }
 
 .navbar:hover {
-    background-color: #F9A51A;
-    transition: background-color 0.5s ease-in-out;
-  }
+  background-color: #F9A51A;
+  transition: background-color 0.5s ease-in-out;
+}
 
 @keyframes slide-in-top {
   0% {
     transform: translateY(-100%);
   }
+
   100% {
     transform: translateY(0);
   }
 }
+
 /* login button animation */
 .fade {
+  opacity: 0;
+  -webkit-transition: opacity .15s linear;
+  -o-transition: opacity .15s linear;
+  transition: opacity .15s linear;
+}
+
+#loginModal.fade.show {
+  opacity: 1;
+}
+
+#loginModal .modal-dialog {
+  -webkit-transform: translate(0, -50%);
+  -ms-transform: translate(0, -50%);
+  -o-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+  margin-top: 250px;
+}
+
+#loginModal .modal-body {
+  overflow-y: auto;
+  max-height: calc(100vh - 210px);
+}
+
+#loginModal .modal-dialog .modal-content {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
+}
+
+#loginModal .modal-header {
+  background-color: #333;
+  color: #fff;
+  border-bottom: 0;
+}
+
+#loginModal .modal-footer {
+  background-color: #f7f7f7;
+}
+
+#loginModal .form-group input[type="text"],
+#loginModal .form-group input[type="password"] {
+  border: 1px solid #333;
+  border-radius: 0;
+}
+
+#loginModal .form-group input[type="text"]:focus,
+#loginModal .form-group input[type="password"]:focus {
+  border-color: #333;
+  box-shadow: 0 0 2px 0px #333;
+  outline: none;
+}
+
+#loginModal .btn-secondary:hover {
+  background-color: #333;
+  color: #fff;
+}
+
+.fade-in-modal {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
     opacity: 0;
-    -webkit-transition: opacity .15s linear;
-    -o-transition: opacity .15s linear;
-    transition: opacity .15s linear;
   }
-  
-  #loginModal.fade.show {
+
+  to {
     opacity: 1;
   }
-  
-  #loginModal .modal-dialog {
-    -webkit-transform: translate(0,-50%);
-    -ms-transform: translate(0,-50%);
-    -o-transform: translate(0,-50%);
-    transform: translate(0,-50%);
-    margin-top: 250px;
-  }
-  
-  #loginModal .modal-dialog .modal-content {
-    box-shadow: 0 5px 15px rgba(0,0,0,.5);
-  }
-  
-  #loginModal .modal-header {
-    background-color: #333;
-    color: #fff;
-    border-bottom: 0;
-  }
-  
-  #loginModal .modal-footer {
-    background-color: #f7f7f7;
-  }
-  
-  #loginModal .form-group input[type="text"],
-  #loginModal .form-group input[type="password"] {
-    border: 1px solid #333;
-    border-radius: 0;
-  }
-  
-  #loginModal .form-group input[type="text"]:focus,
-  #loginModal .form-group input[type="password"]:focus {
-    border-color: #333;
-    box-shadow: 0 0 2px 0px #333;
-    outline: none;
-  }
-  
-  #loginModal .btn-secondary:hover {
-    background-color: #333;
-    color: #fff;
-  }
- 
-  .fade-in-modal {
-    animation: fadeIn 0.5s ease-in-out;
-  }
-  
-  @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-  }
+}
 
 
 /* Registration Modal */
@@ -92,10 +104,10 @@
 }
 
 #registerModal .modal-dialog {
-  -webkit-transform: translate(0,-50%);
-  -ms-transform: translate(0,-50%);
-  -o-transform: translate(0,-50%);
-  transform: translate(0,-50%);
+  -webkit-transform: translate(0, -50%);
+  -ms-transform: translate(0, -50%);
+  -o-transform: translate(0, -50%);
+  transform: translate(0, -50%);
   /* margin-top: 300px; */
   top: 295px;
 }
@@ -106,7 +118,7 @@
 }
 
 #registerModal .modal-dialog .modal-content {
-  box-shadow: 0 5px 15px rgba(0,0,0,.5);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
 }
 
 #registerModal .modal-header {
@@ -147,63 +159,187 @@
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 
 /* carosuel */
 .carousel-indicators li {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    margin: 0 10px;
-    background-color: #999;
-    cursor: pointer;
-    animation: indicator-pulse 1s ease-in-out infinite;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin: 0 10px;
+  background-color: #999;
+  cursor: pointer;
+  animation: indicator-pulse 1s ease-in-out infinite;
+}
+
+@keyframes indicator-pulse {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.5);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.carousel-indicators .active {
+  background-color: #333;
+  animation: indicator-pulse 1s ease-in-out infinite;
+}
+
+.carousel-item {
+  animation: slide-fade-in 1s;
+}
+
+@keyframes slide-fade-in {
+  from {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Input box modal */
+.form-group {
+  transition: all 2s ease;
+  opacity: 0;
+  transform: translateY(200px);
+}
+
+.form-group.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Loader */
+/* #fullPageLoader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   
-  @keyframes indicator-pulse {
-    0% {
-      transform: scale(1);
-    }
-    50% {
-      transform: scale(1.5);
-    }
-    100% {
-      transform: scale(1);
-    }
+  .loader {
+    animation: fadeIn 1s ease-in-out;
   }
   
-  .carousel-indicators .active {
-    background-color: #333;
-    animation: indicator-pulse 1s ease-in-out infinite;
-  }
-  
-  .carousel-item {
-    animation: slide-fade-in 1s;
-  }
-  
-  @keyframes slide-fade-in {
+  @keyframes fadeIn {
     from {
       opacity: 0;
-      transform: translateX(-100%);
     }
     to {
       opacity: 1;
-      transform: translateX(0);
     }
+  } */
+#loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* .spinner-border {
+    width: 4rem;
+    height: 4rem;
+    border: 0.5rem solid #fff;
+    border-top-color: #3498db;
+    border-right-color: #3498db;
+    border-bottom-color: #3498db;
+    border-left-color: #3498db;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+  } */
+/* .spinner-grow {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    animation: 1s ease-in-out 0s infinite normal none running grow;
+} */
+.spinner-grow {
+  display: inline-block;
+  width: 4rem;
+  height: 4rem;
+  /* border: 2px solid ; */
+  /* border-color: blue; */
+  box-shadow: 0 0 30px rgb(53, 53, 255);
+  vertical-align: text-bottom;
+  background-color: rgb(59, 59, 196);
+  border-radius: 50%;
+  opacity: 0;
+  -webkit-animation: spinner-grow .75s linear infinite;
+  animation: spinner-grow .75s linear infinite;
+}
+
+@keyframes grow {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* card 2 only */
+#cardl {
+  opacity: 0;
+  transform: translateX(-100%);
+  transition: all 1s ease;
+}
+
+#cardl.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+#cardr {
+  opacity: 0;
+  transform: translateX(100%);
+  transition: all 1s ease;
+}
+
+#cardr.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* @keyframes slideInRight {
+  from {
+    transform: translate3d(100%, 0, 0);
+    visibility: visible;
   }
 
-  /* Input box modal */
-  .form-group {
-    transition: all 1s ease;
-    opacity: 0;
-    transform: translateY(-200px);
+  to {
+    transform: translate3d(0, 0, 0);
   }
-  
-  .form-group.active {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  
+}
+
+.slideInRight {
+  animation-name: slideInRight;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+} */

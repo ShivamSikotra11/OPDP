@@ -53,7 +53,40 @@ $(document).ready(function() {
       $(this).find('.form-group').removeClass('active');
     });
   });
-  
-  
-  
+
+  //loader
+// window.onload = function() {
+//   setTimeout(function() {
+//     document.getElementById("loading").style.display = "none";
+//   }, 2000);
+// };
+
+//Card
+$(document).ready(function() {
+  $(window).scroll(function() {
+      var card = $("#cardl");
+      var cardTop = card.offset().top;
+      var windowTop = $(window).scrollTop();
+
+      if (cardTop < windowTop + $(window).height()) {
+          card.addClass("visible");
+      }
+  });
+});
+
+$(document).ready(function() {
+  $(window).scroll(function() {
+      var card = $("#cardr");
+      var cardTop = card.offset().top;
+      var windowTop = $(window).scrollTop();
+
+      if (cardTop < windowTop + $(window).height()) {
+          card.addClass("visible");
+      }
+  });
+});
+
+
+
+
   

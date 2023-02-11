@@ -21,6 +21,7 @@ if (isset($_SESSION['le']) && ($_SESSION['le'] == "NL")) {
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=IntersectionObserver"></script>
     <script src="oot.js"></script>
     <script src="animation.js"></script>
     <link rel="stylesheet" href="animation.css">
@@ -323,7 +324,7 @@ if (isset($_SESSION['le']) && ($_SESSION['le'] == "NL")) {
             <h1 class="text-center mb-5">Tech Infections</h1>
             <div class="row">
                 <div class="col-lg-6 col-sm-12 col-xs-12 mb-5 mb-lg-0">
-                    <div class="card">
+                    <div class="card" id="cardl">
                         <div class="card-header">
                             <h3>What are tech infections?</h3>
                         </div>
@@ -333,7 +334,7 @@ if (isset($_SESSION['le']) && ($_SESSION['le'] == "NL")) {
                     </div>
                 </div>
                 <div class="col-lg-6 col-sm-12 col-xs-12 mb-3 mb-lg-0">
-                    <div class="card">
+                    <div class="card" id="cardr">
                         <div class="card-header">
                             <h3>How to protect against tech infections?</h3>
                         </div>
@@ -496,6 +497,10 @@ if (isset($_SESSION['le']) && ($_SESSION['le'] == "NL")) {
             </div>
         </footer>
     </div>
+    <!-- <div id="loading">
+  <div class="spinner-grow text-light"></div>
+</div> -->
+
 </body>
 
 </html>
