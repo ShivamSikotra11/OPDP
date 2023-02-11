@@ -1,3 +1,4 @@
+/* navbar header */
 .navbar {
     /* background: linear-gradient(to right, #E8C41A, #FDE92D); Gradient background color */
   animation: slide-in-top 0.5s ease-in-out both;
@@ -28,15 +29,15 @@
     opacity: 1;
   }
   
-  #loginModal.modal-dialog {
+  #loginModal .modal-dialog {
     -webkit-transform: translate(0,-50%);
     -ms-transform: translate(0,-50%);
     -o-transform: translate(0,-50%);
     transform: translate(0,-50%);
-    top: 50%;
+    margin-top: 250px;
   }
   
-  #loginModal.modal-dialog .modal-content {
+  #loginModal .modal-dialog .modal-content {
     box-shadow: 0 5px 15px rgba(0,0,0,.5);
   }
   
@@ -76,6 +77,80 @@
     from { opacity: 0; }
     to { opacity: 1; }
   }
+
+
+/* Registration Modal */
+.fade {
+  opacity: 0;
+  -webkit-transition: opacity .15s linear;
+  -o-transition: opacity .15s linear;
+  transition: opacity .15s linear;
+}
+
+#registerModal.fade.show {
+  opacity: 1;
+}
+
+#registerModal .modal-dialog {
+  -webkit-transform: translate(0,-50%);
+  -ms-transform: translate(0,-50%);
+  -o-transform: translate(0,-50%);
+  transform: translate(0,-50%);
+  /* margin-top: 300px; */
+  top: 295px;
+}
+
+#registerModal .modal-body {
+  overflow-y: auto;
+  max-height: calc(100vh - 210px);
+}
+
+#registerModal .modal-dialog .modal-content {
+  box-shadow: 0 5px 15px rgba(0,0,0,.5);
+}
+
+#registerModal .modal-header {
+  background-color: #333;
+  color: #fff;
+  border-bottom: 0;
+}
+
+#registerModal .modal-footer {
+  height: 30px;
+  background-color: #f7f7f7;
+}
+
+#registerModal .form-group input[type="text"],
+#registerModal .form-group input[type="tel"],
+#registerModal .form-group input[type="radio"],
+#registerModal .form-group input[type="password"] {
+  border: 1px solid #333;
+  border-radius: 0;
+}
+
+#registerModal .form-group input[type="text"]:focus,
+#registerModal .form-group input[type="tel"]:focus,
+#registerModal .form-group input[type="radio"]:focus,
+#registerModal .form-group input[type="password"]:focus {
+  border-color: #333;
+  box-shadow: 0 0 2px 0px #333;
+  outline: none;
+}
+
+#registerModal .btn-secondary:hover {
+  background-color: #333;
+  color: #fff;
+}
+
+.fade-in-modal {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
 
 /* carosuel */
 .carousel-indicators li {
@@ -119,5 +194,16 @@
       transform: translateX(0);
     }
   }
+
+  /* Input box modal */
+  .form-group {
+    transition: all 1s ease;
+    opacity: 0;
+    transform: translateY(-200px);
+  }
   
+  .form-group.active {
+    opacity: 1;
+    transform: translateY(0);
+  }
   

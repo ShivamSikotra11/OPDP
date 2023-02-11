@@ -4,11 +4,13 @@ $(document).ready(function () {
       backdrop: 'static'
     });
   });
-  
-  function clearModalData() {
-    $('#eid').val('');
-    $('#password').val('');
-  }
+
+  $(document).ready(function () {
+    $('#registerModal').modal({
+      show: false,
+      backdrop: 'static'
+    });
+  });
 
 $(document).ready(function() {
     $("#loginModal").on("show.bs.modal", function () {
@@ -16,6 +18,16 @@ $(document).ready(function() {
     });
     
     $("#loginModal").on("hidden.bs.modal", function () {
+      $(this).removeClass("fade-in-modal");
+    });
+  });
+
+  $(document).ready(function() {
+    $("#registerModal").on("show.bs.modal", function () {
+      $(this).addClass("fade-in-modal");
+    });
+    
+    $("#registerModal").on("hidden.bs.modal", function () {
       $(this).removeClass("fade-in-modal");
     });
   });
@@ -31,6 +43,17 @@ $(document).ready(function() {
       $(this).addClass('animated fadeInLeft');
     });
   });
+
+  // Input box modal
+  $(document).ready(function () {
+    $('#loginModal, #registerModal').on('shown.bs.modal', function () {
+      $(this).find('.form-group').addClass('active');
+    });
+    $('#loginModal, #registerModal').on('hidden.bs.modal', function () {
+      $(this).find('.form-group').removeClass('active');
+    });
+  });
+  
   
   
   

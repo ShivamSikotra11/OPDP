@@ -1,7 +1,6 @@
 <?php
 session_start();
-if(isset($_SESSION['le']) && ($_SESSION['le']=="NL"))
-{
+if (isset($_SESSION['le']) && ($_SESSION['le'] == "NL")) {
     echo '<script>
     // document.getElementById("loginModal").style.display = "block";
     alert("Please Log in");
@@ -77,12 +76,18 @@ if(isset($_SESSION['le']) && ($_SESSION['le']=="NL"))
             box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
         }
 
-        .card-title{
-            font-size:40px; 
+        .card-title {
+            font-size: 40px;
         }
 
-        .read{
-            margin:-4px;
+        .read {
+            margin: -4px;
+        }
+
+        @media only screen and (max-width: 888px) {
+            .carousel-item img {
+                height: 50vh !important;
+            }
         }
     </style>
 </head>
@@ -281,7 +286,7 @@ if(isset($_SESSION['le']) && ($_SESSION['le']=="NL"))
         </form>
 
         <!-- carousel -->
-        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="2000" style="margin:5%;margin-top:100px;">
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="2000" style="margin-top:100px; max-width: 75%; margin:100px auto 0 auto;">
             <ol class="carousel-indicators">
                 <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
                 <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
@@ -289,13 +294,13 @@ if(isset($_SESSION['le']) && ($_SESSION['le']=="NL"))
             </ol>
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="..\images\genral.png" class="d-block mx-auto border-c" style="height:80vh;width:150vh;" alt="image1">
+                    <img src="..\images\genral.png" class="d-block mx-auto" style="height:75vh;width:100%;" alt="image1">
                 </div>
                 <div class="carousel-item">
-                    <img src="..\images\genral_2.jpeg" class="d-block mx-auto border-c" style="height:80vh;width:150vh;" alt="image2">
+                    <img src="..\images\genral_2.jpeg" class="d-block mx-auto" style="height:75vh;width:100%;" alt="image2">
                 </div>
                 <div class="carousel-item">
-                    <img src="..\images\overall.png" class="d-block mx-auto border-c" style="height:80vh;width:150vh;" alt="image3">
+                    <img src="..\images\overall.png" class="d-block mx-auto" style="height:75vh;width:100%;" alt="image3">
                 </div>
             </div>
             <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -307,6 +312,9 @@ if(isset($_SESSION['le']) && ($_SESSION['le']=="NL"))
                 <span class="sr-only">Next</span>
             </a>
         </div>
+
+
+
 
 
 
@@ -370,17 +378,17 @@ if(isset($_SESSION['le']) && ($_SESSION['le']=="NL"))
                 </div>
             </div>
             <form method="post" action="headache.php">
-            <div class="row mb-5">
-                <div class="d-flex col-lg-12 col-sm-12 col-xs-12 mb-5 mb-lg-0" *ngFor="let item of items">
-                    <div class="card h-100" style="background-color: aliceblue;">
-                        <h5 class="card-title text-center m-2">Headache</h5>
-                        <div class=" row card-body d-flex align-items-center">
-                            <img src="..\images\headache2.jpg" class="img-fluid rounded col-lg-4 card-img-top" alt="image2">
-                            <p class="my-3 card-text col-lg-8" style="font-size:21px;">Headache related to technology, often referred to as "tech headache", is a type of discomfort caused by the extended usage of digital devices such as laptops, smartphones, and tablets. This type of headache results from the stress placed on the eyes and neck as we continuously stare at screens for extended periods of time. It is important to take breaks and practice good posture to reduce the risk of tech headaches.<span class="flex justify-content-end mt-0 read"><input type="submit" value="Read More" class="btn btn-link"></span></p>
+                <div class="row mb-5">
+                    <div class="d-flex col-lg-12 col-sm-12 col-xs-12 mb-5 mb-lg-0" *ngFor="let item of items">
+                        <div class="card h-100" style="background-color: aliceblue;">
+                            <h5 class="card-title text-center m-2">Headache</h5>
+                            <div class=" row card-body d-flex align-items-center">
+                                <img src="..\images\headache2.jpg" class="img-fluid rounded col-lg-4 card-img-top" alt="image2">
+                                <p class="my-3 card-text col-lg-8" style="font-size:21px;">Headache related to technology, often referred to as "tech headache", is a type of discomfort caused by the extended usage of digital devices such as laptops, smartphones, and tablets. This type of headache results from the stress placed on the eyes and neck as we continuously stare at screens for extended periods of time. It is important to take breaks and practice good posture to reduce the risk of tech headaches.<span class="flex justify-content-end mt-0 read"><input type="submit" value="Read More" class="btn btn-link"></span></p>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
             </form>
             <div class="row mb-5">
                 <div class="d-flex col-lg-12 col-sm-12 col-xs-12 mb-5 mb-lg-0" *ngFor="let item of items">
