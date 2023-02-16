@@ -28,12 +28,14 @@ if (isset($_SESSION['le']) && ($_SESSION['le'] == "NL")) {
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body style="background-color:beige;">
+<body style="background-color:#1a1a1d;">
 
     <!-- Nav-bar Header -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <nav class="navbar navbar-expand-lg navcolour">
         <div class="container">
-            <a class="navbar-brand" href="#">Tech Infections</a>
+            <a class="navbar-brand" href="#">
+                <img src="../images/logo.png" alt="Tech-Infection" width="170px" height="40px" style="margin: 0px;margin-top:-2px; margin-bottom:-2px;">
+            </a>
             <?php if (isset($_SESSION['name']) && isset($_SESSION['emailid'])) { ?>
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <i class="fas fa-user"></i>
@@ -53,10 +55,10 @@ if (isset($_SESSION['le']) && ($_SESSION['le'] == "NL")) {
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
-                            <button type="button" class="btn btn-outline-primary ml-lg-3" data-toggle="modal" data-target="#loginModal">&nbsp&nbspLogin&nbsp&nbsp</button>
+                            <button type="button" class="btn btn-outline-primary ml-lg-3 round" data-toggle="modal" data-target="#loginModal">&nbsp&nbspLogin&nbsp&nbsp</button>
                         </li>
                         <li class="nav-item">
-                            <button class="btn btn-outline-success ml-lg-3 my-2 my-lg-0" data-toggle="modal" data-target="#registerModal">Register</button>
+                            <button class="btn btn-outline-success ml-lg-3 my-2 my-lg-0 round" data-toggle="modal" data-target="#registerModal">Register</button>
                         </li>
                     </ul>
                 </div>
@@ -64,7 +66,7 @@ if (isset($_SESSION['le']) && ($_SESSION['le'] == "NL")) {
         </div>
     </nav>
 
-    <div id="bar" style="overflow-y: scroll;">
+    <!-- <div id="bar" style="overflow-y: scroll;"> -->
         <!-- The Login modal-->
         <form method="post" action="logintry.php">
             <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -99,11 +101,11 @@ if (isset($_SESSION['le']) && ($_SESSION['le'] == "NL")) {
                             ?>
                         </div>
                         <div class="modal-footer d-flex col-12">
-                            <button type="button" class="btn btn-outline-success mr-auto col-xs-12 col-sm-12 col-md-12 col-lg-4" data-toggle="modal" data-dismiss="modal" data-target="#registerModal">Don't have an account? Register</button>
-                            <div class="d-flex justify-content-between col-xs-12 col-sm-12 sol-md-12 col-lg-7 justify-content-xs-between justify-content-sm-between justify-content-md-between justify-content-lg-end">
+                            <div class="d-flex justify-content-between col-xs-12 col-sm-12 sol-md-12 col-lg-12 justify-content-xs-between justify-content-sm-between justify-content-md-between justify-content-lg-between">
                                 <button type="button" class="btn btn-secondary mr-2 " data-dismiss="modal" onclick="clearModalData()">Close</button>
                                 <input type="submit" value="Login" name="submit" class="btn btn-primary">
                             </div>
+                            <button type="button" class="btn btn-outline-success mr-auto col-xs-12 col-sm-12 col-md-12 col-lg-12" data-toggle="modal" data-dismiss="modal" data-target="#registerModal">Don't have an account? Register</button>
                         </div>
                     </div>
                 </div>
@@ -249,14 +251,9 @@ if (isset($_SESSION['le']) && ($_SESSION['le'] == "NL")) {
             </a>
         </div>
 
-
-
-
-
-
         <!-- data -->
         <div class="container-sm-fluid container-lg mt-5">
-            <h1 class="text-center mb-5">Tech Infections</h1>
+            <h1 class="text-center mb-5 thcolor" >Tech Infections</h1>
             <div class="row">
                 <div class="col-lg-6 col-sm-12 col-xs-12 mb-5 mb-lg-0">
                     <div class="card" id="cardl">
@@ -302,9 +299,9 @@ if (isset($_SESSION['le']) && ($_SESSION['le'] == "NL")) {
         <!-- //blog -->
 
         <div class="container-sm-fluid container-lg my-5">
-            <div class="row mb-5">
+            <div class="row mb-5" id="card1">
                 <div class="d-flex col-lg-12 col-sm-12 col-xs-12 mb-5 mb-lg-0" *ngFor="let item of items">
-                    <div class="card h-100" style="background-color: aliceblue;">
+                    <div class="card h-100 carco" >
                         <h5 class="card-title text-center m-2">Back Pain</h5>
                         <div class=" row card-body d-flex align-items-center">
                             <img src="..\images\neck_back.jpeg" class="img-fluid rounded col-lg-4 card-img-top" alt="image1">
@@ -313,22 +310,9 @@ if (isset($_SESSION['le']) && ($_SESSION['le'] == "NL")) {
                     </div>
                 </div>
             </div>
-            <form method="post" action="headache.php">
-                <div class="row mb-5">
-                    <div class="d-flex col-lg-12 col-sm-12 col-xs-12 mb-5 mb-lg-0" *ngFor="let item of items">
-                        <div class="card h-100" style="background-color: aliceblue;">
-                            <h5 class="card-title text-center m-2">Headache</h5>
-                            <div class=" row card-body d-flex align-items-center">
-                                <img src="..\images\headache2.jpg" class="img-fluid rounded col-lg-4 card-img-top" alt="image2">
-                                <p class="my-3 card-text col-lg-8" style="font-size:21px;">Headache related to technology, often referred to as "tech headache", is a type of discomfort caused by the extended usage of digital devices such as laptops, smartphones, and tablets. This type of headache results from the stress placed on the eyes and neck as we continuously stare at screens for extended periods of time. It is important to take breaks and practice good posture to reduce the risk of tech headaches.<span class="flex justify-content-end mt-0 read"><input type="submit" value="Read More" class="btn btn-link"></span></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </form>
-            <div class="row mb-5">
+            <div class="row mb-5" id="card2">
                 <div class="d-flex col-lg-12 col-sm-12 col-xs-12 mb-5 mb-lg-0" *ngFor="let item of items">
-                    <div class="card h-100" style="background-color: aliceblue;">
+                    <div class="card h-100 carco" >
                         <h5 class="card-title text-center m-2">Eye Issues</h5>
                         <div class=" row card-body d-flex align-items-center">
                             <p class="my-3 card-text col-lg-8" style="font-size:21px;">Eye issues due to laptop and mobile technology are a growing concern due to the prolonged and frequent use of digital devices. These issues include computer vision syndrome, dry eyes, blurred vision, and eye strain, which can cause discomfort and reduce visual performance. The blue light emitted by digital devices can also disrupt the natural sleep-wake cycle and lead to sleep problems.</p>
@@ -337,9 +321,9 @@ if (isset($_SESSION['le']) && ($_SESSION['le'] == "NL")) {
                     </div>
                 </div>
             </div>
-            <div class="row mb-5">
+            <div class="row mb-5" id="card3">
                 <div class="d-flex col-lg-12 col-sm-12 col-xs-12 mb-5 mb-lg-0" *ngFor="let item of items">
-                    <div class="card h-100" style="background-color: aliceblue;">
+                    <div class="card h-100 carco" >
                         <h5 class="card-title text-center m-2">Wrist Pain</h5>
                         <div class=" row card-body d-flex align-items-center">
                             <img src="..\images\tunnel.jpg" class="img-fluid rounded col-lg-4 card-img-top" alt="image2">
@@ -348,9 +332,9 @@ if (isset($_SESSION['le']) && ($_SESSION['le'] == "NL")) {
                     </div>
                 </div>
             </div>
-            <div class="row mb-5">
+            <div class="row mb-5" id="card4">
                 <div class="d-flex col-lg-12 col-sm-12 col-xs-12 mb-5 mb-lg-0" *ngFor="let item of items">
-                    <div class="card h-100" style="background-color: aliceblue;">
+                    <div class="card h-100 carco" >
                         <h5 class="card-title text-center m-2">Neck Pain</h5>
                         <div class=" row card-body d-flex align-items-center">
                             <p class="my-3 card-text col-lg-8" style="font-size:21px;">Neck pain caused by technology refers to the discomfort and strain felt in the neck area as a result of prolonged usage of digital devices such as laptops, smartphones and tablets. Neck pain from technology is a common issue arising from the modern digital age where individuals spend extended hours in front of screens like laptops, smartphones and other devices. This prolonged usage can cause stress on the neck muscles and joints, leading to pain and discomfort. </p>
@@ -359,9 +343,9 @@ if (isset($_SESSION['le']) && ($_SESSION['le'] == "NL")) {
                     </div>
                 </div>
             </div>
-            <div class="row mb-5">
+            <div class="row mb-5" id="card5">
                 <div class="d-flex col-lg-12 col-sm-12 col-xs-12 mb-5 mb-lg-0" *ngFor="let item of items">
-                    <div class="card h-100" style="background-color: aliceblue;">
+                    <div class="card h-100 carco" >
                         <h5 class="card-title text-center m-2">Ear Issues</h5>
                         <div class=" row card-body d-flex align-items-center">
                             <img src="..\images\ear.jpg" class="img-fluid rounded col-lg-4 card-img-top" alt="image2">
@@ -370,17 +354,30 @@ if (isset($_SESSION['le']) && ($_SESSION['le'] == "NL")) {
                     </div>
                 </div>
             </div>
-            <div class="row mb-5">
+            <div class="row mb-5" id="card6">
                 <div class="d-flex col-lg-12 col-sm-12 col-xs-12 mb-5 mb-lg-0" *ngFor="let item of items">
-                    <div class="card h-100" style="background-color: aliceblue;">
+                    <div class="card h-100 carco" >
                         <h5 class="card-title text-center m-2">Shoulder Pain</h5>
                         <div class=" row card-body d-flex align-items-center">
                             <p class="my-3 card-text col-lg-8" style="font-size:21px;">Shoulder pain caused by technology is a modern day affliction resulting from excessive use of laptops, mobile devices and other technology. This condition is characterized by tension, stiffness and discomfort in the neck, shoulders and upper back as a result of prolonged hours of hunching over and poor posture. It is a growing concern among individuals who are heavily reliant on technology for their daily activities.</p>
-                            <img src="..\images\shoulder_1.jpeg" class="img-fluid rounded col-lg-4 card-img-top" alt="image2">
+                            <img src="..\images\shoulder_1.png" class="img-fluid rounded col-lg-4 card-img-top" alt="image2">
                         </div>
                     </div>
                 </div>
             </div>
+            <form method="post" action="headache.php">
+                <div class="row mb-5" id="card7">
+                    <div class="d-flex col-lg-12 col-sm-12 col-xs-12 mb-5 mb-lg-0" *ngFor="let item of items">
+                        <div class="card h-100 carco" >
+                            <h5 class="card-title text-center m-2">Headache</h5>
+                            <div class=" row card-body d-flex align-items-center">
+                                <img src="..\images\headache2.jpg" class="img-fluid rounded col-lg-4 card-img-top" alt="image2">
+                                <p class="my-3 card-text col-lg-8" style="font-size:21px;">Headache related to technology, often referred to as "tech headache", is a type of discomfort caused by the extended usage of digital devices such as laptops, smartphones, and tablets. This type of headache results from the stress placed on the eyes and neck as we continuously stare at screens for extended periods of time. It is important to take breaks and practice good posture to reduce the risk of tech headaches.<span class="flex justify-content-end mt-0 read"><input type="submit" value="Read More" class="btn btn-link"></span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form> 
         </div>
         <!-- bibliography -->
         <div class="container-sm-fluid container-lg my-5">
@@ -431,10 +428,10 @@ if (isset($_SESSION['le']) && ($_SESSION['le'] == "NL")) {
                 </div>
             </div>
         </footer>
-    </div>
-    <!-- <div id="loading">
+    <!-- </div> -->
+    <div id="loading">
   <div class="spinner-grow text-light"></div>
-</div> -->
+</div>
 
 </body>
 

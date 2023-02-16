@@ -5,7 +5,7 @@
 }
 
 .navbar:hover {
-  background-color: #F9A51A;
+  background-color: #000075;
   transition: background-color 0.5s ease-in-out;
 }
 
@@ -234,7 +234,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #000;
+  background-color: #000000da;
   z-index: 9999;
   display: flex;
   justify-content: center;
@@ -295,3 +295,82 @@
   opacity: 1;
 }
 
+/* Blog Animation left to right */
+#card1 {
+  opacity: 0;
+  transform: translateX(-100%);
+  transition: all 1s ease;
+}
+
+#card1.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+#card5 {
+  opacity: 0;
+  transform: translateX(-100%);
+  transition: all 1s ease;
+}
+
+#card5.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+#card3 {
+  opacity: 0;
+  transform: translateX(-100%);
+  transition: all 1s ease;
+}
+
+#card3.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+#card7 {
+  opacity: 0;
+  transform: translateX(-100%);
+  transition: all 1s ease;
+}
+
+#card7.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Blog Animation right to left */
+
+#card2 {
+  opacity: 0;
+  transform: translateX(100%);
+  transition: all 1s ease;
+}
+
+#card2.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+#card4 {
+  opacity: 0;
+  transform: translateX(100%);
+  transition: all 1s ease;
+}
+
+#card4.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+#card6 {
+  opacity: 0;
+  transform: translateX(100%);
+  transition: all 1s ease;
+}
+
+#card6.visible {
+  opacity: 1;
+  transform: translateX(0);
+}

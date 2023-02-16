@@ -55,11 +55,11 @@ $(document).ready(function() {
   });
 
   //loader
-// window.onload = function() {
-//   setTimeout(function() {
-//     document.getElementById("loading").style.display = "none";
-//   }, 2000);
-// };
+window.onload = function() {
+  setTimeout(function() {
+    document.getElementById("loading").style.display = "none";
+  }, 1000);
+};
 
 //Card
 $(document).ready(function() {
@@ -90,6 +90,92 @@ $(document).ready(function() {
 $(document).ready(function () {
   $('.dropdown-toggle').click(function () {
       $('.dropdown-menu').toggleClass('show');
+  });
+});
+
+
+//blog animation
+$(document).ready(function() {
+  $(window).scroll(function() {
+      var card = $("#card1");
+      var cardTop = card.offset().top;
+      var windowTop = $(window).scrollTop();
+
+      if (cardTop < windowTop + $(window).height()) {
+          card.addClass("visible");
+      }
+  });
+});
+
+$(document).ready(function() {
+  $(window).scroll(function() {
+      var card = $("#card3");
+      var cardTop = card.offset().top;
+      var windowTop = $(window).scrollTop();
+
+      if (cardTop < windowTop + $(window).height()) {
+          card.addClass("visible");
+      }
+  });
+});
+
+$(document).ready(function() {
+  $(window).scroll(function() {
+      var card = $("#card5");
+      var cardTop = card.offset().top;
+      var windowTop = $(window).scrollTop();
+
+      if (cardTop < windowTop + $(window).height()) {
+          card.addClass("visible");
+      }
+  });
+});
+
+$(document).ready(function() {
+  $(window).scroll(function() {
+      var card = $("#card7");
+      var cardTop = card.offset().top;
+      var windowTop = $(window).scrollTop();
+
+      if (cardTop < windowTop + $(window).height()) {
+          card.addClass("visible");
+      }
+  });
+});
+
+$(document).ready(function() {
+  $(window).scroll(function() {
+      var card = $("#card2");
+      var cardTop = card.offset().top;
+      var windowTop = $(window).scrollTop();
+
+      if (cardTop < windowTop + $(window).height()) {
+          card.addClass("visible");
+      }
+  });
+});
+
+$(document).ready(function() {
+  $(window).scroll(function() {
+      var card = $("#card4");
+      var cardTop = card.offset().top;
+      var windowTop = $(window).scrollTop();
+
+      if (cardTop < windowTop + $(window).height()) {
+          card.addClass("visible");
+      }
+  });
+});
+
+$(document).ready(function() {
+  $(window).scroll(function() {
+      var card = $("#card6");
+      var cardTop = card.offset().top;
+      var windowTop = $(window).scrollTop();
+
+      if (cardTop < windowTop + $(window).height()) {
+          card.addClass("visible");
+      }
   });
 });
   

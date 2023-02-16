@@ -19,15 +19,29 @@
 }
 
 /* Scroll Bar */
+/* Hide the horizontal scrollbar */
 ::-webkit-scrollbar {
-    width: 0.5em;
+    /* height: 12px; */
+    width: 0.4em;
     background-color: #F5F5F5;
-    border-radius: 30%;
-}
-
-::-webkit-scrollbar-thumb {
+  }
+  
+  ::-webkit-scrollbar-thumb {
     background-color: #000000;
-}
+    border-radius: 10px;
+  }
+  
+  /* Show only the vertical scrollbar */
+  ::-webkit-scrollbar:vertical {
+    width: 12px;
+  }
+  
+  ::-webkit-scrollbar:horizontal {
+    height: 0;
+    /* display: none; */
+    overflow-x: hidden;
+    display: hidden;
+  }
 
 /* Blog */
 
@@ -58,4 +72,23 @@
 
 .dropdown-menu {
     margin-right: 30px;
+}
+
+.round {
+    border-radius: 50px;
+}
+
+/* navbar */
+.navcolour{
+    background-color: #5cdb95;
+}
+
+/* th-colour */
+/* .thcolor{
+    color:#05386b;
+} */
+
+.carco{
+    background-color:#c3073f;
+    color: #f2f2f2;
 }
