@@ -1,5 +1,11 @@
 <?php
 session_start();
+if (isset($_SESSION['le']) && ($_SESSION['le'] == "NL")) {
+    echo '<script>
+    // document.getElementById("loginModal").style.display = "block";
+    alert("Please Log in");
+    </script>';
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -15,59 +21,11 @@ session_start();
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=IntersectionObserver"></script>
     <script src="oot.js"></script>
-    <style>
-        .carousel-control-prev,
-        .carousel-control-next {
-            display: none;
-        }
-
-        .carousel-item img {
-            margin: 0 30px;
-        }
-
-        ::-webkit-scrollbar {
-            width: 0.2em;
-            background-color: #F5F5F5;
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background-color: #000000;
-        }
-
-        /* #bar::-webkit-scrollbar {   
-            width: 0.4em;
-            background-color: #F5F5F5;
-            background-color: lightblue;
-        }
-
-        #bar::-webkit-scrollbar-thumb {
-          background-color: blue;
-        } */
-        .btn-custom-hover:hover {
-            background-color: red !important;
-        }
-
-        .dropdown-menu {
-            margin-right: 30px;
-        }
-
-        .border-c {
-            border: 2px solid lightgrey;
-        }
-
-        .card-custom {
-            background-color: #f2f2f2;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-            transition: 0.3s;
-            margin-bottom: 30px;
-        }
-
-        .card-custom:hover {
-            box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-        }
-    </style>
+    <script src="animation.js"></script>
+    <link rel="stylesheet" href="animation.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body style="background-color:beige;">
@@ -110,7 +68,7 @@ session_start();
         <!-- The Login modal-->
         <form method="post" action="logintry.php">
             <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog modal-xl" role="document">
+                <div class="modal-dialog modal-md" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
                             <h5 class="modal-title" id="exampleModalLabel">Login</h5>
@@ -135,7 +93,7 @@ session_start();
                                     echo "$('#loginModal').modal('show');";
                                     echo "});";
                                     echo "</script>";
-                                    echo "<div class='alert alert-danger'>Error: Invalid login credentials. Please try again.</div>";
+                                    echo "<div class='alert alert-danger form-group'>Error: Invalid login credentials. Please try again.</div>";
                                 }
                             }
                             ?>
@@ -156,7 +114,7 @@ session_start();
         <!-- Register Modal -->
         <form method="post" action="regis.php">
             <div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="registerModalLabel" aria-hidden="true">
-                <div class="modal-dialog modal-xl" role="document">
+                <div class="modal-dialog modal-md" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
                             <h5 class="modal-title" id="registerModalLabel">Register</h5>
@@ -179,7 +137,7 @@ session_start();
                                     echo "$('#registerModal').modal('show');";
                                     echo "});";
                                     echo "</script>";
-                                    echo "<div class='alert alert-danger'>Error: Please enter Valid Name(length>4).</div>";
+                                    echo "<div class='alert alert-danger form-group'>Error: Please enter Valid Name(length>4).</div>";
                                 }
                             }
                             ?>
@@ -197,7 +155,7 @@ session_start();
                                     echo "$('#registerModal').modal('show');";
                                     echo "});";
                                     echo "</script>";
-                                    echo "<div class='alert alert-danger'>Error: Email already exists. Please use a different email.</div>";
+                                    echo "<div class='alert alert-danger form-group'>Error: Email already exists. Please use a different email.</div>";
                                 }
                                 if ($_SESSION["errori"] == "nonvalid_email") {
                                     echo "<script>";
@@ -205,7 +163,7 @@ session_start();
                                     echo "$('#registerModal').modal('show');";
                                     echo "});";
                                     echo "</script>";
-                                    echo "<div class='alert alert-danger'>Error: Please enter the valid Email Address</div>";
+                                    echo "<div class='alert alert-danger form-group'>Error: Please enter the valid Email Address</div>";
                                 }
                             }
                             ?>
@@ -223,7 +181,7 @@ session_start();
                                     echo "$('#registerModal').modal('show');";
                                     echo "});";
                                     echo "</script>";
-                                    echo "<div class='alert alert-danger'> Please enter Strong Password of Length At least 8 length,&nbsp At least one Uppercase letter,At least one Lowercase letter,At least one special character and At least one digit.</div>";
+                                    echo "<div class='alert alert-danger form-group'> Please enter Strong Password of Length At least 8 length,&nbsp At least one Uppercase letter,At least one Lowercase letter,At least one special character and At least one digit.</div>";
                                 }
                             }
                             ?>
@@ -246,17 +204,17 @@ session_start();
                                     echo "$('#registerModal').modal('show');";
                                     echo "});";
                                     echo "</script>";
-                                    echo "<div class='alert alert-danger'>Error: Please enter 10 digit Number.</div>";
+                                    echo "<div class='alert alert-danger form-group'>Error: Please enter 10 digit Number.</div>";
                                 }
                             }
                             ?>
                         </div>
                         <div class="modal-footer d-flex col-12">
-                            <button type="button" class="btn btn-outline-success mr-auto col-xs-12 col-sm-12 col-md-12 col-lg-4" data-toggle="modal" data-dismiss="modal" data-target="#loginModal">Already have an account? Login</button>
-                            <div class="d-flex justify-content-between col-xs-12 col-sm-12 sol-md-12 col-lg-7 justify-content-xs-between justify-content-sm-between justify-content-md-between justify-content-lg-end">
+                            <div class="d-flex justify-content-between col-xs-12 col-sm-12 sol-md-12 col-lg-12 justify-content-xs-between justify-content-sm-between justify-content-md-between justify-content-lg-between">
                                 <button type="button" class="btn btn-secondary mr-2" data-dismiss="modal" onclick="clearRegis()">Close</button>
                                 <input type="submit" value="Register" name="submitr" class="btn btn-primary">
                             </div>
+                            <button type="button" class="btn btn-outline-success mr-auto col-xs-12 col-sm-12 col-md-12 col-lg-12" data-toggle="modal" data-dismiss="modal" data-target="#loginModal">Already have an account? Login</button>
                         </div>
                     </div>
                 </div>
@@ -264,7 +222,7 @@ session_start();
         </form>
 
         <!-- carousel -->
-        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="2000" style="margin:5%;margin-top:100px;">
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="2000" style="margin-top:100px; max-width: 75%; margin:100px auto 0 auto;">
             <ol class="carousel-indicators">
                 <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
                 <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
@@ -272,13 +230,13 @@ session_start();
             </ol>
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="..\images\genral.png" class="d-block mx-auto border-c" style="height:80vh;width:150vh;" alt="image1">
+                    <img src="..\images\genral.png" class="d-block mx-auto" style="height:75vh;width:100%;" alt="image1">
                 </div>
                 <div class="carousel-item">
-                    <img src="..\images\genral_2.jpeg" class="d-block mx-auto border-c" style="height:80vh;width:150vh;" alt="image2">
+                    <img src="..\images\genral_2.jpeg" class="d-block mx-auto" style="height:75vh;width:100%;" alt="image2">
                 </div>
                 <div class="carousel-item">
-                    <img src="..\images\overall.png" class="d-block mx-auto border-c" style="height:80vh;width:150vh;" alt="image3">
+                    <img src="..\images\overall.png" class="d-block mx-auto" style="height:75vh;width:100%;" alt="image3">
                 </div>
             </div>
             <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -293,12 +251,15 @@ session_start();
 
 
 
+
+
+
         <!-- data -->
         <div class="container-sm-fluid container-lg mt-5">
             <h1 class="text-center mb-5">Tech Infections</h1>
             <div class="row">
                 <div class="col-lg-6 col-sm-12 col-xs-12 mb-5 mb-lg-0">
-                    <div class="card">
+                    <div class="card" id="cardl">
                         <div class="card-header">
                             <h3>What are tech infections?</h3>
                         </div>
@@ -308,7 +269,7 @@ session_start();
                     </div>
                 </div>
                 <div class="col-lg-6 col-sm-12 col-xs-12 mb-3 mb-lg-0">
-                    <div class="card">
+                    <div class="card" id="cardr">
                         <div class="card-header">
                             <h3>How to protect against tech infections?</h3>
                         </div>
@@ -347,19 +308,30 @@ session_start();
                         <h5 class="card-title text-center m-2">Back Pain</h5>
                         <div class=" row card-body d-flex align-items-center">
                             <img src="..\images\neck_back.jpeg" class="img-fluid rounded col-lg-4 card-img-top" alt="image1">
-                            <p class="my-3 card-text col-lg-8" style="font-size:24px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor, magna id bibendum
-                                molestie, ipsum odio congue nisl, id luctus magna augue et metus. </p>
+                            <p class="my-3 card-text col-lg-8" style="font-size:21px;">Back pain caused by prolonged use of laptops and mobile devices is a common issue in modern times. This is due to the unnatural posture and positioning of the body while using these devices, leading to poor spinal alignment and straining of the neck, shoulders, and back muscles. To alleviate this problem, it is important to take regular breaks, practice good posture, and use ergonomic accessories.</p>
                         </div>
                     </div>
                 </div>
             </div>
+            <form method="post" action="headache.php">
+                <div class="row mb-5">
+                    <div class="d-flex col-lg-12 col-sm-12 col-xs-12 mb-5 mb-lg-0" *ngFor="let item of items">
+                        <div class="card h-100" style="background-color: aliceblue;">
+                            <h5 class="card-title text-center m-2">Headache</h5>
+                            <div class=" row card-body d-flex align-items-center">
+                                <img src="..\images\headache2.jpg" class="img-fluid rounded col-lg-4 card-img-top" alt="image2">
+                                <p class="my-3 card-text col-lg-8" style="font-size:21px;">Headache related to technology, often referred to as "tech headache", is a type of discomfort caused by the extended usage of digital devices such as laptops, smartphones, and tablets. This type of headache results from the stress placed on the eyes and neck as we continuously stare at screens for extended periods of time. It is important to take breaks and practice good posture to reduce the risk of tech headaches.<span class="flex justify-content-end mt-0 read"><input type="submit" value="Read More" class="btn btn-link"></span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
             <div class="row mb-5">
                 <div class="d-flex col-lg-12 col-sm-12 col-xs-12 mb-5 mb-lg-0" *ngFor="let item of items">
                     <div class="card h-100" style="background-color: aliceblue;">
                         <h5 class="card-title text-center m-2">Eye Issues</h5>
                         <div class=" row card-body d-flex align-items-center">
-                            <p class="my-3 card-text col-lg-8" style="font-size:24px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor, magna id bibendum
-                                molestie, ipsum odio congue nisl, id luctus magna augue et metus. </p>
+                            <p class="my-3 card-text col-lg-8" style="font-size:21px;">Eye issues due to laptop and mobile technology are a growing concern due to the prolonged and frequent use of digital devices. These issues include computer vision syndrome, dry eyes, blurred vision, and eye strain, which can cause discomfort and reduce visual performance. The blue light emitted by digital devices can also disrupt the natural sleep-wake cycle and lead to sleep problems.</p>
                             <img src="..\images\eye_1.jpeg" class="img-fluid rounded col-lg-4 card-img-top" alt="image2">
                         </div>
                     </div>
@@ -371,8 +343,7 @@ session_start();
                         <h5 class="card-title text-center m-2">Wrist Pain</h5>
                         <div class=" row card-body d-flex align-items-center">
                             <img src="..\images\tunnel.jpg" class="img-fluid rounded col-lg-4 card-img-top" alt="image2">
-                            <p class="my-3 card-text col-lg-8" style="font-size:24px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor, magna id bibendum
-                                molestie, ipsum odio congue nisl, id luctus magna augue et metus. </p>
+                            <p class="my-3 card-text col-lg-8" style="font-size:21px;">Wrist pain due to laptop and mobile use is a condition commonly known as "tech neck" or "texting thumb." It is caused by prolonged use of technology devices, such as laptops and smartphones, which can result in repetitive strain injury to the wrist and hand. This discomfort is due to the repetitive motions and awkward angles of the wrist as individuals type and swipe on their devices. This can cause discomfort, numbness, and weakness in the wrist, making it difficult to carry out daily activities.</p>
                         </div>
                     </div>
                 </div>
@@ -382,8 +353,7 @@ session_start();
                     <div class="card h-100" style="background-color: aliceblue;">
                         <h5 class="card-title text-center m-2">Neck Pain</h5>
                         <div class=" row card-body d-flex align-items-center">
-                            <p class="my-3 card-text col-lg-8" style="font-size:24px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor, magna id bibendum
-                                molestie, ipsum odio congue nisl, id luctus magna augue et metus. </p>
+                            <p class="my-3 card-text col-lg-8" style="font-size:21px;">Neck pain caused by technology refers to the discomfort and strain felt in the neck area as a result of prolonged usage of digital devices such as laptops, smartphones and tablets. Neck pain from technology is a common issue arising from the modern digital age where individuals spend extended hours in front of screens like laptops, smartphones and other devices. This prolonged usage can cause stress on the neck muscles and joints, leading to pain and discomfort. </p>
                             <img src="..\images\neckpain.jpg" class="img-fluid rounded col-lg-4 card-img-top" alt="image2">
                         </div>
                     </div>
@@ -395,8 +365,7 @@ session_start();
                         <h5 class="card-title text-center m-2">Ear Issues</h5>
                         <div class=" row card-body d-flex align-items-center">
                             <img src="..\images\ear.jpg" class="img-fluid rounded col-lg-4 card-img-top" alt="image2">
-                            <p class="my-3 card-text col-lg-8" style="font-size:24px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor, magna id bibendum
-                                molestie, ipsum odio congue nisl, id luctus magna augue et metus. </p>
+                            <p class="my-3 card-text col-lg-8" style="font-size:21px;">Ear pain due to the use of technology gadgets like laptops, mobiles, earphones, headphones, etc. is a common issue faced by many people. It is caused by prolonged exposure to high volume and prolonged use of these gadgets which can lead to hearing damage and discomfort in the ear. It is important to take regular breaks and limit the use of these gadgets to prevent ear pain and maintain good hearing health.</p>
                         </div>
                     </div>
                 </div>
@@ -406,8 +375,7 @@ session_start();
                     <div class="card h-100" style="background-color: aliceblue;">
                         <h5 class="card-title text-center m-2">Shoulder Pain</h5>
                         <div class=" row card-body d-flex align-items-center">
-                            <p class="my-3 card-text col-lg-8" style="font-size:24px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor, magna id bibendum
-                                molestie, ipsum odio congue nisl, id luctus magna augue et metus. </p>
+                            <p class="my-3 card-text col-lg-8" style="font-size:21px;">Shoulder pain caused by technology is a modern day affliction resulting from excessive use of laptops, mobile devices and other technology. This condition is characterized by tension, stiffness and discomfort in the neck, shoulders and upper back as a result of prolonged hours of hunching over and poor posture. It is a growing concern among individuals who are heavily reliant on technology for their daily activities.</p>
                             <img src="..\images\shoulder_1.jpeg" class="img-fluid rounded col-lg-4 card-img-top" alt="image2">
                         </div>
                     </div>
@@ -464,6 +432,10 @@ session_start();
             </div>
         </footer>
     </div>
+    <!-- <div id="loading">
+  <div class="spinner-grow text-light"></div>
+</div> -->
+
 </body>
 
 </html>
