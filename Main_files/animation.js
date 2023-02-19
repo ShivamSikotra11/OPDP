@@ -133,18 +133,6 @@ $(document).ready(function() {
 
 $(document).ready(function() {
   $(window).scroll(function() {
-      var card = $("#card7");
-      var cardTop = card.offset().top;
-      var windowTop = $(window).scrollTop();
-
-      if (cardTop < windowTop + $(window).height()) {
-          card.addClass("visible");
-      }
-  });
-});
-
-$(document).ready(function() {
-  $(window).scroll(function() {
       var card = $("#card2");
       var cardTop = card.offset().top;
       var windowTop = $(window).scrollTop();

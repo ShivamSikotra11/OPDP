@@ -40,12 +40,14 @@
     height: 0;
     /* display: none; */
     overflow-x: hidden;
+    overflow-x: none;
     display: hidden;
+    display: none;
   }
 
 /* Blog */
 
-.card-custom {
+/* .card-custom {
     background-color: #f2f2f2;
     border-radius: 10px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
@@ -63,7 +65,7 @@
 
 .read {
     margin: -4px;
-}
+} */
 
 /* Customs */
 .btn-custom-hover:hover {
@@ -80,7 +82,8 @@
 
 /* navbar */
 .navcolour{
-    background-color: #5cdb95;
+    background-color: #008080;
+    color: #FFD700;
 }
 
 /* th-colour */
@@ -88,7 +91,7 @@
     color:#05386b;
 } */
 
-.carco{
-    background-color:#c3073f;
-    color: #f2f2f2;
-}
+/* .carco{
+    background-color:#4EB2A4;
+    color:  #FFFFFF;
+}   */
