@@ -1,13 +1,33 @@
-/* navbar header */
-.navbar {
-  /* background: linear-gradient(to right, #E8C41A, #FDE92D); Gradient background color */
-  animation: slide-in-top 0.5s ease-in-out both;
+/* backgorund image */
+body {
+  background-image: url('/images/mainbg.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  font: 16px / 24px "Rubik", sans-serif;
+  color: var(--black);
 }
 
-/* .navbar:hover {
-  background-color: #000075;
-  transition: background-color 0.5s ease-in-out;
-} */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255,0);
+  z-index: 1;
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+}
+
+/* navbar header */
+.navbar {
+  animation: slide-in-top 0.5s ease-in-out both;
+  z-index:3;
+}
 
 @keyframes slide-in-top {
   0% {
@@ -39,9 +59,14 @@
   top: 270px;
 }
 
+.modal-backdrop{
+  z-index:0;
+}
+
 #loginModal .modal-body {
   overflow-y: auto;
   max-height: calc(100vh - 210px);
+  /* z-index:999; */
 }
 
 #loginModal .modal-dialog .modal-content {
@@ -235,7 +260,7 @@
   width: 100%;
   height: 100%;
   background-color: #000000da;
-  z-index: 9999;
+  z-index: 99999;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -261,15 +286,14 @@
 }
 
 /* card 2 only */
-#cardl {
-  opacity: 0;
-  transform: translateX(-100%);
-  transition: all 1s ease;
-}
 
-#cardl.visible {
-  opacity: 1;
-  transform: translateX(0);
+.cardt {
+  position: relative;
+  background-color: #fff;
+  /* box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3); */
+  /* border-radius: 10px; */
+  overflow: hidden;
+  transition: all 0.2s ease-in-out;
 }
 
 #cardr {
@@ -283,156 +307,164 @@
   transform: translateX(0);
 }
 
+#cardl {
+  opacity: 0;
+  transform: translateX(-100%);
+  transition: all 1s ease;
+}
+
+#cardl.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
 /* Drop-Down Menu */
 .dropdown-menu {
   display: none;
   opacity: 0;
   transition: all 0.5s ease-in-out;
+  /* z-index: 99999999; */
 }
 
 .dropdown-menu.show {
+  /* z-index: 99999999; */
   display: block;
   opacity: 1;
 }
 
-/* Blog Animation left to right */
-#card1 {
+
+/* Extra */
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.cards {
+  display: grid;
+  grid-auto-columns: 100%;
+  grid-column-gap: 10px;
+  grid-auto-flow: column;
+  padding: 25px 0px;
+  list-style: none;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  background: var(--white);
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 15%);
+  scroll-snap-align: start;
+  transition: all 0.2s;
+}
+
+.card:hover {
+  color: var(--white);
+  background: var(--blue);
+}
+
+.card .card-title {
+  font-size: 20px;
+  z-index:3;
+}
+
+.card .card-content {
+  margin: 20px 0;
+  max-width: 85%;
+}
+
+.card .card-link-wrapper {
+  margin-top: auto;
+  z-index:2;
+}
+
+.card .card-link {
+  display: inline-block;
+  text-decoration: none;
+  color: white;
+  background: var(--orange);
+  padding: 6px 12px;
+  border-radius: 8px;
+  transition: background 0.2s;
+}
+
+.card:hover .card-link {
+  background: var(--blue);
+}
+
+.cards::-webkit-scrollbar {
+  height: 12px;
+}
+
+.cards::-webkit-scrollbar-thumb,
+.cards::-webkit-scrollbar-track {
+  border-radius: 92px;
+}
+
+.cards::-webkit-scrollbar-thumb {
+  background: var(--blue);
+}
+
+.cards::-webkit-scrollbar-track {
+  background: var(--white);
+}
+
+@media (min-width: 500px) {
+  .cards {
+    grid-auto-columns: calc(50% - 10px);
+    grid-column-gap: 20px;
+  }
+}
+
+@media (min-width: 700px) {
+  .cards {
+    grid-auto-columns: calc(calc(100% / 3) - 20px);
+    grid-column-gap: 30px;
+  }
+}
+
+@media (min-width: 1100px) {
+  .cards {
+    grid-auto-columns: calc(25% - 30px);
+    grid-column-gap: 40px;
+  }
+}
+
+.image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
   opacity: 0;
-  transform: translateX(-100%);
-  transition: all 1s ease;
-}
-
-#card1.visible {
-  opacity: 1;
-  transform: translateX(0);
-}
-
-#card5 {
-  opacity: 0;
-  transform: translateX(-100%);
-  transition: all 1s ease;
-}
-
-#card5.visible {
-  opacity: 1;
-  transform: translateX(0);
-}
-
-#card3 {
-  opacity: 0;
-  transform: translateX(-100%);
-  transition: all 1s ease;
-}
-
-#card3.visible {
-  opacity: 1;
-  transform: translateX(0);
-}
-
-/* Blog Animation right to left */
-
-#card2 {
-  opacity: 0;
-  transform: translateX(100%);
-  transition: all 1s ease;
-}
-
-#card2.visible {
-  opacity: 1;
-  transform: translateX(0);
-}
-
-#card4 {
-  opacity: 0;
-  transform: translateX(100%);
-  transition: all 1s ease;
-}
-
-#card4.visible {
-  opacity: 1;
-  transform: translateX(0);
-}
-
-#card6 {
-  opacity: 0;
-  transform: translateX(100%);
-  transition: all 1s ease;
-}
-
-#card6.visible {
-  opacity: 1;
-  transform: translateX(0);
-}
-
-.carco {
+  transition: opacity 0.5s ease-in-out;
   display: flex;
   justify-content: center;
-  margin-bottom:30px;
+  align-items: center;
 }
 
-.carco .card {
-  position: relative;
-  /* width: 350px; */
-  /* height: 350px; */
-  background-color: #fff;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
-  border-radius: 10px;
-  overflow: hidden;
-  transition: all 0.2s ease-in-out;
+.overlay-text {
+  color: white;  
+  transition: opacity 0.5s ease-in-out;
+  opacity: 0;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
-.carco .card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0px 4px 16px 16px rgba(0, 0, 0, 0.6);
-  border: 1px solid black;
+.image-container:hover .img-fluid {
+  filter: blur(5px);
+  opacity: 0.7;
 }
 
-.carco .card-image {
-  /* width: 100%; */
-  /* height: 100px; */
-  overflow: hidden;
-  position: relative;
+.image-container:hover .image-overlay {
+  opacity: 1;
 }
 
-.carco .card-image img {
-  /* width: 100%; */
-  /* height: 100%; */
-  object-fit: cover;
+.image-container:hover .overlay-text {
+  opacity: 1;
 }
-
-.carco .card-content {
-  padding: 20px;
-}
-
-.carco .card-title {
-  font-size: 24px;
-  margin: 0 0 10px 0;
-  color: #222;
-}
-
-.carco .card-text {
-  font-size: 21px;
-}
-
-.carco .card-description {
-  font-size: 16px;
-  margin: 0 0 20px 0;
-  color: #555;
-}
-
-.carco .card-button {
-  display: inline-block;
-  padding: 10px 20px;
-  background-color: #0077FF;
-  color: #fff;
-  text-decoration: none;
-  border-radius: 5px;
-  transition: all 0.2s ease-in-out;
-}
-
-.carco .card-button:hover {
-  background-color: #0057b8;
-  transform: translateY(-3px);
-}
-
-

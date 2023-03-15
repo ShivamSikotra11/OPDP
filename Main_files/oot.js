@@ -26,3 +26,21 @@ $(document).ready(function () {
         interval: 5000
     });
 });
+
+function openneck() {
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+        var response = JSON.parse(this.responseText);
+        if (response.redirect) {
+          window.location.href = response.redirect;
+        } else {
+          var modal = document.getElementById("loginModal");
+          modal.style.display = "block";
+        }
+      }
+    };
+    xhttp.open("GET", "check_login.php", true);
+    xhttp.send();
+  }
+  
