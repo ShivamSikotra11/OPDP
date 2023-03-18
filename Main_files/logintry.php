@@ -34,11 +34,12 @@ if(isset($_POST['submit'])){
         $_SESSION['name'] = $name;
         $_SESSION['gender'] = $gender;
         $_SESSION['emailid'] = $emailid;
+        $_SESSION['loggedin'] = true;
         header("Location: techInfection.php");
     }
     else{
         $_SESSION['errori'] = "invalid_credentials";
-        header("Location: techInfection.php");
+        header("Location: login.php");
         exit();
     }
     $conn->close();

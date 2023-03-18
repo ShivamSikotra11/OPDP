@@ -1,5 +1,22 @@
 <?php
 session_start();
+$answer = true; // replace with your variable
+
+if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
+  $link1 = "../Blog Sites/blog.html";
+  $link2 = "../Blog Sites/blog.html";
+  $link3 = "../Blog Sites/blog.html";
+  $link4 = "../Blog Sites/blog.html";
+  $link5 = "../Blog Sites/blog.html";
+  $link6 = "../Blog Sites/blog.html";
+} else {
+  $link1 = "login.php";
+  $link2 = "login.php";
+  $link3 = "login.php";
+  $link4 = "login.php";
+  $link5 = "login.php";
+  $link6 = "login.php";
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -27,7 +44,7 @@ session_start();
 
     <!-- Nav-bar Header -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-transparent">
-        <div class="container">
+        <div class="container pr-2">
             <a class="navbar-brand" href="#">
                 <img src="../images/logo.png" alt="Tech-Infection" width="170px" height="40px" style="margin: 0px;margin-top:-2px; margin-bottom:-2px;">
             </a>
@@ -57,11 +74,9 @@ session_start();
                                 </div>
                             </form>
                         </li>
-                        <li class="nav-item">
-                            <button type="button" class="btn btn-warning ml-lg-3 round" data-toggle="modal" data-target="#loginModal" style="border:2px solid white;">&nbsp&nbspLogin&nbsp&nbsp</button>
-                        </li>
-                        <li class="nav-item">
-                            <button class="btn btn-warning ml-lg-3 my-2 my-lg-0 round" data-toggle="modal" data-target="#registerModal" style="border:2px solid white;">Register</button>
+                        <li class="nav-item ml-lg-2 mt-2 mt-lg-0" style="display:inline-block">
+                            <a type="button" class="btn btn-warning round" style="border:2px solid white;" href="login.php">&nbsp&nbspLogin&nbsp&nbsp</a>
+                            <a type="button" class="btn btn-warning round ml-1" style="border:2px solid white;" href="register.php">Register</a>
                         </li>
                     </ul>
                 </div>
@@ -72,165 +87,8 @@ session_start();
     <div class="overlay"></div>
     <div class="content">
 
-        <!-- <div id="bar" style="overflow-y: scroll;"> -->
-        <!-- The Login modal-->
-        <form method="post" action="logintry.php">
-            <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog modal-md" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Login</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="clearModalData()">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body">
-                            <div class="form-group">
-                                <label for="eid">Email-id:</label>
-                                <input type="text" class="form-control" id="eid" placeholder="Enter your email" name="emailid">
-                            </div>
-                            <div class="form-group">
-                                <label for="password">Password:</label>
-                                <input type="password" class="form-control" id="password" placeholder="Enter your password" name="password">
-                            </div>
-                            <?php
-                            if (isset($_SESSION["errori"])) {
-                                if ($_SESSION["errori"] == "invalid_credentials") {
-                                    echo "<script>";
-                                    echo "$(document).ready(function() {";
-                                    echo "$('#loginModal').modal('show');";
-                                    echo "});";
-                                    echo "</script>";
-                                    echo "<div class='alert alert-danger form-group'>Error: Invalid login credentials. Please try again.</div>";
-                                }
-                            }
-                            ?>
-                        </div>
-                        <div class="modal-footer d-flex col-12">
-                            <div class="d-flex justify-content-between col-xs-12 col-sm-12 sol-md-12 col-lg-12 justify-content-xs-between justify-content-sm-between justify-content-md-between justify-content-lg-between">
-                                <button type="button" class="btn btn-secondary mr-2 " data-dismiss="modal" onclick="clearModalData()">Close</button>
-                                <input type="submit" value="Login" name="submit" class="btn btn-primary">
-                            </div>
-                            <button type="button" class="btn btn-outline-success mr-auto col-xs-12 col-sm-12 col-md-12 col-lg-12" data-toggle="modal" data-dismiss="modal" data-target="#registerModal">Don't have an account? Register</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </form>
-
-
-        <!-- Register Modal -->
-        <form method="post" action="regis.php">
-            <div class="modal fade" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="registerModalLabel" aria-hidden="true">
-                <div class="modal-dialog modal-md" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="registerModalLabel">Register</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="clearRegis();">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                        </div>
-                        <div class="modal-body">
-                            <div class="form-group">
-                                <label for="name">Name:</label>
-                                <input type="text" class="form-control" id="namer" name="namer" placeholder="Enter Name" value="<?php if (isset($_SESSION['name'])) {
-                                                                                                                                    echo $_SESSION['name'];
-                                                                                                                                } ?>">
-                            </div>
-                            <?php
-                            if (isset($_SESSION["errori"])) {
-                                if ($_SESSION["errori"] == "invalid_name") {
-                                    echo "<script>";
-                                    echo "$(document).ready(function() {";
-                                    echo "$('#registerModal').modal('show');";
-                                    echo "});";
-                                    echo "</script>";
-                                    echo "<div class='alert alert-danger form-group'>Error: Please enter Valid Name(length>4).</div>";
-                                }
-                            }
-                            ?>
-                            <div class="form-group">
-                                <label for="emailid">Email-id:</label>
-                                <input type="text" class="form-control" id="eidi" placeholder="Enter your email" name="emailidr" value="<?php if (isset($_SESSION['emailid'])) {
-                                                                                                                                            echo $_SESSION['emailid'];
-                                                                                                                                        } ?>">
-                            </div>
-                            <?php
-                            if (isset($_SESSION["errori"])) {
-                                if ($_SESSION["errori"] == "duplicate_email") {
-                                    echo "<script>";
-                                    echo "$(document).ready(function() {";
-                                    echo "$('#registerModal').modal('show');";
-                                    echo "});";
-                                    echo "</script>";
-                                    echo "<div class='alert alert-danger form-group'>Error: Email already exists. Please use a different email.</div>";
-                                }
-                                if ($_SESSION["errori"] == "nonvalid_email") {
-                                    echo "<script>";
-                                    echo "$(document).ready(function() {";
-                                    echo "$('#registerModal').modal('show');";
-                                    echo "});";
-                                    echo "</script>";
-                                    echo "<div class='alert alert-danger form-group'>Error: Please enter the valid Email Address</div>";
-                                }
-                            }
-                            ?>
-                            <div class="form-group">
-                                <label for="password">Password:</label>
-                                <input type="password" class="form-control" id="password1" name="passwordr" placeholder="Enter your password" value="<?php if (isset($_SESSION['password'])) {
-                                                                                                                                                            echo $_SESSION['password'];
-                                                                                                                                                        } ?>">
-                            </div>
-                            <?php
-                            if (isset($_SESSION["errori"])) {
-                                if ($_SESSION["errori"] == "weak_password") {
-                                    echo "<script>";
-                                    echo "$(document).ready(function() {";
-                                    echo "$('#registerModal').modal('show');";
-                                    echo "});";
-                                    echo "</script>";
-                                    echo "<div class='alert alert-danger form-group'> Please enter Strong Password of Length At least 8 length,&nbsp At least one Uppercase letter,At least one Lowercase letter,At least one special character and At least one digit.</div>";
-                                }
-                            }
-                            ?>
-                            <div class="form-group">
-                                <label for="gender">Gender:&nbsp</label>Male:
-                                <input type="radio" id="male1" name="genderr" value="Male" checked <?php if (isset($_SESSION['gender']) && $_SESSION['gender'] == 'Male') echo "checked"; ?>>&nbspFemale
-                                <input type="radio" id="female1" name="genderr" value="Female" <?php if (isset($_SESSION['gender']) && $_SESSION['gender'] == 'Female') echo "checked"; ?>>
-                            </div>
-                            <div class="form-group">
-                                <label for="mobileNumber">Mobile Number:</label>
-                                <input type="tel" class="form-control" id="mN" name="mNr" placeholder="Enter your mobile number" value="<?php if (isset($_SESSION['mNr'])) {
-                                                                                                                                            echo $_SESSION['mNr'];
-                                                                                                                                        } ?>">
-                            </div>
-                            <?php
-                            if (isset($_SESSION["errori"])) {
-                                if ($_SESSION["errori"] == "correct_number") {
-                                    echo "<script>";
-                                    echo "$(document).ready(function() {";
-                                    echo "$('#registerModal').modal('show');";
-                                    echo "});";
-                                    echo "</script>";
-                                    echo "<div class='alert alert-danger form-group'>Error: Please enter 10 digit Number.</div>";
-                                }
-                            }
-                            ?>
-                        </div>
-                        <div class="modal-footer d-flex col-12">
-                            <div class="d-flex justify-content-between col-xs-12 col-sm-12 sol-md-12 col-lg-12 justify-content-xs-between justify-content-sm-between justify-content-md-between justify-content-lg-between">
-                                <button type="button" class="btn btn-secondary mr-2" data-dismiss="modal" onclick="clearRegis()">Close</button>
-                                <input type="submit" value="Register" name="submitr" class="btn btn-primary">
-                            </div>
-                            <button type="button" class="btn btn-outline-success mr-auto col-xs-12 col-sm-12 col-md-12 col-lg-12" data-toggle="modal" data-dismiss="modal" data-target="#loginModal">Already have an account? Login</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </form>
-
         <!-- carousel -->
-        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="2000" style="margin-top:100px; max-width: 75%; margin:100px auto 0 auto;">
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="2000" style="max-width: 75%; margin:30px auto 0 auto;">
             <ol class="carousel-indicators">
                 <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
                 <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
@@ -258,42 +116,46 @@ session_start();
         </div>
 
         <!-- data -->
-            <div class="container-lg mt-5">
-                <h1 class="text-center mb-5 thcolor">Tech Infections</h1>
-                <div class="row">
-                    <div class="col-lg-6 col-sm-12 col-xs-12 mb-5 mb-lg-0">
-                        <div class="cardt" id="cardl">
-                            <div class="card-header">
-                                <h3>What are tech infections?</h3>
-                            </div>
-                            <div class="card-body">
-                                <p>Tech infections(Technological diseases) are diseases of the modern era. Some are caused by occupational exposures, and are marked with direct professional relation, or the action of harmful effects in the workplace. Technological diseases occur due to excessive work at the computer, or excessive use of keyboards and computer mice, especially the non-ergonomic ones.</p>
-                            </div>
+        <div class="container-lg mt-5">
+            <h1 class="text-center mb-5 thcolor">Tech Infections</h1>
+            <div class="row">
+                <div class="col-lg-6 col-sm-12 col-xs-12 mb-5 mb-lg-0">
+                    <div class="cardt" id="cardl">
+                        <div class="card-header">
+                            <h3>What are tech infections?</h3>
                         </div>
-                    </div>
-                    <div class="col-lg-6 col-sm-12 col-xs-12 mb-3 mb-lg-0">
-                        <div class="cardt" id="cardr">
-                            <div class="card-header">
-                                <h3>How to protect against tech infections?</h3>
-                            </div>
-                            <div class="card-body">
-                                <p>To protect against tech infections, it's important to use security software such as antivirus
-                                    and anti-malware programs. Keep your software and operating system up-to-date, be cautious
-                                    when clicking on links or downloading files from unknown sources, and avoid phishing scams.
-                                </p>
-                            </div>
+                        <div class="card-body">
+                            <p>Tech infections(Technological diseases) are diseases of the modern era. Some are caused by occupational exposures, and are marked with direct professional relation, or the action of harmful effects in the workplace. Technological diseases occur due to excessive work at the computer, or excessive use of keyboards and computer mice, especially the non-ergonomic ones.</p>
                         </div>
                     </div>
                 </div>
-            
+                <div class="col-lg-6 col-sm-12 col-xs-12 mb-3 mb-lg-0">
+                    <div class="cardt" id="cardr">
+                        <div class="card-header">
+                            <h3>How to protect against tech infections?</h3>
+                        </div>
+                        <div class="card-body">
+                            <p>To protect against tech infections, it's important to use security software such as antivirus
+                                and anti-malware programs. Keep your software and operating system up-to-date, be cautious
+                                when clicking on links or downloading files from unknown sources, and avoid phishing scams.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <div class="container-lg my-5">
-                <a class="navbar-brand text-center" href="#">Tech Infections Types</a>
+                <div class="text-center heading">Tech Infections Types</div>
                 <ul class="list-group">
-                    <li class="list-group-item">Back pain</li>
+                    <a href="#back" class="smooth-scroll">
+                        <li class="list-group-item">Back pain</li>
+                    </a>
                     <li class="list-group-item">Computer Vision Syndrome</li>
                     <li class="list-group-item">Carpal Tunnel Syndrome</li>
                     <li class="list-group-item">Text Neck</li>
-                    <li class="list-group-item">Ear Pain</li>
+                    <a href="#ear" class="smooth-scroll">
+                        <li class="list-group-item">Ear Pain</li>
+                    </a>
                     <li class="list-group-item">Shoulder Pain</li>
                 </ul>
             </div>
@@ -302,113 +164,102 @@ session_start();
 
         <!-- eXTRA fLEX -->
         <div class="container-lg">
-            <ul class="cards">
+            <ul class="cards" style="padding-right:30px;">
+
                 <li class="card">
                     <h3 class="card-title">Shoulder Pain</h3>
-                    <div>
-                        <div class="card-content">
-                            <div class=" row card-body d-flex align-items-center">
-                                <div class="image-container">
-                                    <img src="..\images\shoulder_1.png" class="img-fluid rounded card-img-top" alt="image2">
-                                    <div class="image-overlay">
-                                        <p class="overlay-text">Shoulder pain caused by technology is a modern day affliction resulting from excessive use of laptops, mobile devices and other technology.</p>
-                                    </div>
+                    <div class="card-content">
+                        <div class=" row card-body d-flex align-items-center">
+                            <div class="image-container">
+                                <img src="..\images\shoulder_1.png" class="img-fluid rounded card-img-top" alt="image2">
+                                <div class="image-overlay">
+                                    <p class="overlay-text">Shoulder pain caused by technology is a modern day affliction resulting from excessive use of laptops, mobile devices and other technology.</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="card-link-wrapper">
-                        <a href="" class="card-link">Learn More</a>
+                        <a href="<?php echo $link1; ?>" class="card-link card1">Learn More</a>
                     </div>
                 </li>
-                <li class="card">
+                <li class="card" id="back">
                     <h3 class="card-title">Back Pain</h3>
-                    <div>
-                        <div class="card-content">
-                            <div class=" row card-body d-flex align-items-center">
-                                <div class="image-container">
-                                    <img src="..\images\neck_back.png" class="img-fluid rounded card-img-top" alt="image2">
-                                    <div class="image-overlay">
-                                        <p class="overlay-text">Back pain caused by prolonged use of laptops and mobile devices is a common issue in modern times.</p>
-                                    </div>
+                    <div class="card-content">
+                        <div class=" row card-body d-flex align-items-center">
+                            <div class="image-container">
+                                <img src="..\images\neck_back.png" class="img-fluid rounded card-img-top" alt="image2">
+                                <div class="image-overlay">
+                                    <p class="overlay-text">Back pain caused by prolonged use of laptops and mobile devices is a common issue in modern times.</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="card-link-wrapper">
-                        <a href="" class="card-link">Learn More</a>
+                        <a href="<?php echo $link2; ?>" class="card-link">Learn More</a>
                     </div>
                 </li>
                 <li class="card">
                     <h3 class="card-title">Eye Strain</h3>
-                    <div>
-                        <div class="card-content">
-                            <div class=" row card-body d-flex align-items-center">
-                                <div class="image-container">
-                                    <img src="..\images\eye_1.jpeg" class="img-fluid rounded card-img-top" alt="image2">
-                                    <div class="image-overlay">
-                                        <p class="overlay-text">Eye issues due to laptop and mobile technology are a growing concern due to the prolonged and frequent use of digital devices.</p>
-                                    </div>
+                    <div class="card-content">
+                        <div class=" row card-body d-flex align-items-center">
+                            <div class="image-container">
+                                <img src="..\images\eye_1.jpeg" class="img-fluid rounded card-img-top" alt="image2">
+                                <div class="image-overlay">
+                                    <p class="overlay-text">Eye issues due to laptop and mobile technology are a growing concern due to the prolonged and frequent use of digital devices.</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="card-link-wrapper">
-                        <a href="" class="card-link">Learn More</a>
+                        <a href="<?php echo $link3; ?>" class="card-link">Learn More</a>
                     </div>
                 </li>
                 <li class="card">
                     <h3 class="card-title">Wrist Pain</h3>
-                    <div>
-                        <div class="card-content">
-                            <div class=" row card-body d-flex align-items-center">
-                                <div class="image-container">
-                                    <img src="..\images\tunnel.jpg" class="img-fluid rounded card-img-top" alt="image2">
-                                    <div class="image-overlay">
-                                        <p class="overlay-text">Wrist pain due to laptop and mobile use is a condition commonly known as "tech neck" or "texting thumb."</p>
-                                    </div>
+                    <div class="card-content">
+                        <div class=" row card-body d-flex align-items-center">
+                            <div class="image-container">
+                                <img src="..\images\tunnel.jpg" class="img-fluid rounded card-img-top" alt="image2">
+                                <div class="image-overlay">
+                                    <p class="overlay-text">Wrist pain due to laptop and mobile use is a condition commonly known as "tech neck" or "texting thumb."</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="card-link-wrapper">
-                        <a href="" class="card-link">Learn More</a>
+                        <a href="<?php echo $link4; ?>" class="card-link">Learn More</a>
                     </div>
                 </li>
                 <li class="card">
                     <h3 class="card-title">Neck Pain</h3>
-                    <div>
-                        <div class="card-content">
-                            <div class=" row card-body d-flex align-items-center">
-                                <div class="image-container">
-                                    <img src="..\images\neckpain.png" class="img-fluid rounded card-img-top" alt="image2">
-                                    <div class="image-overlay">
-                                        <p class="overlay-text">Neck pain caused by technology refers to the discomfort and strain felt in the neck area as a result of prolonged usage of digital devices such as laptops, smartphones and tablets.</p>
-                                    </div>
+                    <div class="card-content">
+                        <div class=" row card-body d-flex align-items-center">
+                            <div class="image-container">
+                                <img src="..\images\neckpain.png" class="img-fluid rounded card-img-top" alt="image2">
+                                <div class="image-overlay">
+                                    <p class="overlay-text">Neck pain caused by technology refers to the discomfort and strain felt in the neck area as a result of prolonged usage of digital devices such as laptops, smartphones and tablets.</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="card-link-wrapper">
-                        <a href="" class="card-link">Learn More</a>
+                        <a href="<?php echo $link5; ?>" class="card-link">Learn More</a>
                     </div>
                 </li>
-                <li class="card">
+                <li class="card " id="ear">
                     <h3 class="card-title">Ear Pain</h3>
-                    <div>
-                        <div class="card-content">
-                            <div class=" row card-body d-flex align-items-center">
-                                <div class="image-container">
-                                    <img src="..\images\ear.png" class="img-fluid rounded card-img-top" alt="image2">
-                                    <div class="image-overlay">
-                                        <p class="overlay-text">Ear pain due to the use of technology gadgets like laptops, mobiles, earphones, headphones, etc. is a common issue faced by many people.</p>
-                                    </div>
+                    <div class="card-content">
+                        <div class=" row card-body d-flex align-items-center">
+                            <div class="image-container">
+                                <img src="..\images\ear.png" class="img-fluid rounded card-img-top" alt="image2">
+                                <div class="image-overlay">
+                                    <p class="overlay-text">Ear pain due to the use of technology gadgets like laptops, mobiles, earphones, headphones, etc. is a common issue faced by many people.</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="card-link-wrapper">
-                        <a href="" class="card-link">Learn More</a>
+                        <a href="<?php echo $link6; ?>" class="card-link">Learn More</a>
                     </div>
                 </li>
             </ul>
@@ -430,6 +281,7 @@ session_start();
                         Academies Press (US); 2006.</a></li>
             </ol>
         </div>
+
         <!-- footer -->
         <footer class="bg-dark py-3">
             <div class="container">

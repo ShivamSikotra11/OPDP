@@ -1,94 +1,37 @@
 $(document).ready(function () {
-    $('#loginModal').modal({
-      show: false,
-      backdrop: 'static'
-    });
+  // Add animation to carousel indicators
+  $('.carousel-indicators li').click(function () {
+    $(this).addClass('animated pulse');
   });
 
-  $(document).ready(function () {
-    $('#registerModal').modal({
-      show: false,
-      backdrop: 'static'
-    });
+  // Add animation to carousel items
+  $('.carousel-item').click(function () {
+    $(this).addClass('animated fadeInLeft');
   });
+});
 
-$(document).ready(function() {
-    $("#loginModal").on("show.bs.modal", function () {
-      $(this).addClass("fade-in-modal");
-    });
-    
-    $("#loginModal").on("hidden.bs.modal", function () {
-      $(this).removeClass("fade-in-modal");
-    });
-  });
-
-  $(document).ready(function() {
-    $("#registerModal").on("show.bs.modal", function () {
-      $(this).addClass("fade-in-modal");
-    });
-    
-    $("#registerModal").on("hidden.bs.modal", function () {
-      $(this).removeClass("fade-in-modal");
-    });
-  });
-
-  $(document).ready(function() {
-    // Add animation to carousel indicators
-    $('.carousel-indicators li').click(function() {
-      $(this).addClass('animated pulse');
-    });
-  
-    // Add animation to carousel items
-    $('.carousel-item').click(function() {
-      $(this).addClass('animated fadeInLeft');
-    });
-  });
-
-  // Input box modal
-  $(document).ready(function () {
-    $('#loginModal, #registerModal').on('shown.bs.modal', function () {
-      $(this).find('.form-group').addClass('active');
-    });
-    $('#loginModal, #registerModal').on('hidden.bs.modal', function () {
-      $(this).find('.form-group').removeClass('active');
-    });
-  });
-
-  //loader
-window.onload = function() {
-  setTimeout(function() {
+//loader
+window.onload = function () {
+  setTimeout(function () {
     document.getElementById("loading").style.display = "none";
   }, 1000);
 };
 
-//Card
-$(document).ready(function() {
-  $(window).scroll(function() {
-      var card = $("#cardl");
-      var cardTop = card.offset().top;
-      var windowTop = $(window).scrollTop();
-
-      if (cardTop < windowTop + $(window).height()) {
-          card.addClass("visible");
-      }
+$(document).ready(function(){
+  $(".smooth-scroll").on('click', function(event) {
+      event.preventDefault();
+      $('.smooth-scroll').removeClass('active');
+      var hash = this.hash;
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 800, function(){
+        window.location.hash = hash;
+        $(hash).addClass('highlight');
+        setTimeout(function(){
+          $(hash).removeClass('highlight');
+        }, 2000);
+      });
   });
 });
 
-$(document).ready(function() {
-  $(window).scroll(function() {
-      var card = $("#cardr");
-      var cardTop = card.offset().top;
-      var windowTop = $(window).scrollTop();
 
-      if (cardTop < windowTop + $(window).height()) {
-          card.addClass("visible");
-      }
-  });
-});
-
-//Drop_Down Menu
-$(document).ready(function () {
-  $('.dropdown-toggle').click(function () {
-      $('.dropdown-menu').toggleClass('show');
-  });
-});
