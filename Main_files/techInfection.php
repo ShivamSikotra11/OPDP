@@ -34,6 +34,8 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=IntersectionObserver"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <script src="oot.js"></script>
     <script src="animation.js"></script>
     <link rel="stylesheet" href="animation.css">
@@ -70,7 +72,8 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
                             <form action="search.php" method="post">
                                 <div class="btn-group">
                                     <input class="btn btn-warning ml-lg-3 round" style="border:2px solid white;" type="text" name="search_term" placeholder="Search...">
-                                    <button class="btn btn-warning round" type="submit" name="submit_search" style="border:2px solid white;">Search</button>
+                                    <button class="btn btn-warning round" type="submit" name="submit_search" style="border:2px solid white;">
+                                    <ion-icon name="search-outline" style="padding-top:7px;"></ion-icon></button>
                                 </div>
                             </form>
                         </li>
@@ -125,7 +128,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
                             <h3>What are tech infections?</h3>
                         </div>
                         <div class="card-body">
-                            <p>Tech infections(Technological diseases) are diseases of the modern era. Some are caused by occupational exposures, and are marked with direct professional relation, or the action of harmful effects in the workplace. Technological diseases occur due to excessive work at the computer, or excessive use of keyboards and computer mice, especially the non-ergonomic ones.</p>
+                            <p> Some are caused by occupational exposures, and are marked with direct professional relation, or the action of harmful effects in the workplace. Technological diseases occur due to excessive work at the computer, or excessive use of keyboards and computer mice, especially the non-ergonomic ones.</p>
                         </div>
                     </div>
                 </div>

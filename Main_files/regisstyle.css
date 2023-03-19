@@ -20,42 +20,22 @@ section {
 
 .form-box {
     position: absolute;
-    width: 450px;
-    height: 500px;
+    width: 400px;
+    height: 600px;
     background: transparent;
     border: 2px solid rgba(255, 255, 255, 0.5);
     border-radius: 20px;
     backdrop-filter: blur(15px);
     display: flex;
     justify-content: center;
-    overflow:auto;
+    /* overflow:auto; */
 }
-
-/* scrollbar styles */
-.form-box::-webkit-scrollbar {
-    width: 17px;
-}
-
-.form-box::-webkit-scrollbar-thumb {
-    background-color: #ffffff;
-    border-radius: 0px 60px 60px 0px;
-}
-
-.form-box::-webkit-scrollbar-track {
-    background-color: transparent;
-}
-
-.form-box::-webkit-scrollbar-corner {
-    background-color: transparent;
-    border-radius: 20px;
-}
-
 
 h2 {
     font-size: 2em;
     color: #fff;
     text-align: center;
-    margin-top:1.5em;
+    margin-top:1em;
 }
 
 
