@@ -3,19 +3,22 @@ session_start();
 $answer = true; // replace with your variable
 
 if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
-  $link1 = "../Blog Sites/blog.html";
-  $link2 = "../Blog Sites/blog.html";
-  $link3 = "../Blog Sites/blog.html";
-  $link4 = "../Blog Sites/blog.html";
-  $link5 = "../Blog Sites/blog.html";
+  $link1 = "../Blog Sites/Shoulder_Pain.html";
+  $link2 = "../Blog Sites/Back_PAin.html";
+  $link3 = "../Blog Sites/Eye_Strain.html";
+  $link4 = "../Blog Sites/Wrist_Pain.html";
+  $link5 = "../Blog Sites/Neckpain.html";
   $link6 = "../Blog Sites/blog.html";
+  $link7 = "../Blog Sites/headache.html";
 } else {
-  $link1 = "login.php";
-  $link2 = "login.php";
-  $link3 = "login.php";
-  $link4 = "login.php";
-  $link5 = "login.php";
-  $link6 = "login.php";
+    $link1 = "login.php";
+    $link2 = "login.php";
+    $link3 = "login.php";
+    $link4 = "login.php";
+    $link5 = "login.php";
+    $link6 = "login.php";
+    $link7 = "login.php";
+    
 }
 ?>
 <!DOCTYPE html>
@@ -168,7 +171,24 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
         <!-- eXTRA fLEX -->
         <div class="container-lg">
             <ul class="cards" style="padding-right:30px;">
-
+            <li class="card">
+                    <h3 class="card-title">Headache</h3>
+                    <div class="card-content">
+                        <div class=" row card-body d-flex align-items-center">
+                            <div class="image-container">
+                                <img src="..\images\headache3.jpg" class="img-fluid rounded card-img-top" alt="image2">
+                                <div class="image-overlay">
+                                    <p class="overlay-text">
+                                    Headache is caused by blue light emitted by digital devices, prolonged screen time, poor posture, and eye strain.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-link-wrapper">
+                        <a href="<?php echo $link7; ?>" class="card-link card1">Learn More</a>
+                    </div>
+                </li>
                 <li class="card">
                     <h3 class="card-title">Shoulder Pain</h3>
                     <div class="card-content">
