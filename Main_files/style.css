@@ -44,3 +44,21 @@
     background-color: #008080;
     color: #FFD700;
 }
+
+.loginbtn
+{
+    position: relative;
+    color: cyan;
+    border: 2px solid cyan;
+    background: transparent;
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+    transition: 1.0s;
+}
+.loginbtn:hover
+{
+    position: relative;
+    text-shadow: 0 0 5px cyan;
+    background: cyan;
+    border: 2px solid cyan;
+}

@@ -73,16 +73,16 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
                             <form action="search.php" method="post">
-                                <div class="btn-group">
-                                    <input class="btn btn-warning ml-lg-3 round" style="border:2px solid white;" type="text" name="search_term" placeholder="Search...">
-                                    <button class="btn btn-warning round" type="submit" name="submit_search" style="border:2px solid white;">
-                                    <ion-icon name="search-outline" style="padding-top:7px;"></ion-icon></button>
+                                <div class="btn-group ">
+                                    <input class="btn btn-warning round loginbtn" type="text" name="search_term" placeholder="Search...">
+                                    <button class="btn btn-warning round loginbtn" type="submit" name="submit_search" style="padding-top:10px">
+                                    <ion-icon name="search-outline" ></ion-icon></button>
                                 </div>
                             </form>
                         </li>
                         <li class="nav-item ml-lg-2 mt-2 mt-lg-0" style="display:inline-block">
-                            <a type="button" class="btn btn-warning round" style="border:2px solid white;" href="login.php">&nbsp&nbspLogin&nbsp&nbsp</a>
-                            <a type="button" class="btn btn-warning round ml-1" style="border:2px solid white;" href="register.php">Register</a>
+                            <a type="button" class="btn btn-warning round loginbtn" href="login.php">&nbsp&nbspLogin&nbsp&nbsp</a>
+                            <a type="button" class="btn btn-warning round loginbtn" href="register.php">Register</a>
                         </li>
                     </ul>
                 </div>
