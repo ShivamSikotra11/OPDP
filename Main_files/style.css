@@ -49,8 +49,8 @@
 {
     position: relative;
     color: cyan;
-    border: 2px solid cyan;
     background: transparent;
+    border: solid cyan 2px;
     font-size: 18px;
     font-family: Arial, Helvetica, sans-serif;
     transition: 1.0s;
@@ -62,3 +62,29 @@
     background: cyan;
     border: 2px solid cyan;
 }
+.landing{
+    background-color: transparent;
+}
+.landing.container {
+    max-width: 800px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0px 0px 10px #ccc;
+  }
+
+  .landing.h1 {
+    font-size: 36px;
+    font-weight: bold;
+    color: #444;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  .landing.p {
+    font-size: 18px;
+    line-height: 1.5;
+    color: #666;
+    text-align: justify;
+    margin-bottom: 0;
+  }
