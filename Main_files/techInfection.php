@@ -50,6 +50,11 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
     <script src="animation.js"></script>
     <link rel="stylesheet" href="animation.css">
     <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Pacifico&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Kanit:ital@1&family=Pacifico&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -58,8 +63,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
     <nav class="navbar navbar-expand-lg navbar-dark bg-transparent">
         <div class="container pr-2">
             <a class="navbar-brand" href="#">
-                <img src="../images/logo.png" alt="Tech-Infection" width="170px" height="40px"
-                    style="margin: 0px;margin-top:-2px; margin-bottom:-2px;">
+                <img src="../images/logo.png" alt="Tech-Infection" width="200px" height="51px" style="margin: 0px;margin-top:-2px; margin-bottom:-2px;">
             </a>
             <?php if (isset($_SESSION['name']) && isset($_SESSION['emailid'])) { ?>
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
@@ -86,20 +90,8 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ml-auto">
-                        <li class="nav-item">
-                            <form action="search.php" method="post">
-                                <div class="btn-group ">
-                                    <input class="btn btn-warning round loginbtn" type="text" name="search_term"
-                                        placeholder="Search...">
-                                    <button class="btn btn-warning round loginbtn" type="submit" name="submit_search"
-                                        style="padding-top:10px">
-                                        <ion-icon name="search-outline"></ion-icon></button>
-                                </div>
-                            </form>
-                        </li>
-                        <li class="nav-item ml-lg-2 mt-2 mt-lg-0" style="display:inline-block">
-                            <a type="button" class="btn btn-warning round loginbtn"
-                                href="login.php">&nbsp&nbspLogin&nbsp&nbsp</a>
+                        <li class="nav-item mt-2 mt-lg-0" style="display:inline-block">
+                            <a type="button" class="btn btn-warning round loginbtn mr-lg-2" href="login.php">&nbsp&nbspLogin&nbsp&nbsp</a>
                             <a type="button" class="btn btn-warning round loginbtn" href="register.php">Register</a>
                         </li>
                     </ul>
@@ -110,24 +102,19 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
 
     <div class="overlay"></div>
     <div class="content">
-        <!-- <div class="container-lg mt-5"> -->
-        <div class="landing">
+    <div class="landing">
         <div class="container mt-4 mx-auto">
-            <div class="row justify-content-center">
+            <div class="row justify-content-center" >
                 <div class="col-md-8">
-                <h1 class="text-center mb-4 text-white">"Are You Suffering from Technological Health Issues? Find Out How to Prevent and Treat Them"
+                <h1 class="text-center mb-4">Suffering from Technological Health Issues?
                     </h1>
-                    <p class="text-white"> Welcome to our website dedicated to helping you protect yourself from physical health issues
-                        caused by technology use. Here, you'll find information about common symptoms, causes, and
-                        solutions for eye strain, neck and back pain, carpal tunnel syndrome, and other health issues
-                        associated with excessive use of computers, mobile devices, and other technology. Learn how to
-                        maintain good posture, adjust your screen settings, and practice healthy habits to prevent these
-                        issues and stay connected without sacrificing your health.</p>
+                    <p>We provide information on common symptoms, causes, and solutions to help protect ourselves from physical health issues caused by technology use. Learn how to maintain good posture, adjust screen settings, and practice healthy habits to prevent these issues and stay connected without sacrificing health.</p>
                 </div>
             </div>
         </div>
         </div>
 
+                
         <!-- carousel -->
         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="2000"
             style="max-width: 75%; margin:30px auto 0 auto;">
@@ -160,151 +147,132 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
             </a>
         </div>
 
-        <div class="container-lg my-5">
-            <div class="text-center heading">Tech Infections Types</div>
-            <ul class="list-group">
-                <a href="#back" class="smooth-scroll">
-                    <li class="list-group-item">Back pain</li>
-                </a>
-                <li class="list-group-item">Computer Vision Syndrome</li>
-                <li class="list-group-item">Carpal Tunnel Syndrome</li>
-                <li class="list-group-item">Text Neck</li>
-                <a href="#ear" class="smooth-scroll">
-                    <li class="list-group-item">Ear Pain</li>
-                </a>
-                <li class="list-group-item">Shoulder Pain</li>
+        <!-- data -->
+        <div class="container-lg mt-5">
+        <div class="heading m-5 text-center">Tech Infections Types</div>
+            
+        </div>
+        <!-- //blog -->
+
+        <!-- eXTRA fLEX -->
+        <div class="container-lg" >
+            <ul class="cards" style="padding-right:30px;">
+            <li class="card" id="head">
+                    <h3 class="card-title">Headache</h3>
+                    <div class="card-content">
+                        <div class=" row card-body d-flex align-items-center">
+                            <div class="image-container">
+                                <img src="..\images\headache3.jpg" class="img-fluid rounded card-img-top" alt="image2">
+                                <div class="image-overlay">
+                                    <p class="overlay-text">
+                                    Headache is caused by blue light emitted by digital devices, prolonged screen time, poor posture, and eye strain.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-link-wrapper">
+                        <a href="<?php echo $link7; ?>" class="card-link card1">Learn More</a>
+                    </div>
+                </li>
+                <li class="card" id="shoulder">
+                    <h3 class="card-title">Shoulder Pain</h3>
+                    <div class="card-content">
+                        <div class=" row card-body d-flex align-items-center">
+                            <div class="image-container">
+                                <img src="..\images\shoulder_1.png" class="img-fluid rounded card-img-top" alt="image2">
+                                <div class="image-overlay">
+                                    <p class="overlay-text">Shoulder pain caused by technology is a modern day affliction resulting from excessive use of laptops, mobile devices and other technology.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-link-wrapper">
+                        <a href="<?php echo $link1; ?>" class="card-link card1">Learn More</a>
+                    </div>
+                </li>
+                <li class="card" id="back">
+                    <h3 class="card-title">Back Pain</h3>
+                    <div class="card-content">
+                        <div class=" row card-body d-flex align-items-center">
+                            <div class="image-container">
+                                <img src="..\images\neck_back.png" class="img-fluid rounded card-img-top" alt="image2">
+                                <div class="image-overlay">
+                                    <p class="overlay-text">Back pain caused by prolonged use of laptops and mobile devices is a common issue in modern times.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-link-wrapper">
+                        <a href="<?php echo $link2; ?>" class="card-link">Learn More</a>
+                    </div>
+                </li>
+                <li class="card" id="eye">
+                    <h3 class="card-title">Eye Strain</h3>
+                    <div class="card-content">
+                        <div class=" row card-body d-flex align-items-center">
+                            <div class="image-container">
+                                <img src="..\images\eye_1.jpeg" class="img-fluid rounded card-img-top" alt="image2">
+                                <div class="image-overlay">
+                                    <p class="overlay-text">Eye issues due to laptop and mobile technology are a growing concern due to the prolonged and frequent use of digital devices.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-link-wrapper">
+                        <a href="<?php echo $link3; ?>" class="card-link">Learn More</a>
+                    </div>
+                </li>
+                <li class="card" id="wrist">
+                    <h3 class="card-title">Wrist Pain</h3>
+                    <div class="card-content">
+                        <div class=" row card-body d-flex align-items-center">
+                            <div class="image-container">
+                                <img src="..\images\tunnel.jpg" class="img-fluid rounded card-img-top" alt="image2">
+                                <div class="image-overlay">
+                                    <p class="overlay-text">Wrist pain due to laptop and mobile use is a condition commonly known as "tech neck" or "texting thumb."</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-link-wrapper">
+                        <a href="<?php echo $link4; ?>" class="card-link">Learn More</a>
+                    </div>
+                </li>
+                <li class="card" id="neck">
+                    <h3 class="card-title">Neck Pain</h3>
+                    <div class="card-content">
+                        <div class=" row card-body d-flex align-items-center">
+                            <div class="image-container">
+                                <img src="..\images\neckpain.png" class="img-fluid rounded card-img-top" alt="image2">
+                                <div class="image-overlay">
+                                    <p class="overlay-text">Neck pain caused by technology refers to the discomfort and strain felt in the neck area as a result of prolonged usage of digital devices such as laptops, smartphones and tablets.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-link-wrapper">
+                        <a href="<?php echo $link5; ?>" class="card-link">Learn More</a>
+                    </div>
+                </li>
+                <li class="card " id="ear">
+                    <h3 class="card-title">Ear Pain</h3>
+                    <div class="card-content">
+                        <div class=" row card-body d-flex align-items-center">
+                            <div class="image-container">
+                                <img src="..\images\ear.png" class="img-fluid rounded card-img-top" alt="image2">
+                                <div class="image-overlay">
+                                    <p class="overlay-text">Ear pain due to the use of technology gadgets like laptops, mobiles, earphones, headphones, etc. is a common issue faced by many people.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-link-wrapper">
+                        <a href="<?php echo $link6; ?>" class="card-link">Learn More</a>
+                    </div>
+                </li>
             </ul>
         </div>
-    </div>
-    <!-- //blog -->
-
-    <!-- eXTRA fLEX -->
-    <div class="container-lg">
-        <ul class="cards" style="padding-right:30px;">
-            <li class="card">
-                <h3 class="card-title">Headache</h3>
-                <div class="card-content">
-                    <div class=" row card-body d-flex align-items-center">
-                        <div class="image-container">
-                            <img src="..\images\headache3.jpg" class="img-fluid rounded card-img-top" alt="image2">
-                            <div class="image-overlay">
-                                <p class="overlay-text">
-                                    Headache is caused by blue light emitted by digital devices, prolonged screen time,
-                                    poor posture, and eye strain.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-link-wrapper">
-                    <a href="<?php echo $link7; ?>" class="card-link card1">Learn More</a>
-                </div>
-            </li>
-            <li class="card">
-                <h3 class="card-title">Shoulder Pain</h3>
-                <div class="card-content">
-                    <div class=" row card-body d-flex align-items-center">
-                        <div class="image-container">
-                            <img src="..\images\shoulder_1.png" class="img-fluid rounded card-img-top" alt="image2">
-                            <div class="image-overlay">
-                                <p class="overlay-text">Shoulder pain caused by technology is a modern day affliction
-                                    resulting from excessive use of laptops, mobile devices and other technology.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-link-wrapper">
-                    <a href="<?php echo $link1; ?>" class="card-link card1">Learn More</a>
-                </div>
-            </li>
-            <li class="card" id="back">
-                <h3 class="card-title">Back Pain</h3>
-                <div class="card-content">
-                    <div class=" row card-body d-flex align-items-center">
-                        <div class="image-container">
-                            <img src="..\images\neck_back.png" class="img-fluid rounded card-img-top" alt="image2">
-                            <div class="image-overlay">
-                                <p class="overlay-text">Back pain caused by prolonged use of laptops and mobile devices
-                                    is a common issue in modern times.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-link-wrapper">
-                    <a href="<?php echo $link2; ?>" class="card-link">Learn More</a>
-                </div>
-            </li>
-            <li class="card">
-                <h3 class="card-title">Eye Strain</h3>
-                <div class="card-content">
-                    <div class=" row card-body d-flex align-items-center">
-                        <div class="image-container">
-                            <img src="..\images\eye_1.jpeg" class="img-fluid rounded card-img-top" alt="image2">
-                            <div class="image-overlay">
-                                <p class="overlay-text">Eye issues due to laptop and mobile technology are a growing
-                                    concern due to the prolonged and frequent use of digital devices.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-link-wrapper">
-                    <a href="<?php echo $link3; ?>" class="card-link">Learn More</a>
-                </div>
-            </li>
-            <li class="card">
-                <h3 class="card-title">Wrist Pain</h3>
-                <div class="card-content">
-                    <div class=" row card-body d-flex align-items-center">
-                        <div class="image-container">
-                            <img src="..\images\tunnel.jpg" class="img-fluid rounded card-img-top" alt="image2">
-                            <div class="image-overlay">
-                                <p class="overlay-text">Wrist pain due to laptop and mobile use is a condition commonly
-                                    known as "tech neck" or "texting thumb."</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-link-wrapper">
-                    <a href="<?php echo $link4; ?>" class="card-link">Learn More</a>
-                </div>
-            </li>
-            <li class="card">
-                <h3 class="card-title">Neck Pain</h3>
-                <div class="card-content">
-                    <div class=" row card-body d-flex align-items-center">
-                        <div class="image-container">
-                            <img src="..\images\neckpain.png" class="img-fluid rounded card-img-top" alt="image2">
-                            <div class="image-overlay">
-                                <p class="overlay-text">Neck pain caused by technology refers to the discomfort and
-                                    strain felt in the neck area as a result of prolonged usage of digital devices such
-                                    as laptops, smartphones and tablets.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-link-wrapper">
-                    <a href="<?php echo $link5; ?>" class="card-link">Learn More</a>
-                </div>
-            </li>
-            <li class="card " id="ear">
-                <h3 class="card-title">Ear Pain</h3>
-                <div class="card-content">
-                    <div class=" row card-body d-flex align-items-center">
-                        <div class="image-container">
-                            <img src="..\images\ear.png" class="img-fluid rounded card-img-top" alt="image2">
-                            <div class="image-overlay">
-                                <p class="overlay-text">Ear pain due to the use of technology gadgets like laptops,
-                                    mobiles, earphones, headphones, etc. is a common issue faced by many people.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-link-wrapper">
-                    <a href="<?php echo $link6; ?>" class="card-link">Learn More</a>
-                </div>
-            </li>
-        </ul>
-    </div>
 
     <!-- bibliography -->
     <div class="container-sm-fluid container-lg my-5">
@@ -323,39 +291,39 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
         </ol>
     </div>
 
-    <!-- footer -->
-    <footer class="bg-dark py-3">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4">
-                    <h5 class="text-light">About Us</h5>
-                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor, magna id
-                        bibendum molestie, ipsum odio congue nisl, id luctus magna augue et metus.</p>
-                </div>
-                <div class="col-md-4">
-                    <h5 class="text-light">Contact Us</h5>
-                    <ul class="list-unstyled">
-                        <li class="text-muted">Email: info@example.com</li>
-                        <li class="text-muted">Phone: +123-456-7890</li>
-                    </ul>
-                </div>
-                <div class="col-md-4">
-                    <h5 class="text-light">Follow Us</h5>
-                    <div class="d-flex justify-content-between">
-                        <a href="#" class="text-light">
-                            <i class="fab fa-facebook fa-2x"></i>
-                        </a>
-                        <a href="#" class="text-light">
-                            <i class="fab fa-twitter fa-2x"></i>
-                        </a>
-                        <a href="#" class="text-light">
-                            <i class="fab fa-instagram fa-2x"></i>
-                        </a>
+        <!-- footer -->
+        <footer class="bg-dark py-3">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <h5 class="text-light">About Us</h5>
+                        <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor, magna id
+                            bibendum molestie, ipsum odio congue nisl, id luctus magna augue et metus.</p>
+                    </div>
+                    <div class="col-md-4">
+                        <h5 class="text-light">Contact Us</h5>
+                        <ul class="list-unstyled">
+                            <li class="text-muted">Email: svspbs567@gmail.com</li>
+                            <li class="text-muted">Phone: 7567145524</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4">
+                        <h5 class="text-light">Follow Us</h5>
+                        <div class="d-flex justify-content-left">
+                            <a href="#" class="mr-4">
+                                <i class="fab fa-facebook fa-2x"></i>
+                            </a>
+                            <a href="#" class=" mr-4">
+                                <i class="fab fa-twitter fa-2x"></i>
+                            </a>
+                            <a href="#" class="">
+                                <i class="fab fa-instagram fa-2x"></i>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </footer>
+        </footer>
     </div>
     <div id="loading">
         <div class="spinner-grow text-light"></div>
