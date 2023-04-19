@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>TecHInfection - Twitter</title>
+	<style>
+		body {
+			margin: 0;
+			padding: 0;
+			font-family: Arial, sans-serif;
+			background-color: #f5f8fa;
+		}
+
+		header {
+			background-color: #1da1f2;
+			color: #fff;
+			padding: 10px;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+		}
+
+		h1 {
+			margin: 0;
+			font-size: 24px;
+			font-weight: bold;
+			margin-left: 10px;
+		}
+
+		#tweet {
+			background-color: #fff;
+			padding: 20px;
+			margin: 10px;
+			border-radius: 5px;
+			box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+		}
+
+		p {
+			font-size: 16px;
+			line-height: 1.5;
+			margin-bottom: 10px;
+		}
+
+		img {
+			max-width: 100%;
+			height: auto;
+			margin-bottom: 10px;
+		}
+
+		#buttons {
+			display: flex;
+			align-items: center;
+			margin-bottom: 10px;
+		}
+
+		.button {
+			background-color: #1da1f2;
+			color: #fff;
+			border: none;
+			border-radius: 3px;
+			padding: 5px 10px;
+			font-size: 14px;
+			margin-right: 10px;
+			cursor: pointer;
+			transition: background-color 0.3s ease;
+		}
+
+		.button:hover {
+			background-color: #0e71a1;
+		}
+
+		#avatar {
+			width: 50px;
+			height: 50px;
+			border-radius: 50%;
+			margin-right: 10px;
+		}
+
+		#username {
+			font-size: 16px;
+			font-weight: bold;
+			margin-bottom: 5px;
+		}
+
+		#handle {
+			font-size: 14px;
+			color: #657786;
+		}
+
+		#timestamp {
+			font-size: 14px;
+			color: #657786;
+			margin-left: 10px;
+		}
+
+		#actions {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			margin-top: 10px;
+		}
+
+		.action {
+			display: flex;
+			align-items: center;
+			color: #657786;
+			font-size: 14px;
+			cursor: pointer;
+			transition: color 0.3s ease;
+		}
+
+		.action:hover {
+			color: #1da1f2;
+		}
+
+		#reply-icon {
+			margin-right: 5px;
+		}
+
+		#retweet-icon {
+			margin-right: 5px;
+		}
+
+		#like-icon {
+			margin-right: 5px;
+		}
+
+		#send-icon {
+			margin-right: 5px;
+		}
+
+		footer {
+			background-color: #f5f8fa;
+			color: #657786;
+			padding: 10px;
+			text-align: center;
+			font-size: 14px;
+			margin-top: 10px;
+		}
+	</style>
+</head>
+<body>
+    <header>
+        <h1>TecHInfection - Twitter</h1>
+        <button class="button">Tweet</button>
+    </header>
+    
+    <div id="tweet">
+        <img id="avatar" src="https://picsum.photos/id/237/50/50" alt="Avatar">
+        <div>
+            <div id="username">John Doe</div>
+            <div id="handle">@johndoe</div>
+        </div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed id velit eget tortor bibendum imperdiet. Donec vitae vestibulum dolor. Aliquam id lobortis ipsum. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Quisque fermentum aliquet lacus, ac lobortis augue convallis vel. Praesent elementum, urna in viverra iaculis, neque leo gravida justo, vel dictum arcu ipsum et nibh.</p>
+        <img src="https://picsum.photos/id/1003/500/250" alt="Post image">
+        <div id="buttons">
+            <button class="button">Reply</button>
+            <button class="button">Retweet</button>
+            <button class="button">Like</button>
+            <button class="button">Send</button>
+        </div>
+        <div id="actions">
+            <div class="action">
+                <img id="reply-icon" src="https://img.icons8.com/ios-glyphs/30/1da1f2/reply-arrow.png" alt="Reply icon">
+                <span>3</span>
+            </div>
+            <div class="action">
+                <img id="retweet-icon" src="https://img.icons8.com/material-outlined/24/1da1f2/retweet.png" alt="Retweet icon">
+                <span>10</span>
+            </div>
+            <div class="action">
+                <img id="like-icon" src="https://img.icons8.com/ios-filled/50/1da1f2/like.png" alt="Like icon">
+                <span>25</span>
+            </div>
+            <div class="action">
+                <img id="send-icon" src="https://img.icons8.com/material-sharp/24/1da1f2/filled-sent.png" alt="Send icon">
+            </div>
+            <div id="timestamp">2h</div>
+        </div>
+    </div>
+    
+    <footer>&copy; 2023 TecHInfection - Twitter</footer>    
+</body>
+</html>

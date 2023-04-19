@@ -310,10 +310,10 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
                     <div class="col-md-4">
                         <h5 class="text-light">Follow Us</h5>
                         <div class="d-flex justify-content-left">
-                            <a href="#" class="mr-4">
+                            <a href="facebook.html" class="mr-4">
                                 <i class="fab fa-facebook fa-2x"></i>
                             </a>
-                            <a href="#" class=" mr-4">
+                            <a href="twitter.html" class=" mr-4">
                                 <i class="fab fa-twitter fa-2x"></i>
                             </a>
                             <a href="#" class="">
