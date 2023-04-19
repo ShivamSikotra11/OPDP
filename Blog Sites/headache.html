@@ -8,13 +8,100 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <title>Headache</title>
+    <style>
+		body {
+			background-image: url("../images/mainbg.jpg");
+            background-repeat:no-repeat;
+            background-size: contain;
+            background-attachment: fixed;
+			background-size: cover;
+            color: antiquewhite;
+		}
+       
+
+        .headachetext {
+          background: #082330;
+          font-size: 20em;
+          font-family: Arial;
+        }
+       
+          
+          svg {
+            position: relative;
+            width: 100%;
+            height: 100%;
+          }
+          
+          .text-copy {
+            fill: none;
+            stroke: white;
+            stroke-dasharray: 7% 28%;
+            stroke-width: 3px;
+            -webkit-animation: stroke-offset 9s infinite linear;
+                    animation: stroke-offset 9s infinite linear;
+          }
+          .text-copy:nth-child(1) {
+            stroke: #360745;
+            stroke-dashoffset: 7%;
+          }
+          .text-copy:nth-child(2) {
+            stroke: #d61c59;
+            stroke-dashoffset: 14%;
+          }
+          .text-copy:nth-child(3) {
+            stroke: #e7d84b;
+            stroke-dashoffset: 21%;
+          }
+          .text-copy:nth-child(4) {
+            stroke: #efeac5;
+            stroke-dashoffset: 28%;
+          }
+          .text-copy:nth-child(5) {
+            stroke: #1b8798;
+            stroke-dashoffset: 35%;
+          }
+          
+          @-webkit-keyframes stroke-offset {
+            50% {
+              stroke-dashoffset: 35%;
+              stroke-dasharray: 0 87.5%;
+            }
+          }
+          
+          @keyframes stroke-offset {
+            50% {
+              stroke-dashoffset: 35%;
+              stroke-dasharray: 0 87.5%;
+            }
+          }
+          
+	</style>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
 </head>
 
-<body>
+<body >
     <!-- Navigation Bar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">Headache</a>
+        <!-- <div class="headachetext" >
+            <svg viewBox="0 0 800 600 ">
+                <symbol id="s-text">
+                  <text text-anchor="middle" x="100%" y="30%" class="text--line">
+                    Headache
+                  </text>
+              
+                </symbol>
+              
+                <g class="g-ants">
+                  <use xlink:href="#s-text" class="text-copy"></use>
+                  <use xlink:href="#s-text" class="text-copy"></use>
+                  <use xlink:href="#s-text" class="text-copy"></use>
+                  <use xlink:href="#s-text" class="text-copy"></use>
+                  <use xlink:href="#s-text" class="text-copy"></use>
+                </g>
+              
+              </svg>
+        </div> -->
+        <!-- <a class="navbar-brand" href="#">Headache</a> -->
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -45,13 +132,13 @@
                 </ol>
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <img src="../images/headache1.jpg" class="d-block mx-auto border-c" style="height:50vh;width:88vh;" alt="image1">
+                        <img src="../images/headache1.jpg" class="d-block mx-auto border-c" style="height:50vh;width:76vh;" alt="image1">
                     </div>
                     <div class="carousel-item">
-                        <img src="../images/headache3.jpg" class="d-block mx-auto border-c" style="height:50vh;width:88vh;" alt="image2">
+                        <img src="../images/headache3.jpg" class="d-block mx-auto border-c" style="height:50vh;width:76vh;" alt="image2">
                     </div>
                     <div class="carousel-item">
-                        <img src="../images/headache2.jpg" class="d-block mx-auto border-c" style="height:50vh;width:88vh;" alt="image3">
+                        <img src="../images/headache2.jpg" class="d-block mx-auto border-c" style="height:50vh;width:76vh;" alt="image3">
                     </div>
                 </div>
                 <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -66,8 +153,8 @@
           
             <!-- Blog -->
             <div class="col-md-6">
-                <h2 class="text-primary mt-">The Headache of Today's Technology</h2>
-                <div class="col-md-50   ">
+                <h2 class="text mt-3" style="color:lightpink;">The Headache of Today's Technology</h2>
+                <div class="col-md-50">
                     <p>
                         Headaches caused by technology, also known as "<b>Tech-neck</b>" or "<b>Computer vision syndrome</b>"
                     </p>

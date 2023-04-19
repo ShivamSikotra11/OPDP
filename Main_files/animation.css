@@ -281,10 +281,21 @@ body {
   background-color: #bfdefa;
   color: #000;
 }
+@font-face
+{
+    font-family:abc;
+    src:url('Fonts/PlayfairDisplay-Italic-VariableFont_wght.ttf');
+    font-family:abc2;
+    src:url('Fonts/PlayfairDisplay-VariableFont_wght.ttf')
+}
 
 /* Add hover effect to list items */
 .list-group-item:hover {
-  background-color: #ffffff;
+  background-color: #ffffff; 
+  font-family:abc;
+  /* color: rgb(27, 1, 39); */
+  color: darkblue;
+  /* font-variant:small-caps;  */
   cursor: pointer;
 }
 
@@ -306,11 +317,25 @@ body {
 }
 
 .heading{
-  color: white;
-  font-size: 1.5em;
+  color: burlywood;
+  padding-left: 0.8em;
+  padding-bottom: 0.3em;
+  /* font-family: 'Times New Roman', Times, serif; */
+  /* font-family: 'Pacifico', cursive; */
+  font-family: 'Dancing Script', cursive;
+font-family: 'Pacifico', cursive;
+  font-size: 2em;
 }
 
 .highlight {
   box-shadow: 0px 0px 40px #f1f100;
   transition: box-shadow 0.1s ease-in-out;
+}
+.thcolor{
+  color:sandybrown;
+  /* font-family: 'Dancing Script', cursive; */
+font-family: 'Kanit';
+}
+.rounded {
+  border-radius: 10px;
 }

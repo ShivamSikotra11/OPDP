@@ -44,3 +44,51 @@
     background-color: #008080;
     color: #FFD700;
 }
+
+.loginbtn
+{
+    position: relative;
+    color: cyan;
+    background: transparent;
+    border: solid cyan 2px;
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+    transition: 1.0s;
+}
+.loginbtn:hover
+{
+    position: relative;
+    text-shadow: 0 0 5px cyan;
+    background: cyan;
+    border: 2px solid cyan;
+}
+.landing{
+    background-color: transparent;
+}
+.landing p{
+    max-width: 800px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0px 0px 10px #ccc;
+  }
+
+  .landing h1 {
+    font-size: 36px;
+    font-weight: bold;
+    color: burlywood;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  .landing p {
+    font-size: 18px;
+    line-height: 1.5;
+    color:burlywood;
+    text-align: justify;
+    margin-bottom: 0;
+  }
+
+  /* .headcontent{
+    color:coral;    
+  } */

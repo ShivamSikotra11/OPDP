@@ -43,6 +43,11 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
     <script src="animation.js"></script>
     <link rel="stylesheet" href="animation.css">
     <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Pacifico&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Kanit:ital@1&family=Pacifico&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -51,7 +56,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
     <nav class="navbar navbar-expand-lg navbar-dark bg-transparent">
         <div class="container pr-2">
             <a class="navbar-brand" href="#">
-                <img src="../images/logo.png" alt="Tech-Infection" width="170px" height="40px" style="margin: 0px;margin-top:-2px; margin-bottom:-2px;">
+                <img src="../images/logo.png" alt="Tech-Infection" width="200px" height="51px" style="margin: 0px;margin-top:-2px; margin-bottom:-2px;">
             </a>
             <?php if (isset($_SESSION['name']) && isset($_SESSION['emailid'])) { ?>
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -71,18 +76,9 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ml-auto">
-                        <li class="nav-item">
-                            <form action="search.php" method="post">
-                                <div class="btn-group">
-                                    <input class="btn btn-warning ml-lg-3 round" style="border:2px solid white;" type="text" name="search_term" placeholder="Search...">
-                                    <button class="btn btn-warning round" type="submit" name="submit_search" style="border:2px solid white;">
-                                    <ion-icon name="search-outline" style="padding-top:7px;"></ion-icon></button>
-                                </div>
-                            </form>
-                        </li>
-                        <li class="nav-item ml-lg-2 mt-2 mt-lg-0" style="display:inline-block">
-                            <a type="button" class="btn btn-warning round" style="border:2px solid white;" href="login.php">&nbsp&nbspLogin&nbsp&nbsp</a>
-                            <a type="button" class="btn btn-warning round ml-1" style="border:2px solid white;" href="register.php">Register</a>
+                        <li class="nav-item mt-2 mt-lg-0" style="display:inline-block">
+                            <a type="button" class="btn btn-warning round loginbtn mr-lg-2" href="login.php">&nbsp&nbspLogin&nbsp&nbsp</a>
+                            <a type="button" class="btn btn-warning round loginbtn" href="register.php">Register</a>
                         </li>
                     </ul>
                 </div>
@@ -92,7 +88,19 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
 
     <div class="overlay"></div>
     <div class="content">
+    <div class="landing">
+        <div class="container mt-4 mx-auto">
+            <div class="row justify-content-center" >
+                <div class="col-md-8">
+                <h1 class="text-center mb-4">Suffering from Technological Health Issues?
+                    </h1>
+                    <p>We provide information on common symptoms, causes, and solutions to help protect ourselves from physical health issues caused by technology use. Learn how to maintain good posture, adjust screen settings, and practice healthy habits to prevent these issues and stay connected without sacrificing health.</p>
+                </div>
+            </div>
+        </div>
+        </div>
 
+                
         <!-- carousel -->
         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="2000" style="max-width: 75%; margin:30px auto 0 auto;">
             <ol class="carousel-indicators">
@@ -123,55 +131,15 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
 
         <!-- data -->
         <div class="container-lg mt-5">
-            <h1 class="text-center mb-5 thcolor">Tech Infections</h1>
-            <div class="row">
-                <div class="col-lg-6 col-sm-12 col-xs-12 mb-5 mb-lg-0">
-                    <div class="cardt" id="cardl">
-                        <div class="card-header">
-                            <h3>What are tech infections?</h3>
-                        </div>
-                        <div class="card-body">
-                            <p> Some are caused by occupational exposures, and are marked with direct professional relation, or the action of harmful effects in the workplace. Technological diseases occur due to excessive work at the computer, or excessive use of keyboards and computer mice, especially the non-ergonomic ones.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-sm-12 col-xs-12 mb-3 mb-lg-0">
-                    <div class="cardt" id="cardr">
-                        <div class="card-header">
-                            <h3>How to protect against tech infections?</h3>
-                        </div>
-                        <div class="card-body">
-                            <p>To protect against tech infections, it's important to use security software such as antivirus
-                                and anti-malware programs. Keep your software and operating system up-to-date, be cautious
-                                when clicking on links or downloading files from unknown sources, and avoid phishing scams.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="container-lg my-5">
-                <div class="text-center heading">Tech Infections Types</div>
-                <ul class="list-group">
-                    <a href="#back" class="smooth-scroll">
-                        <li class="list-group-item">Back pain</li>
-                    </a>
-                    <li class="list-group-item">Computer Vision Syndrome</li>
-                    <li class="list-group-item">Carpal Tunnel Syndrome</li>
-                    <li class="list-group-item">Text Neck</li>
-                    <a href="#ear" class="smooth-scroll">
-                        <li class="list-group-item">Ear Pain</li>
-                    </a>
-                    <li class="list-group-item">Shoulder Pain</li>
-                </ul>
-            </div>
+        <div class="heading m-5 text-center">Tech Infections Types</div>
+            
         </div>
         <!-- //blog -->
 
         <!-- eXTRA fLEX -->
-        <div class="container-lg">
+        <div class="container-lg" >
             <ul class="cards" style="padding-right:30px;">
-            <li class="card">
+            <li class="card" id="head">
                     <h3 class="card-title">Headache</h3>
                     <div class="card-content">
                         <div class=" row card-body d-flex align-items-center">
@@ -189,7 +157,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
                         <a href="<?php echo $link7; ?>" class="card-link card1">Learn More</a>
                     </div>
                 </li>
-                <li class="card">
+                <li class="card" id="shoulder">
                     <h3 class="card-title">Shoulder Pain</h3>
                     <div class="card-content">
                         <div class=" row card-body d-flex align-items-center">
@@ -221,7 +189,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
                         <a href="<?php echo $link2; ?>" class="card-link">Learn More</a>
                     </div>
                 </li>
-                <li class="card">
+                <li class="card" id="eye">
                     <h3 class="card-title">Eye Strain</h3>
                     <div class="card-content">
                         <div class=" row card-body d-flex align-items-center">
@@ -237,7 +205,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
                         <a href="<?php echo $link3; ?>" class="card-link">Learn More</a>
                     </div>
                 </li>
-                <li class="card">
+                <li class="card" id="wrist">
                     <h3 class="card-title">Wrist Pain</h3>
                     <div class="card-content">
                         <div class=" row card-body d-flex align-items-center">
@@ -253,7 +221,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
                         <a href="<?php echo $link4; ?>" class="card-link">Learn More</a>
                     </div>
                 </li>
-                <li class="card">
+                <li class="card" id="neck">
                     <h3 class="card-title">Neck Pain</h3>
                     <div class="card-content">
                         <div class=" row card-body d-flex align-items-center">
@@ -317,20 +285,20 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
                     <div class="col-md-4">
                         <h5 class="text-light">Contact Us</h5>
                         <ul class="list-unstyled">
-                            <li class="text-muted">Email: info@example.com</li>
-                            <li class="text-muted">Phone: +123-456-7890</li>
+                            <li class="text-muted">Email: svspbs567@gmail.com</li>
+                            <li class="text-muted">Phone: 7567145524</li>
                         </ul>
                     </div>
                     <div class="col-md-4">
                         <h5 class="text-light">Follow Us</h5>
-                        <div class="d-flex justify-content-between">
-                            <a href="#" class="text-light">
+                        <div class="d-flex justify-content-left">
+                            <a href="#" class="mr-4">
                                 <i class="fab fa-facebook fa-2x"></i>
                             </a>
-                            <a href="#" class="text-light">
+                            <a href="#" class=" mr-4">
                                 <i class="fab fa-twitter fa-2x"></i>
                             </a>
-                            <a href="#" class="text-light">
+                            <a href="#" class="">
                                 <i class="fab fa-instagram fa-2x"></i>
                             </a>
                         </div>
