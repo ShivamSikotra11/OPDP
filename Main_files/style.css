@@ -74,23 +74,52 @@
 } 
 .landing h1 {
   font-size: 36px;
+  font-family: 'Cairo', sans-serif;
   font-weight: bold;
-  color: rgb(4, 211, 248);
+  /* color: rgb(4, 211, 248); */
+  color:darkkhaki;
   text-align: center;
   margin-bottom: 30px;
 }
 
   .landing p {
-    font-size: 20px;
-    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-size: 24px;
+    /* font-family:Georgia, 'Times New Roman', Times, serif; */
+    font-family: 'Vollkorn', serif;
     line-height: 1.5;
-    color:rgb(238, 99, 141);
+    /* color:rgb(2, 255, 234); */
+    color:navajowhite;
+    /* color:linear-gradient(90deg, rgba(209,136,18,1) 7%, rgba(121,12,9,1) 50%, rgba(226,0,255,1) 91%); */
     text-align: justify;
     margin-bottom: 0;
   }
-  .linkk:link
-  {
-    color:yellowgreen;   
+  /* * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  } */
+  
+  .waviy {
+    position: relative;
+  }
+  .waviy span {
+    position: relative;
+    font-family: 'Chivo Mono', monospace;
+    display: inline-block;
+    font-size: 40px;
+    color:darksalmon;
+    text-transform: uppercase;
+    animation: flip 2s infinite;
+    animation-delay: calc(.2s * var(--i))
+  }
+  @keyframes flip {
+    0%,80% {
+      transform: rotateY(360deg) 
+    }
+  }
+  a{
+    text-decoration:none;
+    /* color:yellowgreen;    */
   }
   /* .text-info a:visited
   {

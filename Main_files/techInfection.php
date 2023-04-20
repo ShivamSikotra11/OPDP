@@ -57,6 +57,10 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Pacifico&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Kanit:ital@1&family=Pacifico&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Chivo+Mono&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Tilt+Prism&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Vollkorn:ital@1&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -276,8 +280,19 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
             </ul>
         </div>
         <div class="container-lg text-center mt-5">
-            <h2 style="color:white;">Find the Best Hospitals Near You</h2>
-            <h4 style="color:white;">Looking for top-notch medical care? We've got you covered. Our website connects you with the best hospitals in your area. Click the button below to start your search:</h4>
+            <!-- <h2 style="color:khaki; font-family: 'Chivo Mono', monospace;">Find Best Hospitals Near You Today!</h2> -->
+            <h2 style="color:lightsteelblue; font-family: 'Chivo Mono', monospace;">Find Best Hospitals Near You Today!</h2>
+            <h4 style="color:lightsteelblue; font-family: 'Chivo Mono', monospace;">
+                Looking for top-notch medical care? We've got you covered. <br>Our website connects you with the best hospitals in your area. <br><b style="color:darksalmon"> Click the button </b> <br>
+                <!-- <h1 style="color:">  -->
+                    <div class="waviy">
+                     <span style="--i:1">N</span>
+                     <span style="--i:2">O</span>
+                     <span style="--i:3">W</span>
+                     <span style="--i:4">!</span>
+                    </div>
+                <!-- </h1>  -->
+            </h4>
             <a type="button" class="call-to-action mt-5 " href="<?php echo $hosp; ?>">Find Hospitals Now</a>
         </div>
 
@@ -286,15 +301,15 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
         
         <details>
           <summary class="ref">References</summary>
-        <p>
+        <p class="lks">
           <ol>
-              <li><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7173320/" class="text-info ">Health Risks from
+              <li><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7173320/" style="text-decoration:none;"class="text-info ">Health Risks from
                       Exposure to Low Levels of Ionizing Radiation: BEIR VII Phase 2. National Research Council (US)
                       Committee on the Biological Effects of Ionizing Radiations (BEIR). Washington (DC): National
                       Academies Press (US); 2006.</a></li>
-              <li><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6497807/" class="text-info">The health effects of
+              <li><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6497807/" style="text-decoration:none;"class="text-info">The health effects of
                       ionizing radiation exposure: a review. Int J Environ Res Public Health. 2018;15(10):2279.</a></li>
-              <li><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7173320/" class="text-info">Health Risks from
+              <li><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7173320/" style="text-decoration:none;" class="text-info">Health Risks from
                       Exposure to Low Levels of Ionizing Radiation: BEIR VII Phase 2. National Research Council (US)
                       Committee on the Biological Effects of Ionizing Radiations (BEIR). Washington (DC): National
                       Academies Press (US); 2006.</a></li>
