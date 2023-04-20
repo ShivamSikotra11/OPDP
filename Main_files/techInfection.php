@@ -2,6 +2,7 @@
 session_start();
 $answer = true; // replace with your variable
 
+
 if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
     $link1 = "../Blog Sites/Shoulder_Pain.html";
     $link2 = "../Blog Sites/Back_PAin.html";
@@ -10,6 +11,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
     $link5 = "../Blog Sites/Neckpain.html";
     $link6 = "../Blog Sites/blog.html";
     $link7 = "../Blog Sites/headache.html";
+    $hosp = "../map.html";
 } else {
     $link1 = "login.php";
     $link2 = "login.php";
@@ -18,7 +20,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
     $link5 = "login.php";
     $link6 = "login.php";
     $link7 = "login.php";
-
+    $hosp = "login.php";
 }
 ?>
 <!DOCTYPE html>
@@ -105,7 +107,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
     <div class="landing">
         <div class="container mt-4 mx-auto">
             <div class="row justify-content-center" >
-                <div class="col-md-8">
+                <div class="col-md-8" >
                 <h1 class="text-center mb-4">Suffering from Technological Health Issues?
                     </h1>
                     <p>We provide information on common symptoms, causes, and solutions to help protect ourselves from physical health issues caused by technology use. Learn how to maintain good posture, adjust screen settings, and practice healthy habits to prevent these issues and stay connected without sacrificing health.</p>
@@ -155,7 +157,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
         <!-- //blog -->
 
         <!-- eXTRA fLEX -->
-        <div class="container-lg" >
+        <div class="container-lg mb-5" >
             <ul class="cards" style="padding-right:30px;">
             <li class="card" id="head">
                     <h3 class="card-title">Headache</h3>
@@ -273,22 +275,33 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
                 </li>
             </ul>
         </div>
+        <div class="container-lg text-center mt-5">
+            <h2 style="color:white;">Find the Best Hospitals Near You</h2>
+            <h4 style="color:white;">Looking for top-notch medical care? We've got you covered. Our website connects you with the best hospitals in your area. Click the button below to start your search:</h4>
+            <a type="button" class="call-to-action mt-5 " href="<?php echo $hosp; ?>">Find Hospitals Now</a>
+        </div>
 
     <!-- bibliography -->
     <div class="container-sm-fluid container-lg my-5">
-        <h5>References</h5>
-        <ol>
-            <li><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7173320/" class="text-info">Health Risks from
-                    Exposure to Low Levels of Ionizing Radiation: BEIR VII Phase 2. National Research Council (US)
-                    Committee on the Biological Effects of Ionizing Radiations (BEIR). Washington (DC): National
-                    Academies Press (US); 2006.</a></li>
-            <li><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6497807/" class="text-info">The health effects of
-                    ionizing radiation exposure: a review. Int J Environ Res Public Health. 2018;15(10):2279.</a></li>
-            <li><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7173320/" class="text-info">Health Risks from
-                    Exposure to Low Levels of Ionizing Radiation: BEIR VII Phase 2. National Research Council (US)
-                    Committee on the Biological Effects of Ionizing Radiations (BEIR). Washington (DC): National
-                    Academies Press (US); 2006.</a></li>
-        </ol>
+        
+        <details>
+          <summary class="ref">References</summary>
+        <p>
+          <ol>
+              <li><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7173320/" class="text-info ">Health Risks from
+                      Exposure to Low Levels of Ionizing Radiation: BEIR VII Phase 2. National Research Council (US)
+                      Committee on the Biological Effects of Ionizing Radiations (BEIR). Washington (DC): National
+                      Academies Press (US); 2006.</a></li>
+              <li><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6497807/" class="text-info">The health effects of
+                      ionizing radiation exposure: a review. Int J Environ Res Public Health. 2018;15(10):2279.</a></li>
+              <li><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7173320/" class="text-info">Health Risks from
+                      Exposure to Low Levels of Ionizing Radiation: BEIR VII Phase 2. National Research Council (US)
+                      Committee on the Biological Effects of Ionizing Radiations (BEIR). Washington (DC): National
+                      Academies Press (US); 2006.</a></li>
+          </ol>
+        </p>
+        </details>
+
     </div>
 
         <!-- footer -->
@@ -315,11 +328,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
                             </a>
                             <a href="twitter.html" class=" mr-4">
                                 <i class="fab fa-twitter fa-2x"></i>
-                            </a>
-                            <a href="#" class="">
-                                <i class="fab fa-instagram fa-2x"></i>
-                            </a>
-                        </div>
+                            </a></div>
                     </div>
                 </div>
             </div>

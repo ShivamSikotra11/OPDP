@@ -71,23 +71,43 @@
     border-radius: 10px;
     padding: 30px;
     box-shadow: 0px 0px 10px #ccc;
-  }
-
-  .landing h1 {
-    font-size: 36px;
-    font-weight: bold;
-    color: burlywood;
-    text-align: center;
-    margin-bottom: 30px;
-  }
+} 
+.landing h1 {
+  font-size: 36px;
+  font-weight: bold;
+  color: rgb(4, 211, 248);
+  text-align: center;
+  margin-bottom: 30px;
+}
 
   .landing p {
-    font-size: 18px;
+    font-size: 20px;
+    font-family:Georgia, 'Times New Roman', Times, serif;
     line-height: 1.5;
-    color:burlywood;
+    color:rgb(238, 99, 141);
     text-align: justify;
     margin-bottom: 0;
   }
+  .linkk:link
+  {
+    color:yellowgreen;   
+  }
+  /* .text-info a:visited
+  {
+      color:black;
+  }
+  .text-info a:hover
+  {
+      color:orange;
+  }
+  .text-info a:active
+  {
+      color:red;
+  } */
+.ref{
+    font-size:23px;
+    color: rgb(4, 211, 248);
+}
 
   /* .headcontent{
     color:coral;    

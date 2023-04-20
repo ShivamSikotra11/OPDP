@@ -7,6 +7,29 @@ body {
   font: 16px / 24px "Rubik", sans-serif;
   color: var(--black);
 }
+.call-to-action {
+  display: inline-block;
+  background-color: #48e8ee;
+  color: #000;
+  font-size: 1.2em;
+  padding: 1em 2em;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+
+.call-to-action:hover{
+  display: inline-block;
+  background-color: transparent;
+  border: 1px solid cyan;
+  color: cyan;
+  font-size: 1.2em;
+  padding: 1em 2em;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
 
 .overlay {
   position: fixed;
