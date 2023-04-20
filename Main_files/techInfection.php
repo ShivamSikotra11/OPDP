@@ -61,6 +61,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
 <link href="https://fonts.googleapis.com/css2?family=Tilt+Prism&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@500&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Vollkorn:ital@1&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noticia+Text&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -114,7 +115,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
                 <div class="col-md-8" >
                 <h1 class="text-center mb-4">Suffering from Technological Health Issues?
                     </h1>
-                    <p>We provide information on common symptoms, causes, and solutions to help protect ourselves from physical health issues caused by technology use. Learn how to maintain good posture, adjust screen settings, and practice healthy habits to prevent these issues and stay connected without sacrificing health.</p>
+                    <p>“We provide information on common symptoms, causes, and solutions to help protect ourselves from physical health issues caused by technology use. Learn how to maintain good posture, adjust screen settings, and practice healthy habits to prevent these issues and stay connected without sacrificing health.”</p>
                 </div>
             </div>
         </div>

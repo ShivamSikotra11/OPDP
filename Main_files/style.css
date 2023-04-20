@@ -93,6 +93,10 @@
     text-align: justify;
     margin-bottom: 0;
   }
+  .call-to-action{
+    font-family: 'Noticia Text', serif;
+  }
+
   /* * {
     padding: 0;
     margin: 0;
