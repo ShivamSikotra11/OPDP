@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
     <title>Backpain</title>
 </head>
 
@@ -32,18 +33,20 @@
             </ul>
         </div>
     </nav>
-
+    
     <!-- Picture and Blog Section -->
-    <div class="container my-5">
+    
+    <div class="container">
+        <h2 class="text-primary text-center">Backpain due to Technology</h2>
         <div class="row">
             <!-- Picture -->
-            <div id="carouselExampleIndicators" class="carousel slide col-md-5" data-ride="carousel" data-interval="5000" style="margin-top:0px;">
-                <ol class="carousel-indicators">
+            <div id="carouselExampleIndicators" class="carousel slide col-md-5 ml-3" data-ride="carousel" data-interval="5000">
+                <ol class="carousel-indicators" >
                     <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
                     <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
                     <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
                 </ol>
-                <div class="carousel-inner">
+                <div class="carousel-inner" style="margin-top:70px;">
                     <div class="carousel-item active">
                         <img src="../images/backpain(c).jpg" class="d-block mx-auto border-c" style="height:50vh;width:60vh;" alt="image1">
                     </div>
@@ -65,9 +68,8 @@
             </div>
           
             <!-- Blog -->
-            <div class="col-md-6">
-                <h2 class="text-primary">Backpain due to Technology</h2>
-                <div class="col-md-50   ">
+            <div class="col-md-6 ml-3">
+                <div class="col-md-50">
                         <p>
                             <span style="font-family: Verdana, Geneva, Tahoma, sans-serif;font-size: large;">B</span>ack pain is a common condition that affects people of all ages and is often caused by prolonged sitting, poor posture, and repetitive motions performed in front of computers or other technology devices.
                         </p> <p>
@@ -160,47 +162,6 @@
                     </li>
                     
             </ul>
-    <!-- Optional Interactivity -->
-    <div class="container my-5">
-        <div class="row">
-            <!-- Rating -->
-            <div class="col-md-4">
-                <div class="card bg-light">
-                    <div class="card-header">
-                        <h3>Rating</h3>
-                    </div>
-                    <div class="card-body">
-                        <form>
-                            <div class="form-group">
-                                <label for="ratingInput">Rate this blog:</label>
-                                <input type="number" class="form-control" id="ratingInput" min="1" max="5" />
-                            </div>
-                            <button type="submit" class="btn btn-primary">Submit</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Comment -->
-            <div class="col-md-8">
-                <div class="card bg-light">
-                    <div class="card-header">
-                        <h3>Comment</h3>
-                    </div>
-                    <div class="card-body">
-                        <form>
-                            <div class="form-group">
-                                <label for="commentInput">Leave a comment:</label>
-                                <textarea class="form-control" id="commentInput"></textarea>
-                            </div>
-                            <button type="submit" class="btn btn-primary">Submit</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <!-- Optional Footer -->
     <footer class="bg-dark py-3">
         <p class="text-center text-white">

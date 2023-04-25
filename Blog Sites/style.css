@@ -1,0 +1,77 @@
+/* Background */
+body {
+    background-color: #eae7e7;
+}
+
+/* Navigation Bar */
+.navbar {
+    background-color: #6c757d;
+}
+
+.navbar-brand,
+.navbar-nav .nav-link {
+    color: #fff;
+}
+
+/* Blog Section */
+.container {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 0px 30px 10px rgba(0,0,0);
+    padding: 20px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.container h2 {
+    color: #dc3545;
+    font-size: 36px;
+    margin-bottom: 30px;
+}
+
+.container p {
+    color: #333;
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+.container ul li {
+    color: #333;
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+/* Carousel */
+.carousel-item img {
+    border-radius: 10px;
+}
+
+.carousel-indicators li {
+    background-color: #6c757d;
+    border-color: #6c757d;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  width: 27px;
+  height: 30px;
+  background-color: #343a40;
+  border-radius: 40%;
+  opacity: 0.5;
+}
+
+.carousel-control-next{
+    right:20px;
+    top:34.7vh;
+}
+
+.carousel-control-prev{
+    left:20px;
+    top:35.5vh;
+}
+
+.carousel-control-prev:focus,
+.carousel-control-next:focus {
+    outline: none;
+    box-shadow: none;
+}
