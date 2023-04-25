@@ -1,0 +1,94 @@
+/* Define global styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    color: #333;
+    margin: 0;
+    margin-left: 40px;
+    margin-right: 40px;
+  }
+  
+  /* Define styles for the page header */
+  header {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  /* Define styles for headings */
+  h1, h2 {
+    text-align: center;
+    font-size: 36px;
+    font-weight: bold;
+    margin-top: 50px;
+    margin-bottom: 30px;
+  }
+  
+  /* Define styles for paragraphs */
+  p {
+    font-size: 18px;
+    line-height: 1.5;
+    margin-bottom: 30px;
+  }
+  
+  /* Define styles for unordered list */
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Define styles for list items */
+  li {
+    margin-bottom: 10px;
+  }
+  
+  /* Define styles for links */
+  a {
+    color: #4CAF50;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Define styles for social media links */
+  .social-media {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+  }
+  
+  .social-media li {
+    margin: 0 10px;
+  }
+  
+  /* Define styles for Facebook link */
+  .facebook {
+    color: #3b5998;
+  }
+  
+  .facebook:hover {
+    color: #2d4373;
+  }
+  
+  /* Define styles for Twitter link */
+  .twitter {
+    color: #1da1f2;
+  }
+  
+  .twitter:hover {
+    color: #0c8cd6;
+  }
+  
+  /* Define styles for Instagram link */
+  .instagram {
+    color: #c13584;
+  }
+  
+  .instagram:hover {
+    color: #a63476;
+  }
+  
