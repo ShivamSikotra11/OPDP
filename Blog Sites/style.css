@@ -47,8 +47,11 @@ body {
 }
 
 .carousel-indicators li {
-    background-color: #6c757d;
-    border-color: #6c757d;
+    background-color: black;
+    border-color: black;
+}
+.carousel-indicators .active {
+    background-color: transparent;
 }
 
 .carousel-control-prev,
@@ -62,12 +65,12 @@ body {
 
 .carousel-control-next{
     right:20px;
-    top:34.7vh;
+    top:22.7vh;
 }
 
 .carousel-control-prev{
     left:20px;
-    top:35.5vh;
+    top:22.8vh;
 }
 
 .carousel-control-prev:focus,
