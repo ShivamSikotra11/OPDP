@@ -326,8 +326,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
                 <div class="row">
                     <div class="col-md-4">
                         <h5 class="text-light">About Us</h5>
-                        <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor, magna id
-                            bibendum molestie, ipsum odio congue nisl, id luctus magna augue et metus.</p>
+                        <p class="text-muted">	We aims to explore the different pains and strains caused by technology and provide insights on how to protect ourselves from these infections.</p>
                     </div>
                     <div class="col-md-4">
                         <h5 class="text-light">Contact Us</h5>

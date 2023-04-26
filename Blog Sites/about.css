@@ -6,6 +6,7 @@ body {
     margin: 0;
     margin-left: 40px;
     margin-right: 40px;
+    margin-top: 40px;
   }
   
   /* Define styles for the page header */
@@ -21,7 +22,7 @@ body {
     text-align: center;
     font-size: 36px;
     font-weight: bold;
-    margin-top: 50px;
+    margin-top: 0px;
     margin-bottom: 30px;
   }
   
@@ -92,3 +93,29 @@ body {
     color: #a63476;
   }
   
+/* Back to Home */
+.back-to-home {
+  top: 100px;
+  /* position: fixed; */
+  /* top: 20px;
+  left: 20px; */
+  font-size: 30px;
+  color: #ffffff;
+  background-color: rgba(255, 255, 255);
+  padding: 10px;
+  border-radius: 50%;
+  transition: all 0.3s ease-in-out;
+}
+
+.back-to-home:hover {
+  background: transparent;
+  cursor: pointer;
+}
+
+.back-to-home i {
+  color: #000000;
+}
+
+.back-to-home:hover i {
+  color: black;
+}
