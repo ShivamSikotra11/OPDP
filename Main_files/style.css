@@ -64,13 +64,14 @@
 }
 .landing{
     background-color: transparent;
-}
-.landing p{
+  }
+  .landing p{
     max-width: 800px;
     border: 1px solid #ccc;
     border-radius: 10px;
     padding: 30px;
     box-shadow: 0px 0px 10px #ccc;
+    backdrop-filter: blur(15px);
 } 
 .landing h1 {
   font-size: 36px;
