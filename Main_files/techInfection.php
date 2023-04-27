@@ -262,7 +262,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
                         <a href="<?php echo $link5; ?>" class="card-link">Learn More</a>
                     </div>
                 </li>
-                <li class="card " id="ear">
+                <!-- <li class="card " id="ear">
                     <h3 class="card-title">Ear Pain</h3>
                     <div class="card-content">
                         <div class=" row card-body d-flex align-items-center">
@@ -277,7 +277,7 @@ if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
                     <div class="card-link-wrapper">
                         <a href="<?php echo $link6; ?>" class="card-link">Learn More</a>
                     </div>
-                </li>
+                </li> -->
             </ul>
         </div>
         <div class="container-lg text-center mt-5">

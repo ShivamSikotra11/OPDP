@@ -51,11 +51,11 @@ $_SESSION["pain"] = "Shoulder Pain"
                 </ol>
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <img src="../images/shoulder_1.jpg" class="d-block mx-auto border-c"
+                        <img src="../images/shoulder_1.png" class="d-block mx-auto border-c"
                             style="height:50vh;width:88vh;" alt="image1">
                     </div>
                     <div class="carousel-item">
-                        <img src="../images/shoulder_2.jpg" class="d-block mx-auto border-c"
+                        <img src="../images/shoulder_2.jpeg" class="d-block mx-auto border-c"
                             style="height:50vh;width:88vh;" alt="image2">
                     </div>
                 </div>

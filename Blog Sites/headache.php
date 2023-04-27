@@ -31,7 +31,7 @@ $_SESSION["pain"] = "Headache"
                     <a class="nav-link" href="../Main_files/techInfection.php">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#foot">About</a>
+                    <a class="nav-link" href="about.html">About</a>
                 </li>
             </ul>
         </div>
