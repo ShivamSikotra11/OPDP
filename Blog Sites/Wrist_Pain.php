@@ -33,9 +33,6 @@ $_SESSION["pain"] = "Wrist Pain"
                 <li class="nav-item">
                     <a class="nav-link" href="#foot">About</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Contact</a>
-                </li>
             </ul>
         </div>
     </nav>
