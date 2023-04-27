@@ -50,16 +50,12 @@ $_SESSION["pain"] = "Eye Strain"
                 </ol>
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <img src="../images/headache1.jpg" class="d-block mx-auto border-c"
+                        <img src="../images/eye_1.jpg" class="d-block mx-auto border-c"
                             style="height:50vh;width:88vh;" alt="image1">
                     </div>
                     <div class="carousel-item">
-                        <img src="../images/headache3.jpg" class="d-block mx-auto border-c"
+                        <img src="../images/eye2.jpg" class="d-block mx-auto border-c"
                             style="height:50vh;width:88vh;" alt="image2">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="../images/headache2.jpg" class="d-block mx-auto border-c"
-                            style="height:50vh;width:88vh;" alt="image3">
                     </div>
                 </div>
                 <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
