@@ -1,3 +1,7 @@
+<?php
+session_start();
+$_SESSION["pain"] = "Headache"
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,7 +11,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <title>Neckpain</title>
+    <title>Headache</title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css"
         integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
@@ -16,7 +20,7 @@
 <body>
     <!-- Navigation Bar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">Neckpain</a>
+        <a class="navbar-brand" href="#">Headache</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -38,7 +42,7 @@
 
     <!-- Picture and Blog Section -->
     <div class="container">
-        <h2 class="text-primary mt-5 text-center">Neck Pain in the Digital Age</h2>
+        <h2 class="text-primary mt-5 text-center">The Headache of Today's Technology</h2>
         <div class="row mt-5">
             <div id="carouselExampleIndicators" class="carousel slide col-md-5" data-ride="carousel"
                 data-interval="5000">
@@ -74,29 +78,39 @@
             <!-- Blog -->
             <div class="col-md-6">
                 <div class="col-md-50   ">
-                    <p><span style="font-family: Verdana, Geneva, Tahoma, sans-serif;font-size: large;">W</span>ith the increasing use of technology in our daily lives, neck pain has become a common issue. </p>
-            <p>
-                Long hours spent in front of computers, phones, and tablets can put a lot of strain on the neck and shoulders. In this article, we'll explore the causes of neck pain in the digital age and what you can do to prevent it.</p>
-            </p>
-            <p>
-              Today's technology has brought about numerous advancements and
-              convenience in our daily lives. However, it has also come with its
-              own set of problems, one of which is the headache.
-            </p>
-            <p>
-                When using electronic devices for extended periods, people tend to hunch over, which places excessive strain on the neck and upper back muscles. 
-            </p>
-                    </div>
+                    <p>
+                        <b> <span style="font-family: Verdana, Geneva, Tahoma, sans-serif;font-size: larger;">H</span>eadaches
+                            </b> caused by technology, also known as "<b>Tech-neck</b>" or "<b>Computer vision syndrome</b>"
+                    </p>
+                    <p>
+                        Today's technology has brought about numerous advancements and
+                        convenience in our daily lives. However, it has also come with its
+                        own set of problems, one of which is the headache.
+                      </p>
+                    <p>
+                        The constant use of electronic devices, such as smartphones and
+                      laptops, emit blue light which disrupts our natural sleep patterns
+                      and causes eye strain. This can lead to headaches, fatigue, and even
+                      migraines.
+                    </p>
                 </div>
+            </div>
+            <div class="m-3 my-0">
+            <p>
+                Additionally, the constant stimulation and information overload from
+                social media and the internet can cause stress and anxiety, leading
+                to headaches.
+            </p></div>
                 </div>
         <details>
             <summary style="margin-top: 10px;font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-size:24px;"><u>Symptoms</u></summary>
             <ul>
-                <li>Headaches</li>
-                <li>Shoulder Pain</li>
-                <li>Reduced range of motion:</li>
-                <li>Tingling or numbness:</li>
-                <li>Increased Fatigue</li>
+                <li> Eye strain and fatigue </li>
+                <li> Blurred or double vision </li>
+                <li> Dry, irritated, or red eyes </li>
+                <li> Neck, shoulder, and back pain </li>
+                <li> Headache or migraine </li>
+                <li> Light sensitivity or glare intolerance </li>
                 <li> Decreased focus or concentration </li>
             </ul>
         </details>
@@ -104,32 +118,30 @@
         <div>
                 <details>
                     <summary style="margin-top: 10px;font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-size:24px;"><u>Causes</u></summary>
-                <!-- <h4 style="margin-top: 10px;font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;"> <u> Causes</u></h4> -->
                 <ul>
                     <li>
-                        <b>Repetitive strain:</b>
-                        Frequent use of electronic devices can cause repetitive strain injuries in the neck, shoulders, and upper back muscles.
+                        <b>Eyestrain:</b>
+                             Prolonged use of computers, smartphones, and other digital devices can cause eye strain, which can lead to headaches. This is because the eyes are forced to focus on a small, bright screen for long periods of time, which can cause the muscles in the eyes to become fatigued.
                         </li>
                         <li>
-                            <b>Excessive screen time:</b>Spending long hours staring at electronic screens, such as computer monitors, laptops, smartphones, and tablets, can cause eye strain, fatigue, and discomfort in the neck muscles.
+                            <b>Bluelight:</b>: The blue light emitted by digital screens can disrupt the body's natural sleep-wake cycle and cause headaches. This is because blue light suppresses the production of melatonin, a hormone that regulates sleep.
                         </li>
                         <li>
                             <b>Poorposture:</b>
-                            Prolonged use of electronic devices can cause people to slouch, hunch over, or hold their neck in an awkward position, which can put excessive strain on the neck muscles.
+                              Prolonged use of technology, such as sitting in front of a computer for extended periods of time, can cause poor posture and muscle tension, which can lead to headaches.
                         </li>
                         <li>
-                            <b>Improper ergonomics:</b>
-                            Using electronic devices that are not set up in an ergonomic manner can cause neck pain. For example, a computer monitor that is too low or too high can cause neck strain.
+                            <b>Noise pollution:</b>
+                             Noise pollution from technology such as smartphones, laptops, and other electronic devices can cause headaches.
                         </li>
                         <li>
-                            <b>Lack of breaks: </b>
-                            Prolonged use of electronic devices without taking breaks to stretch and move around can cause muscle fatigue and stiffness in the neck and upper back.
+                            <b>Stress:</b>
+                            Stress: Technology can also cause stress and anxiety, which can lead to headaches. Social media and the constant need to check for notifications and updates can create a sense of pressure, leading to headaches.
                         </li>
                         <li>
-                            <b>Sleeping with electronic devices: </b>
-                             Using electronic devices in bed can cause people to sleep with their neck in an awkward position, which can result in neck pain.
+                            <b>Lack of physical activity:</b>
+                             Spending too much time in front of screens can make people inactive, which can contribute to headaches.
                         </li>
-
                 </ul>
             </details>
 
@@ -137,34 +149,38 @@
                     <summary style="margin-top: 10px;font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-size:24px;"><u>Precautions</u></summary>
                     <ul>
                         <li>
-                            <b>Maintain good posture:</b>
-                             When using electronic devices, ensure that your head and neck are in a neutral position, and your shoulders are relaxed. Sit with your back straight and avoid hunching forward.
+                            <b>Take frequent breaks:</b>
+                            Spending long hours in front of screens can strain your eyes and cause headaches. It's recommended to take a break every 20-30 minutes and look away from the screen for a few minutes.
                             </li>
                             <li>
-                                <b>Take breaks:</b> Take regular breaks from using electronic devices, preferably every 30 minutes, to stretch and move around. This can help prevent muscle fatigue and stiffness.
+                                <b>Adjust your screen:</b> Make sure your screen is positioned correctly and the brightness is adjusted to a comfortable level. This can help reduce eye strain and minimize headaches.
                             </li>
                             <li>
-                                <b>Use a stand:</b>
-                                 Use a stand or holder to elevate your device to eye level. This can help reduce strain on the neck and shoulders.
+                                <b>Exercise regularly:</b>
+                                Regular physical activity can help prevent headaches caused by technology. Exercise improves blood flow and reduces stress, which are both factors that can contribute to headaches.
                             </li>
                             <li>
-                                <b>Use a headset: </b>
-                                If you frequently make phone calls or attend video conferences, consider using a headset to avoid holding the phone against your ear.
+                                <b>Noise pollution:</b>
+                                 Noise pollution from technology such as smartphones, laptops, and other electronic devices can cause headaches.
                             </li>
                             <li>
-                                <b>Exercise regularly: </b>
-                                Engage in regular exercise to strengthen your neck and upper back muscles. This can help prevent muscle strain and reduce the risk of neck pain.                </li>
+                                <b>Good posture:</b>
+                                Maintaining good posture while using technology can help reduce strain on the neck, back, and shoulders, which can lead to headaches.                </li>
                             <li>
-                                <b>Get a comfortable chair</b>
-                                Use a chair that is comfortable and provides good support to your back, neck, and shoulders.
+                                <b>Limit screen time: </b>
+                                Reducing the amount of time you spend on technology can help prevent headaches. Consider setting limits for yourself or engaging in other activities that do not involve screens.
                             </li>
                             <li>
-                                <b>Adjust your screen brightness</b>
-                                Adjust the brightness and contrast of your screen to prevent eye strain, which can contribute to neck pain.
+                                <b>Hydrate regularly: </b>
+                                Reducing the amount of time you spend on technology can help prevent headaches. Consider setting limits for yourself or engaging in other activities that do not involve screens.
                             </li>
                             <li>
-                                <b>Use voice-to-text:</b>
-                                If possible, use voice-to-text software or a virtual assistant to reduce the amount of time you spend typing.
+                                <b>Get enough sleep:</b>
+                                Sleep deprivation can also cause headaches, so make sure to get enough sleep each night.
+                            </li>
+                            <li>
+                                <b> Seek medical attention: </b>
+                               If you are experiencing frequent headaches, it's important to seek medical attention. A doctor can help determine the underlying cause and provide appropriate treatment
                             </li>
             </ul>
         </details>
@@ -182,12 +198,12 @@
                         <h3>FeedBack</h3>
                     </div>
                     <div class="card-body">
-                        <form>
+                    <form method="post" action="dataentry.php">
                             <div class="form-group">
                                 <label for="commentInput">Give a FeedBack:</label>
-                                <textarea class="form-control" id="commentInput"></textarea>
+                                <textarea class="form-control" name="inp"></textarea>
                             </div>
-                            <button type="submit" class="btn btn-primary">Submit</button>
+                            <button type="submit" class="btn btn-primary" name="submit">Submit</button>
                         </form>
                     </div>
                 </div>

@@ -4,13 +4,13 @@ $answer = true; // replace with your variable
 
 
 if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
-    $link1 = "../Blog Sites/Shoulder_Pain.html";
-    $link2 = "../Blog Sites/Back_PAin.html";
-    $link3 = "../Blog Sites/Eye_Strain.html";
-    $link4 = "../Blog Sites/Wrist_Pain.html";
-    $link5 = "../Blog Sites/Neckpain.html";
-    $link6 = "../Blog Sites/blog.html";
-    $link7 = "../Blog Sites/headache.html";
+    $link1 = "../Blog Sites/Shoulder_Pain.php";
+    $link2 = "../Blog Sites/Back_PAin.php";
+    $link3 = "../Blog Sites/Eye_Strain.php";
+    $link4 = "../Blog Sites/Wrist_Pain.php";
+    $link5 = "../Blog Sites/Neckpain.php";
+    $link6 = "../Blog Sites/blog.php";
+    $link7 = "../Blog Sites/headache.php";
     $hosp = "../map.html";
 } else {
     $link1 = "login.php";

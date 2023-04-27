@@ -1,3 +1,7 @@
+<?php
+session_start();
+$_SESSION["pain"] = "Shoulder Pain"
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -38,7 +42,8 @@
 
     <!-- Picture and Blog Section -->
     <div class="container">
-        <h2 class="text-primary mt-5 text-center">The Headache of Today's Technology</h2>
+        <h2 class="text-primary mt-5 text-center">Shoulder Pain Due to Technology
+        </h2>
         <div class="row mt-5">
             <div id="carouselExampleIndicators" class="carousel slide col-md-5" data-ride="carousel"
                 data-interval="5000">
@@ -147,12 +152,12 @@
                         <h3>FeedBack</h3>
                     </div>
                     <div class="card-body">
-                        <form>
+                    <form method="post" action="dataentry.php">
                             <div class="form-group">
                                 <label for="commentInput">Give a FeedBack:</label>
-                                <textarea class="form-control" id="commentInput"></textarea>
+                                <textarea class="form-control" name="inp"></textarea>
                             </div>
-                            <button type="submit" class="btn btn-primary">Submit</button>
+                            <button type="submit" class="btn btn-primary" name="submit">Submit</button>
                         </form>
                     </div>
                 </div>

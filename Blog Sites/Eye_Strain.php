@@ -1,3 +1,7 @@
+<?php
+session_start();
+$_SESSION["pain"] = "Eye Strain"
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -144,12 +148,12 @@
                         <h3>FeedBack</h3>
                     </div>
                     <div class="card-body">
-                        <form>
+                    <form method="post" action="dataentry.php">
                             <div class="form-group">
                                 <label for="commentInput">Give a FeedBack:</label>
-                                <textarea class="form-control" id="commentInput"></textarea>
+                                <textarea class="form-control" name="inp"></textarea>
                             </div>
-                            <button type="submit" class="btn btn-primary">Submit</button>
+                            <button type="submit" class="btn btn-primary" name="submit">Submit</button>
                         </form>
                     </div>
                 </div>

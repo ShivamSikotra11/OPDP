@@ -3,6 +3,7 @@
 
 
 <head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
     <title>Find Hospitals</title>
     <style>
         body {
@@ -95,11 +96,40 @@
             font-size: 1.2em;
             color: #555;
         }
+
+        /* Back to Home */
+.back-to-home {
+    position: fixed;
+    top: 40px;
+    left: 20px;
+    font-size: 30px;
+    color: #ffffff;
+    background-color: rgba(255, 255, 255);
+    padding: 10px;
+    border-radius: 50%;
+    transition: all 0.3s ease-in-out;
+}
+
+.back-to-home:hover {
+    background: transparent;
+    cursor: pointer;
+}
+
+.back-to-home i {
+    color: #000000;
+}
+
+.back-to-home:hover i {
+    color: #ffffff;
+}
     </style>
 </head>
 
 
 <body>
+    <a href="Main_files/techInfection.php" class="back-to-home">
+        <i class="fas fa-home"></i>
+    </a>
     <h1>Find Hospitals</h1>
     <form onsubmit="return searchHospitals()">
         <label for="city">Enter a city:</label>
